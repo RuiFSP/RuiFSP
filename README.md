@@ -50,5 +50,3 @@
 <a href="https://twitter.com/RuiFSPinto/"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-RuiFSP-blue?style=flat-square&logo=twitter"></a>
 <a href="mailto:ruifspinto@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-ruifspinto@gmail.com-red?style=flat-square&logo=gmail"></a>
 </p>
-
-⭐️ From [AVS1508](https://github.com/AVS1508)
