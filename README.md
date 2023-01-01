@@ -10,8 +10,8 @@
 
 <h3> 👨🏻‍💻 &nbsp;About Me </h3>
 
-- 💼 &nbsp; Currently looking for opportunities as a junior software developer 
-- 🌱 &nbsp; I'm learning about different Front/Back End technologies
+- 💼 &nbsp; Junior software developer 
+- 🌱 &nbsp; I'm learning so many different technologies
 - 💜 &nbsp; Sports analytics and cryptocurrency 
 
 <h3> 🛠 &nbsp;Tech Stack</h3>
