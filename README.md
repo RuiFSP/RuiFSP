@@ -1,6 +1,12 @@
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
+  <img src="https://media.giphy.com/media/EPDjO7pkxU8KI/giphy.gif" width="200"/>
 </div>
+
+<p align="center">
+<a href="https://www.linkedin.com/in/ruifspinto/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-RuiFSP-blue?style=flat-square&logo=linkedin"></a>
+<a href="https://twitter.com/RuiFSPinto/"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-RuiFSP-blue?style=flat-square&logo=twitter"></a>
+<a href="mailto:ruifspinto@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-ruifspinto@gmail.com-red?style=flat-square&logo=gmail"></a>
+</p>
 
 <h2> Hey ! I'm Rui. 😄👋 <h2/> 
   
