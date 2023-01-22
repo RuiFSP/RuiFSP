@@ -3,13 +3,9 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ruifspinto&label=Profile%20views&color=0e75b6&style=flat" alt="ruifspinto" /> </p>
 
-<p align="left"> <a href="https://twitter.com/ruifspinto" target="blank"><img src="https://img.shields.io/twitter/follow/ruifspinto?logo=twitter&style=for-the-badge" alt="ruifspinto" /></a> </p>
-
 - 🔭 I’m currently working on [100 Days of Coding](https://github.com/RuiFSP/100-days-of-code)
 
 - 🌱 I’m currently learning **Python, Java and Devops**
-
-- 👯 I’m looking to collaborate on **open source projects**
 
 
 <h3 align="left">Connect with me:</h3>
