@@ -6,9 +6,6 @@
 - 🔭 I’m currently working on [100 Days of Coding](https://github.com/RuiFSP/100-days-of-code)
 
 - 🌱 I’m currently learning **Python, Java and Devops**
-- 🤓 Training to be a better Programmer at CodeWars 
-<img src="https://www.codewars.com/users/rui3/badges/large">
-
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
