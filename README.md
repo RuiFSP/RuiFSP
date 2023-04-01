@@ -9,7 +9,7 @@
 
 - 🌱 Learning **Python, Java, DataScience and Devops**
 
-- 🦾 Practicing my **Skills** at :
+- 🦾 Practicing my **Skills** at <em>CodeWars</em>:
     ###### <img src="https://www.codewars.com/users/rui3/badges/large" alt="codewars badge">
 
 
