@@ -4,9 +4,6 @@
 <p> <img src="https://komarev.com/ghpvc/?username=ruifspinto&label=Profile%20views&color=0e75b6&style=flat" alt="ruifspinto" /> </p>
 
 
-
-- 🔭 I’m currently working on [100 Days of Coding](https://github.com/RuiFSP/100-days-of-code)
-
 - 🌱 Learning **Python, Java, DataScience and Devops**
 
 - 🦾 Practicing my **Skills** at <em>CodeWars</em>:
