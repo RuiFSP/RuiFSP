@@ -12,10 +12,6 @@ I am passionate about data science and believe that it's never too late to embar
 
 - 📊 Data Enthusiast: I have a deep love for data and am always looking for insights and patterns that can drive decision-making and innovation.
 
-## Let's Connect
-
-I'm always open to connecting with fellow data enthusiasts, learners, and anyone who shares my passion for data science. Feel free to reach out to me on [mention your preferred social media platforms or contact information].
-
 ## My Toolbox
 
 - **Programming Languages:** Python
