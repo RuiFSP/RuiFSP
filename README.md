@@ -1,12 +1,34 @@
-<h1 align="center">Hi 👋, I'm Rui Pinto</h1>
-<h3 align="center">There is a quote that says, “ It’s never too late for new beginnings in your life ”. Many people assume that skill development is an ‘age sensitive’ thing and can only apply to people who are just starting their career. Whether you are 11 or 85 there is no reason why you can’t start now. Age is simply a number. </h3>
+# Embracing Data Science at 40+ 🚀
 
-<p> <img src="https://komarev.com/ghpvc/?username=ruifspinto&label=Profile%20views&color=0e75b6&style=flat" alt="ruifspinto" /> </p>
+**Hello, I'm Rui Pinto** 😃👋
+
+I am passionate about data science and believe that it's never too late to embark on a journey of learning and growth. In my 40s, I decided to embrace the exciting world of data science, and it has been an incredible adventure ever since.
+
+## About Me
+
+- 📚 Lifelong learner: I'm a firm believer in the power of continuous learning. I'm constantly expanding my knowledge and skills to stay at the forefront of data science and analytics.
+
+- 🌟 Inspiring the world: I aim to inspire others with my late-blooming journey into analytics. I want to show that age should never be a barrier to pursuing your passions and dreams.
+
+- 📊 Data Enthusiast: I have a deep love for data and am always looking for insights and patterns that can drive decision-making and innovation.
+
+## Let's Connect
+
+I'm always open to connecting with fellow data enthusiasts, learners, and anyone who shares my passion for data science. Feel free to reach out to me on [mention your preferred social media platforms or contact information].
+
+## My Toolbox
+
+- **Programming Languages:** Python
+- **Data Analysis:** Pandas, NumPy, Statsmodel
+- **Machine Learning:** Scikit-Learn, TensorFlow, PyTorch, Huggin Face, Google Compute
+- **Data Visualization:** Matplotlib, Seaborn, Plotly
+- **Database:** SQL, MongoDB
+- **Tools:** Jupyter Notebook, Git, Docker, MLFlow, FastAPI, ChatGPT
+
+## 📢 Let's Inspire Together
+
+I'm on a mission to inspire others to follow their dreams, no matter their age. Join me in my journey to explore the exciting world of data science and analytics. Follow me here on GitHub, on Twitter, Linkedin, and let's learn and grow together! 🌟
 
 
-- 🌱 Learning **Python, Java, DataScience and Devops**
-
-- 🦾 Practicing my **Skills** at <em>CodeWars</em>:
-    ###### <img src="https://www.codewars.com/users/rui3/badges/large" alt="codewars badge">
-
+#DataScience #NeverTooLate
 
