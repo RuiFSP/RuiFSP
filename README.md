@@ -14,11 +14,11 @@ I am passionate about data science and believe that it's never too late to embar
 
 ## My Toolbox
 
-- **Programming Languages:** Python
+- **Programming Languages:** Python, Java, Javascript
 - **Data Analysis:** Pandas, NumPy, Statsmodel
 - **Machine Learning:** Scikit-Learn, TensorFlow, PyTorch, Huggin Face, Google Compute
-- **Data Visualization:** Matplotlib, Seaborn, Plotly
-- **Database:** SQL, MongoDB
+- **Data Visualization:** Matplotlib, Seaborn, Plotly, Power BI, Tableau
+- **Database:** SQL, MongoDB, MySQL, PostgreSQL, Oracle
 - **Tools:** Jupyter Notebook, Git, Docker, MLFlow, FastAPI, ChatGPT
 
 ## 📢 Let's Inspire Together
