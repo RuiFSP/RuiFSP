@@ -30,8 +30,6 @@ Equipped with a versatile set of tools, I navigate the data landscape with ease:
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ruifsp&show_icons=true&locale=en" alt="ruifsp" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=ruifsp&" alt="ruifsp" /></p>
-
 ## 📢 Let's Inspire Together
 
 Embarking on a mission to encourage others, I invite you to join me in exploring the captivating universe of data science and analytics. Age is never a barrier to dreams. Connect with me here on GitHub, on Twitter, and LinkedIn, and let's embark on this journey of learning and growth together! 🌟
