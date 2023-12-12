@@ -8,8 +8,6 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ruifsp" alt="ruifsp" /></a> </p>
 
-<p align="left"> <a href="https://twitter.com/ruifspinto" target="blank"><img src="https://img.shields.io/twitter/follow/ruifspinto?logo=twitter&style=for-the-badge" alt="ruifspinto" /></a> </p>
-
 
 
 - 📚 **Lifelong Learner:** I staunchly believe in the transformative power of continuous learning. Always at the cutting edge of data science, I thrive on expanding my knowledge and honing my skills.
