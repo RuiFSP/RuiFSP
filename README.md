@@ -8,7 +8,11 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ruifsp" alt="ruifsp" /></a> </p>
 
-
+<p align="left">
+  <a href="https://www.codewars.com/users/Rui%20Pinto/badges/large">
+    <img src="https://www.codewars.com/users/Rui%20Pinto/badges/large" alt="Codewars Badge">
+  </a>
+</p>
 
 - 📚 **Lifelong Learner:** I staunchly believe in the transformative power of continuous learning. Always at the cutting edge of data science, I thrive on expanding my knowledge and honing my skills.
 
