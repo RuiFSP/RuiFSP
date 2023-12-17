@@ -2,13 +2,13 @@
 
 # About Me
 
-<h3 align="lest"> Hello there! 👋 I'm a dedicated individual on an exhilarating journey in the realm of data science and analytics. Here's a glimpse into who I am and what drives my passion </h3>
+<h3 align="lest"> Hello there! 👋 I'm a dedicated individual on an exhilarating journey in data science and analytics. Here's a glimpse into who I am and what drives my passion </h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ruifsp&label=Profile%20views&color=0e75b6&style=flat" alt="ruifsp" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ruifsp" alt="ruifsp" /></a> </p>
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ruifsp" alt="ruifsp" /></a> </p>
 
-<p align="left">
+<p align="center">
   <a href="https://www.codewars.com/users/Rui%20Pinto/badges/large">
     <img src="https://www.codewars.com/users/Rui%20Pinto/badges/large" alt="Codewars Badge">
   </a>
@@ -16,9 +16,9 @@
 
 - 📚 **Lifelong Learner:** I staunchly believe in the transformative power of continuous learning. Always at the cutting edge of data science, I thrive on expanding my knowledge and honing my skills.
 
-- 🌟 **Inspiring the World:** My journey into analytics started later in life, and I'm on a mission to inspire others. I want to be living proof that age should never hinder the pursuit of one's passions and dreams.
+- 🌟 **Inspiring the World:** My analytics journey started later in life, and I'm on a mission to inspire others. I want to be living proof that age should never hinder the pursuit of one's passions and dreams.
 
-- 📊 **Data Enthusiast:** I harbor a profound affection for data, perpetually seeking insights and patterns that fuel decision-making and innovation.
+- 📊 **Data Enthusiast:** I harbour a profound affection for data, perpetually seeking insights and patterns that fuel decision-making and innovation.
 
 ## My Toolbox 🧰
 
