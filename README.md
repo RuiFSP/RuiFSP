@@ -8,12 +8,6 @@
 
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ruifsp" alt="ruifsp" /></a> </p>
 
-<p align="center">
-  <a href="https://www.codewars.com/users/Rui%20Pinto/badges/large">
-    <img src="https://www.codewars.com/users/Rui%20Pinto/badges/large" alt="Codewars Badge">
-  </a>
-</p>
-
 - 📚 **Lifelong Learner:** I staunchly believe in the transformative power of continuous learning. Always at the cutting edge of data science, I thrive on expanding my knowledge and honing my skills.
 
 - 🌟 **Inspiring the World:** My analytics journey started later in life, and I'm on a mission to inspire others. I want to be living proof that age should never hinder the pursuit of one's passions and dreams.
