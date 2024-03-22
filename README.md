@@ -12,10 +12,6 @@
 
 - 📊 **Data Enthusiast:** I harbour a profound affection for data, perpetually seeking insights and patterns that fuel decision-making and innovation.
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=ruifsp&show_icons=true&locale=en&layout=compact" alt="ruifsp" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ruifsp&show_icons=true&locale=en" alt="ruifsp" /></p>
-
 ## 📢 Let's Inspire Together
 
 Embarking on a mission to encourage others, I invite you to join me in exploring the captivating universe of data science and analytics. Age is never a barrier to dreams. Connect with me here on GitHub, on Twitter, and LinkedIn, and let's embark on this journey of learning and growth together! 🌟
