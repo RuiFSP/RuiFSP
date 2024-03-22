@@ -22,4 +22,9 @@
 
 Embarking on a mission to encourage others, I invite you to join me in exploring the captivating universe of data science and analytics. Age is never a barrier to dreams. Connect with me here on GitHub, on Twitter, and LinkedIn, and let's embark on this journey of learning and growth together! 🌟
 
+<p align="left">
+<a href="https://twitter.com/ruifspinto" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="ruifspinto" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/ruifspinto" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ruifspinto" height="30" width="40" /></a>
+</p>
+
 #DataScience #NeverTooLate
