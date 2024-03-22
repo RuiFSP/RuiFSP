@@ -4,9 +4,7 @@
 
 <h3 align="lest"> Hello there! 👋 I'm a dedicated individual on an exhilarating journey in data science and analytics. Here's a glimpse into who I am and what drives my passion </h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=ruifsp&label=Profile%20views&color=0e75b6&style=flat" alt="ruifsp" /> </p>
-
-<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ruifsp" alt="ruifsp" /></a> </p>
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=ruifsp&label=Profile%20views&color=0e75b6&style=flat" alt="ruifsp" /> </p>
 
 - 📚 **Lifelong Learner:** I staunchly believe in the transformative power of continuous learning. Always at the cutting edge of data science, I thrive on expanding my knowledge and honing my skills.
 
