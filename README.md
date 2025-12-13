@@ -74,16 +74,6 @@ Hello! I'm Rui Pinto, a passionate data science and analytics practitioner based
 - [**advent_code_2024**](https://github.com/RuiFSP/advent_code_2024): Advent of Code 2024 solutions in Python.
 
 ---
-
-<details>
-<summary>🔗 <b>See All My Public Repositories</b></summary>
-
-- [RuiFSP on GitHub](https://github.com/RuiFSP?tab=repositories)
-
-</details>
-
----
-
 ## 🌐 Connect with Me
 
 <p>
