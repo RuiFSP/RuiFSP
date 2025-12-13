@@ -91,16 +91,3 @@ Hello! I'm Rui Pinto, a passionate data science and analytics practitioner based
 	<a href="https://www.linkedin.com/in/ruifspinto/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 	<a href="mailto:ruifspinto@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
-
----
-
-
----
-
-<p align="center">
-	<img src="https://github-readme-stats.vercel.app/api?username=ruifsp&show_icons=true&theme=radical" alt="RuiFSP's GitHub stats"/>
-	<br/>
-	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ruifsp&layout=compact&theme=radical" alt="Top Languages"/>
-	<br/>
-	<img src="https://github-profile-trophy.vercel.app/?username=ruifsp&theme=radical" alt="GitHub Trophies"/>
-</p>
