@@ -56,22 +56,24 @@ Hello! I'm Rui Pinto, a passionate data science and analytics practitioner based
 
 ## 🚩 Featured Projects
 
-### 🛠️ MLOps & Machine Learning
+### 🛠️ MLOps (Datatalksclub)
 - [**mlops-2025-final_project**](https://github.com/RuiFSP/mlops-2025-final_project): Production-ready MLOps pipeline for Premier League match prediction.
 - [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): End-to-end ML workflows, deployment, and orchestration (MLOps Zoomcamp Course).
+
+### 🛠️ Machine Learning (DataTalksclub)
 - [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project): Final project for MLZoomcamp, applying ML to real-world data.
 - [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): Midterm project for MLZoomcamp 2024, with Docker and AWS deployment.
 - [**ml-zoomcamp**](https://github.com/RuiFSP/ml-zoomcamp): DataTalks homeworks and exercises for ML Zoomcamp.
 
-### 🤖 LLMs & AI Engineering
+### 🤖 LLMs & AI Engineering (Ed Donner)
 - [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.
-- [**ragbook-notebooks**](https://github.com/RuiFSP/ragbook-notebooks): Building LLMs for production (forked from towardsai/ragbook-notebooks).
-- [**ai-dev-zoomcamp**](https://github.com/RuiFSP/ai-dev-zoomcamp): Using AI tools to write better code (AI Dev Zoomcamp).
+
 
 ### 📚 Learning & Community
 - [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code): 100 days journal to keep yourself accountable (multi-language, data science, Flask, etc.).
 - [**MLOps-Basics**](https://github.com/RuiFSP/MLOps-Basics): MLOps basics and best practices (forked from graviraja/MLOps-Basics).
 - [**advent_code_2024**](https://github.com/RuiFSP/advent_code_2024): Advent of Code 2024 solutions in Python.
+- [**ragbook-notebooks**](https://github.com/RuiFSP/ragbook-notebooks): Building LLMs for production (forked from towardsai/ragbook-notebooks).
 
 ---
 ## 🌐 Connect with Me
