@@ -1,13 +1,36 @@
 
+
+# Rui Pinto — Data Science Enthusiast 🚀
+*Data Scientist | MLOps | LLMs | Community Builder*
+
+
 <p align="center">
 	<img src="https://komarev.com/ghpvc/?username=ruifsp&label=Profile%20views&color=0e75b6&style=flat" alt="ruifsp" />
 </p>
 
-# Rui Pinto — Data Science Enthusiast 🚀
-
 <p align="center">
 	<b>Embracing Data Science at 40+ | Lifelong Learner | Inspiring Others</b>
 </p>
+
+<p align="center">
+	<img src="https://github-readme-stats.vercel.app/api?username=ruifsp&show_icons=true&theme=radical" alt="GitHub Stats" height="150"/>
+	<img src="https://github-readme-streak-stats.herokuapp.com/?user=ruifsp&theme=radical" alt="GitHub Streak" height="150"/>
+	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ruifsp&layout=compact&theme=radical" alt="Top Languages" height="150"/>
+</p>
+
+<p align="center">
+	<img src="https://github-profile-trophy.vercel.app/?username=ruifsp&theme=radical&margin-w=10&margin-h=10&column=6" alt="Trophies"/>
+</p>
+
+---
+
+## 📑 Table of Contents
+- [About Me](#-about-me)
+- [Main Interests](#-main-interests)
+- [Skills & Tools](#️-skills--tools)
+- [Featured Work](#-featured-work)
+- [Contact](#-contact)
+- [Fun Fact](#-fun-fact)
 
 ---
 
@@ -54,20 +77,25 @@ Hello! I'm Rui Pinto, a passionate data science and analytics practitioner based
 ---
 
 
-## 🚩 Featured Projects
+## 🚩 Featured Work
 
-### 🛠️ MLOps (Datatalksclub)
-- [**mlops-2025-final_project**](https://github.com/RuiFSP/mlops-2025-final_project): Production-ready MLOps pipeline for Premier League match prediction.
+### 🛠️ MLOps & Machine Learning (Datatalksclub)
+
+#### Datatalksclub Projects - Final Projects
+- [**mlops-2025-final_project**](https://github.com/RuiFSP/mlops-2025-final_project): Production-ready MLOps pipeline for Premier League match prediction.  
+	*Role: Designed and implemented the full pipeline, from data ingestion to deployment.*
+- [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project): Final project for MLZoomcamp, applying ML to real-world data.  
+	*Role: Led data preprocessing and model selection.*
+- [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): Midterm project for MLZoomcamp 2024, with Docker and AWS deployment.  
+	*Role: Built and containerized the solution for cloud deployment.*
+
+#### Datatalksclub Courses - Homeworks & Exercises
 - [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): End-to-end ML workflows, deployment, and orchestration (MLOps Zoomcamp Course).
-
-### 🛠️ Machine Learning (DataTalksclub)
-- [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project): Final project for MLZoomcamp, applying ML to real-world data.
-- [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): Midterm project for MLZoomcamp 2024, with Docker and AWS deployment.
 - [**ml-zoomcamp**](https://github.com/RuiFSP/ml-zoomcamp): DataTalks homeworks and exercises for ML Zoomcamp.
 
 ### 🤖 LLMs & AI Engineering (Ed Donner)
-- [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.
-
+- [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.  
+	*Role: Experimented with prompt engineering and LLM deployment.*
 
 ### 📚 Learning & Community
 - [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code): 100 days journal to keep yourself accountable (multi-language, data science, Flask, etc.).
@@ -76,10 +104,17 @@ Hello! I'm Rui Pinto, a passionate data science and analytics practitioner based
 - [**ragbook-notebooks**](https://github.com/RuiFSP/ragbook-notebooks): Building LLMs for production (forked from towardsai/ragbook-notebooks).
 
 ---
-## 🌐 Connect with Me
+
+## 📫 Contact
 
 <p>
 	<a href="https://twitter.com/RuiFSPinto"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
 	<a href="https://www.linkedin.com/in/ruifspinto/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 	<a href="mailto:ruifspinto@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
+
+---
+
+## 🎉 Fun Fact
+
+When I'm not coding or learning about data, you’ll find me hiking the hills around Lisbon or experimenting with new coffee brewing methods!
