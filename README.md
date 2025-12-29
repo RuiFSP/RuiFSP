@@ -49,7 +49,6 @@
 	<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
 	<img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white"/>
 	<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
 	<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white"/>
 	<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"/>
 	<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
@@ -65,8 +64,12 @@
 	<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 	<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 	<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white"/>
+	<img src="https://img.shields.io/badge/HuggingFace-FFD21F?style=for-the-badge&logo=huggingface&logoColor=black"/>
+	<img src="https://img.shields.io/badge/LangChain-000000?style=for-the-badge&logo=langchain&logoColor=white"/>
+	<img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Anthropic-000000?style=for-the-badge&logo=anthropic&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Prefect-212121?style=for-the-badge&logo=prefect&logoColor=white"/>
 </p>
 
 ---
@@ -78,19 +81,18 @@
 
 #### Datatalksclub Projects - Final Projects
 - [**mlops-2025-final_project**](https://github.com/RuiFSP/mlops-2025-final_project): Production-ready MLOps pipeline for Premier League match prediction.  
-	*Role: Designed and implemented the full pipeline, from data ingestion to deployment.*
+	*Task: Designed and implemented the full pipeline, from data ingestion to deployment.*
 - [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project): Final project for MLZoomcamp, applying ML to real-world data.  
-	*Role: Led data preprocessing and model selection.*
+	*Task: Led data preprocessing and model selection.*
 - [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): Midterm project for MLZoomcamp 2024, with Docker and AWS deployment.  
-	*Role: Built and containerized the solution for cloud deployment.*
-
+	*Task: Built and containerized the solution for cloud deployment.*
 #### Datatalksclub Courses - Homeworks & Exercises
 - [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): End-to-end ML workflows, deployment, and orchestration (MLOps Zoomcamp Course).
 - [**ml-zoomcamp**](https://github.com/RuiFSP/ml-zoomcamp): DataTalks homeworks and exercises for ML Zoomcamp.
 
 ### 🤖 LLMs & AI Engineering (Ed Donner)
 - [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.  
-	*Role: Experimented with prompt engineering and LLM deployment.*
+	*Task: Experimented with prompt engineering and LLM deployment.*
 
 ### 📚 Learning & Community
 - [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code): 100 days journal to keep yourself accountable (multi-language, data science, Flask, etc.).
