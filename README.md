@@ -9,10 +9,7 @@
 			<ul>
 				<li>Machine Learning & AI</li>
 				<li>MLOps & Model Deployment</li>
-				<li>Large Language Models (LLMs) & Generative AI</li>
 				<li>Kaggle Competitions & Data Challenges</li>
-				<li>Cloud ML Platforms (AWS, GCP, Azure)</li>
-				<li>Data Engineering & Analytics</li>
 				<li>Open Source Contributions</li>
 			</ul>
 		</td>
