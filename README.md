@@ -1,17 +1,8 @@
-
-
-# Rui Pinto — Data Science Enthusiast 🚀
-*Data Scientist | MLOps | LLMs | Community Builder*
-
-
----
-
-
 <table>
 	<tr>
 		<td valign="top" width="50%">
 			<h2>👋 About Me</h2>
-			<p>Hello! I'm Rui Pinto, a data scientist and machine learning engineer based in Lisbon, Portugal. With a strong background in end-to-end ML solutions, MLOps, and LLMs, I specialize in designing, deploying, and scaling data-driven products for real-world impact. My experience spans production-grade pipelines, cloud platforms, and leading cross-functional projects. I’m passionate about leveraging AI to solve complex business challenges, mentoring others, and building vibrant data communities.</p>
+			<p>Hello! I'm Rui Pinto, a data scientist and machine learning engineer based in Lisbon, Portugal. I’m passionate about leveraging AI to solve complex business challenges, mentoring others, and building vibrant data communities.</p>
 		</td>
 		<td valign="top" width="50%">
 			<h2>🧭 Main Interests</h2>
@@ -19,13 +10,10 @@
 				<li>Machine Learning & AI</li>
 				<li>MLOps & Model Deployment</li>
 				<li>Large Language Models (LLMs) & Generative AI</li>
-				<li>Retrieval-Augmented Generation & Vector Databases</li>
 				<li>Kaggle Competitions & Data Challenges</li>
-				<li>Experiment Tracking & Model Monitoring</li>
 				<li>Cloud ML Platforms (AWS, GCP, Azure)</li>
 				<li>Data Engineering & Analytics</li>
 				<li>Open Source Contributions</li>
-				<li>Community Building & Mentorship</li>
 			</ul>
 		</td>
 	</tr>
