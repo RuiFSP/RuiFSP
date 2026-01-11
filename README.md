@@ -31,7 +31,6 @@
 #### Datatalksclub Courses - Homeworks & Exercises
 
 - [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026): Datatalksclub homeworks and exercises for Data Engineering Zoomcamp 2026.
-
 - [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): Datatalksclub homeworks and exercises for MLOps Zoomcamp 2025.
 - [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024): Datatalksclub homeworks and exercises for ML Zoomcamp 2024.
 
