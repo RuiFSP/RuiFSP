@@ -29,12 +29,14 @@
 - [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): Datatalksclub Midterm project for ML Zoomcamp 2024, with Docker and AWS deployment.  
 
 #### Datatalksclub Courses - Homeworks & Exercises
+
+- [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026): Datatalksclub homeworks and exercises for Data Engineering Zoomcamp 2026.
+
 - [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): Datatalksclub homeworks and exercises for MLOps Zoomcamp 2025.
 - [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024): Datatalksclub homeworks and exercises for ML Zoomcamp 2024.
 
 ### 🤖 LLMs & AI Engineering (Ed Donner)
-- [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.  
-	*Task: Experimented with prompt engineering and LLM deployment.*
+- [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.
 
 ### 📚 Learning & Community
 - [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code): What made me love python - 100 days journal to keep yourself accountable (multi-language, data science, Flask, etc.).
