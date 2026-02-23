@@ -34,13 +34,14 @@
 - [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): Datatalksclub homeworks and exercises for MLOps Zoomcamp 2025.
 - [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024): Datatalksclub homeworks and exercises for ML Zoomcamp 2024.
 
-### 🤖 LLMs & AI Engineering (Ed Donner)
-- [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.
 
 ### 📚 Learning & Community
+- [**llm_engineering**](https://github.com/RuiFSP/llm_engineering): Mastering LLM engineering course materials and experiments.
 - [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code): What made me love python - 100 days journal to keep yourself accountable (multi-language, data science, Flask, etc.).
 - [**MLOps-Basics**](https://github.com/RuiFSP/MLOps-Basics): MLOps basics and best practices (forked from graviraja/MLOps-Basics).
 - [**advent_code_2024**](https://github.com/RuiFSP/advent_code_2024): Fun time with Advent of Code 2024 solutions in python.
 - [**ragbook-notebooks**](https://github.com/RuiFSP/ragbook-notebooks): Building LLMs for production (forked from towardsai/ragbook-notebooks).
+- [**ai-engineer-handbook**](https://github.com/RuiFSP/ai-engineer-handbook): All the resources you need to become an amazing AI engineer—books, communities, blogs, courses, and more.
+- [**mlops-coding-course**](https://github.com/RuiFSP/mlops-coding-course): Hands-on, project-driven course to learn MLOps coding, best practices, and real-world workflows with Python.
 
 ---
