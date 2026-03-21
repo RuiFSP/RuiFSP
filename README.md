@@ -21,18 +21,19 @@
 
 ## 🚩 Featured Work
 
-### 🛠️ MLOps & Machine Learning (Datatalksclub)
+### 🛠️ DataTalks.Club Projects
 
-#### Datatalksclub Projects - Final Projects
-- [**mlops-2025-final_project**](https://github.com/RuiFSP/mlops-2025-final_project): Datatalksclub Final project for MLOps Zoomcamp 2025, focusing on MLOps best practices and deployment.  
-- [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project): Datatalksclub Final project for ML Zoomcamp 2024, applying ML to real-world data.  
-- [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): Datatalksclub Midterm project for ML Zoomcamp 2024, with Docker and AWS deployment.  
+#### DataTalks.Club Projects - Final Projects
+- [**dezoomcamp-2026-final-project**](https://github.com/RuiFSP/dezoomcamp-2026-final-project): DataTalks.Club Final project for Data Engineering Zoomcamp 2026 — end-to-end batch pipeline ingesting GitHub archive events into GCS + BigQuery (Bruin orchestration, Terraform IaC, Streamlit dashboard on Cloud Run).  
+- [**mlops-2025-final-project**](https://github.com/RuiFSP/mlops-2025-final_project): DataTalks.Club Final project for MLOps Zoomcamp 2025, focusing on MLOps best practices and deployment.  
+- [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project): DataTalks.Club Final project for ML Zoomcamp 2024, applying ML to real-world data.  
+- [**mlzoomcamp2024-midterm-project**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project): DataTalks.Club Midterm project for ML Zoomcamp 2024, with Docker and AWS deployment.  
 
-#### Datatalksclub Courses - Homeworks & Exercises
+#### DataTalks.Club Courses - Homeworks & Exercises
 
-- [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026): Datatalksclub homeworks and exercises for Data Engineering Zoomcamp 2026.
-- [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): Datatalksclub homeworks and exercises for MLOps Zoomcamp 2025.
-- [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024): Datatalksclub homeworks and exercises for ML Zoomcamp 2024.
+- [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026): DataTalks.Club homeworks and exercises for Data Engineering Zoomcamp 2026.
+- [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025): DataTalks.Club homeworks and exercises for MLOps Zoomcamp 2025.
+- [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024): DataTalks.Club homeworks and exercises for ML Zoomcamp 2024.
 
 
 ### 📚 Learning & Community
