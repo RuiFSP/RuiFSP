@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rui Pinto · Data Scientist & ML Engineer</title>
+  <style>
+    :root {
+      --bg:       #1a1b2e;
+      --surface:  #24253a;
+      --border:   #2e2f4a;
+      --accent:   #7aa2f7;
+      --accent2:  #bb9af7;
+      --green:    #9ece6a;
+      --cyan:     #7dcfff;
+      --text:     #c0caf5;
+      --muted:    #787c99;
+      --heading:  #e0e5ff;
+      --radius:   12px;
+      --nav-h:    58px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding-top: var(--nav-h);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--cyan); text-decoration: underline; }
+
+    /* ── Nav ────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(26, 27, 46, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      width: 100%;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--heading);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--accent); text-decoration: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+    .nav-links a.active { color: var(--accent); }
+
+    @media (max-width: 540px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+    }
+
+    /* ── Layout ─────────────────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--heading);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 0.75rem;
+    }
+
+    /* ── Fade-in animation ──────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Hero ───────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Avatar */
+    .avatar-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .avatar-wrap img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      display: block;
+    }
+    .avatar-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px solid var(--accent2);
+      opacity: 0.5;
+      animation: pulse-ring 3s ease-in-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50%       { transform: scale(1.06); opacity: 0.15; }
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.5px;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--accent2);
+      margin: 0.4rem 0 0.8rem;
+    }
+
+    /* Typing tagline */
+    .hero .tagline {
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 1.8rem;
+      min-height: 1.7em;
+    }
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .badges img { height: 28px; border-radius: 6px; }
+
+    /* ── About ──────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card ul li { font-size: 0.93rem; }
+
+    /* ── Tech stack ─────────────────────────────────── */
+    .tech-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-wrap img { height: 24px; border-radius: 4px; }
+
+    /* ── Projects ───────────────────────────────────── */
+    .project-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.4rem 1rem;
+      align-items: start;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+    .project-card .title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--heading);
+    }
+
+    .project-card .title a { color: var(--heading); }
+    .project-card .title a:hover { color: var(--accent); }
+
+    .project-card .desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    .stack-tag {
+      font-size: 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.15rem 0.65rem;
+      color: var(--cyan);
+      white-space: nowrap;
+      align-self: start;
+    }
+
+    /* ── Learning ───────────────────────────────────── */
+    .learn-list {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .learn-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.93rem;
+      transition: border-color 0.2s;
+    }
+
+    .learn-item:hover { border-color: var(--accent); }
+    .learn-item .focus { color: var(--muted); font-size: 0.85rem; }
+
+    /* ── Stats ──────────────────────────────────────── */
+    .stats-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .stats-wrap img {
+      border-radius: var(--radius);
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Connect ────────────────────────────────────── */
+    .connect-text {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .connect-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .connect-links img { height: 26px; border-radius: 5px; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Rui Pinto</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────── -->
+  <div class="container">
+    <div class="hero" id="hero">
+      <div class="avatar-wrap">
+        <img src="https://github.com/RuiFSP.png" alt="Rui Pinto" />
+      </div>
+      <h1>Hi, I'm Rui Pinto 👋</h1>
+      <p class="subtitle">Data Scientist &amp; Machine Learning Engineer · Lisbon, Portugal 🇵🇹</p>
+      <p class="tagline"><span id="typed-text"></span><span class="cursor"></span></p>
+      <div class="badges">
+        <a href="https://linkedin.com/in/ruifspinto">
+          <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/RuiFSP">
+          <img src="https://img.shields.io/github/followers/RuiFSP?style=for-the-badge&logo=github&logoColor=white" alt="GitHub followers" />
+        </a>
+      </div>
+    </div>
+
+    <!-- ── ABOUT ───────────────────────────────────── -->
+    <section id="about" class="fade-in">
+      <h2>🚀 About</h2>
+      <div class="about-grid">
+        <div class="card">
+          <h3>What I Do</h3>
+          <ul>
+            <li>🧠 Build data products that turn messy signals into useful decisions</li>
+            <li>🏗️ Deliver end-to-end pipelines with strong engineering and reproducibility</li>
+            <li>🚀 Focus on MLOps, model serving, and reliable cloud deployment</li>
+            <li>🌱 Deepening work in LLM systems and data platform design</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Current Focus</h3>
+          <ul>
+            <li>🎯 Production ML architecture and experiment traceability</li>
+            <li>🎯 Data engineering for analytics + ML platforms</li>
+            <li>🎯 LLM engineering patterns (RAG, evaluation, orchestration)</li>
+            <li>🎯 Clean, documented, and maintainable Python code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ──────────────────────────────── -->
+    <section id="stack" class="fade-in">
+      <h2>🛠️ Tech Stack</h2>
+      <div class="tech-wrap">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+        <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
+        <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
+        <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
+        <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+        <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
+        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
+        <img src="https://img.shields.io/badge/XGBoost-189C2A?style=flat-square&logoColor=white" alt="XGBoost" />
+        <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" alt="MLflow" />
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+        <img src="https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white" alt="Terraform" />
+        <img src="https://img.shields.io/badge/Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" alt="Apache Airflow" />
+        <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
+        <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="GCP" />
+        <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white" alt="AWS" />
+        <img src="https://img.shields.io/badge/BigQuery-4285F4?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+      </div>
+    </section>
+
+    <!-- ── FEATURED PROJECTS ───────────────────────── -->
+    <section id="projects" class="fade-in">
+      <h2>🏆 Featured Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="title">
+            <a href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank">dezoomcamp-2026</a>
+          </div>
+          <span class="stack-tag">Data Engineering</span>
+          <div class="desc">Batch data platform from ingestion to dashboard using cloud-native orchestration — Python · Bruin · Terraform · GCS · BigQuery · Streamlit · Cloud Run</div>
+        </div>
+
+        <div class="project-card">
+          <div class="title">
+            <a href="https://github.com/RuiFSP/mlops-2025-final_project" target="_blank">mlops-2025</a>
+          </div>
+          <span class="stack-tag">MLOps</span>
+          <div class="desc">End-to-end MLOps lifecycle: tracking, packaging, deployment, monitoring — Python · FastAPI · MLflow · Prefect · PostgreSQL · Grafana · Docker · GitHub Actions</div>
+        </div>
+
+        <div class="project-card">
+          <div class="title">
+            <a href="https://github.com/RuiFSP/mlzoomcamp2024-final-project" target="_blank">mlzoomcamp2024-final</a>
+          </div>
+          <span class="stack-tag">ML Engineering</span>
+          <div class="desc">Production-style ML service with reproducible training and serving flow — Python · TensorFlow/Keras · Flask · Docker · AWS Elastic Beanstalk · Streamlit</div>
+        </div>
+
+        <div class="project-card">
+          <div class="title">
+            <a href="https://github.com/RuiFSP/mlzoomcamp2024-midterm-project" target="_blank">mlzoomcamp2024-midterm</a>
+          </div>
+          <span class="stack-tag">ML Engineering</span>
+          <div class="desc">Cloud-deployed ML app with containerized training and inference pipeline — Python · scikit-learn · XGBoost · Docker · AWS Elastic Beanstalk · Streamlit</div>
+        </div>
+
+        <div class="project-card">
+          <div class="title">
+            <a href="https://github.com/RuiFSP/llm_engineering" target="_blank">llm_engineering</a>
+          </div>
+          <span class="stack-tag">LLM / AI</span>
+          <div class="desc">Applied LLM experiments with RAG pipelines and agent workflows — Jupyter Notebook · Python · Ollama · OpenAI APIs · Anthropic APIs · Google Colab</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LEARNING & COMMUNITY ────────────────────── -->
+    <section id="learning" class="fade-in">
+      <h2>📚 Learning &amp; Community</h2>
+      <div class="learn-list">
+        <div class="learn-item">
+          <a href="https://github.com/RuiFSP/dataengineering-zoomcamp-2026" target="_blank">dataengineering-zoomcamp-2026</a>
+          <span class="focus">Data Engineering Zoomcamp 2026 homeworks</span>
+        </div>
+        <div class="learn-item">
+          <a href="https://github.com/RuiFSP/mlops-zoomcamp-2025" target="_blank">mlops-zoomcamp-2025</a>
+          <span class="focus">MLOps Zoomcamp 2025 homeworks</span>
+        </div>
+        <div class="learn-item">
+          <a href="https://github.com/RuiFSP/ml-zoomcamp-2024" target="_blank">ml-zoomcamp-2024</a>
+          <span class="focus">ML Zoomcamp 2024 homeworks</span>
+        </div>
+        <div class="learn-item">
+          <a href="https://github.com/RuiFSP/100-days-of-code" target="_blank">100-days-of-code</a>
+          <span class="focus">100-day coding journal — Python, data science, Flask</span>
+        </div>
+        <div class="learn-item">
+          <a href="https://github.com/RuiFSP/advent_code_2024" target="_blank">advent_code_2024</a>
+          <span class="focus">Advent of Code 2024 solutions in Python</span>
+        </div>
+        <div class="learn-item">
+          <a href="https://github.com/RuiFSP/ai-engineer-handbook" target="_blank">ai-engineer-handbook</a>
+          <span class="focus">Curated AI engineer resources: books, courses, communities</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GITHUB STATS ─────────────────────────────── -->
+    <section id="stats" class="fade-in">
+      <h2>📊 GitHub Stats</h2>
+      <div class="stats-wrap">
+        <img
+          src="https://github-readme-stats-sigma-five.vercel.app/api?username=RuiFSP&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"
+          alt="Rui's GitHub Stats"
+        />
+        <img
+          src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=RuiFSP&layout=compact&theme=tokyonight&hide_border=true"
+          alt="Top Languages"
+        />
+      </div>
+    </section>
+
+    <!-- ── CONNECT ──────────────────────────────────── -->
+    <section id="connect" class="fade-in">
+      <h2>📬 Let's Connect</h2>
+      <p class="connect-text">I'm open to collaborations, mentoring, and interesting ML/MLOps projects!</p>
+      <div class="connect-links">
+        <a href="https://linkedin.com/in/ruifspinto" target="_blank">
+          <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin" alt="LinkedIn" />
+        </a>
+        <a href="https://kaggle.com/ruifspinto" target="_blank">
+          <img src="https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=flat-square&logo=kaggle" alt="Kaggle" />
+        </a>
+        <a href="https://github.com/RuiFSP" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github" alt="GitHub" />
+        </a>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <footer>
+    <p>⭐️ If you find my work useful, feel free to star a repo!</p>
+  </footer>
+
+  <script>
+    /* ── Typing effect ─────────────────────────────── */
+    const phrases = [
+      'I design and ship practical ML systems from prototype to production.',
+      'Turning messy data into useful decisions.',
+      'MLOps · LLM Engineering · Data Platforms.',
+      'Open to collaborations and interesting ML projects!'
+    ];
+    let phraseIdx = 0, charIdx = 0, deleting = false;
+    const typedEl = document.getElementById('typed-text');
+
+    function type() {
+      const current = phrases[phraseIdx];
+      if (!deleting) {
+        typedEl.textContent = current.slice(0, ++charIdx);
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(type, 2200);
+          return;
+        }
+      } else {
+        typedEl.textContent = current.slice(0, --charIdx);
+        if (charIdx === 0) {
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+        }
+      }
+      setTimeout(type, deleting ? 38 : 52);
+    }
+    type();
+
+    /* ── Fade-in on scroll ──────────────────────────── */
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    /* ── Active nav link on scroll ─────────────────── */
+    const sections = document.querySelectorAll('section[id], div[id="hero"]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const navObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(a => a.classList.remove('active'));
+            const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+            if (link) link.classList.add('active');
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    sections.forEach(s => navObserver.observe(s));
+  </script>
+
+</body>
+</html>
