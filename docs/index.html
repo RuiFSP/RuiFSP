@@ -396,19 +396,62 @@
       height: auto;
     }
 
-    /* ── Connect ────────────────────────────────────── */
+    /* ── Connect / form ────────────────────────────── */
     .connect-text {
       color: var(--muted);
       margin-bottom: 1.25rem;
     }
-
     .connect-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
+      margin-bottom: 2rem;
     }
-
     .connect-links img { height: 26px; border-radius: 5px; }
+
+    .contact-form {
+      display: grid;
+      gap: 0.9rem;
+      max-width: 560px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--accent); }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .contact-form button {
+      align-self: start;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.6rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .contact-form button:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── Hero bio ──────────────────────────────────── */
+    .hero-bio {
+      max-width: 620px;
+      margin: 0.8rem auto 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.75;
+    }
 
     /* ── Timeline ────────────────────────────────────── */
     .timeline {
@@ -498,12 +541,10 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">Rui Pinto</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#stack">Stack</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#stats">Stats</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
     </div>
@@ -515,35 +556,13 @@
       <div class="avatar-wrap">
         <img src="https://github.com/RuiFSP.png" alt="Rui Pinto" />
       </div>
-      <h1>Hi, I'm Rui Pinto 👋</h1>
-      <p class="subtitle">Data Scientist &amp; Machine Learning Engineer · Lisbon, Portugal 🇵🇹</p>
+      <h1>Rui Pinto</h1>
+      <p class="subtitle">Data Scientist &amp; Machine Learning Engineer &nbsp;&middot;&nbsp; Lisbon, Portugal 🇵🇹</p>
       <p class="tagline"><span id="typed-text"></span><span class="cursor"></span></p>
+      <p class="hero-bio">
+        Engineer by training, data scientist by choice. After 15+ years across mechanical engineering, operations, and process consulting, I retrained in software and ML — earning an MSc, MBA, and Six Sigma Black Belt along the way. Today I design and ship practical ML systems at Deloitte, from forecasting pipelines to RAG agents, with a focus on production-ready code and real business impact.
+      </p>
     </div>
-
-    <!-- ── ABOUT ───────────────────────────────────── -->
-    <section id="about" class="fade-in">
-      <h2>🚀 About</h2>
-      <div class="about-grid">
-        <div class="card">
-          <h3>What I Do</h3>
-          <ul>
-            <li>🧠 Build data products that turn messy signals into useful decisions</li>
-            <li>🏗️ Deliver end-to-end pipelines with strong engineering and reproducibility</li>
-            <li>🚀 Focus on MLOps, model serving, and reliable cloud deployment</li>
-            <li>🌱 Deepening work in LLM systems and data platform design</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Current Focus</h3>
-          <ul>
-            <li>🎯 Production ML architecture and experiment traceability</li>
-            <li>🎯 Data engineering for analytics + ML platforms</li>
-            <li>🎯 LLM engineering patterns (RAG, evaluation, orchestration)</li>
-            <li>🎯 Clean, documented, and maintainable Python code</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
     <!-- ── EXPERIENCE ────────────────────────────────── -->
     <section id="experience" class="fade-in">
@@ -810,25 +829,9 @@
       </div>
     </section>
 
-    <!-- ── GITHUB STATS ─────────────────────────────── -->
-    <section id="stats" class="fade-in">
-      <h2>📊 GitHub Stats</h2>
-      <div class="stats-wrap">
-        <img
-          src="https://github-readme-stats-sigma-five.vercel.app/api?username=RuiFSP&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"
-          alt="Rui's GitHub Stats"
-        />
-        <img
-          src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=RuiFSP&layout=compact&theme=tokyonight&hide_border=true"
-          alt="Top Languages"
-        />
-      </div>
-    </section>
-
     <!-- ── CONNECT ──────────────────────────────────── -->
     <section id="connect" class="fade-in">
-      <h2>📬 Let's Connect</h2>
-      <p class="connect-text">I'm open to collaborations, mentoring, and interesting ML/MLOps projects!</p>
+      <h2>📬 Let’s Connect</h2>
       <div class="connect-links">
         <a href="https://linkedin.com/in/ruifspinto" target="_blank">
           <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin" alt="LinkedIn" />
