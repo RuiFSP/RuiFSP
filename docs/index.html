@@ -248,13 +248,20 @@
     .card ul li { font-size: 0.93rem; }
 
     /* ── Tech stack ─────────────────────────────────── */
+    .tech-categories { display: grid; gap: 1.1rem; }
+    .tech-category h3 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
     .tech-wrap {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.45rem;
     }
-
-    .tech-wrap img { height: 24px; border-radius: 4px; }
+    .tech-wrap img { height: 22px; border-radius: 4px; }
 
     /* ── Projects ───────────────────────────────────── */
     .project-grid {
@@ -302,12 +309,41 @@
       align-self: start;
     }
 
-    /* ── Learning ───────────────────────────────────── */
-    .learn-list {
+    /* ── Certifications / Education / Community ─────── */
+    .cert-grid {
       display: grid;
-      gap: 0.6rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
     }
+    @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      transition: border-color 0.2s;
+    }
+    .cert-card:hover { border-color: var(--accent); }
+    .cert-title { font-weight: 600; font-size: 0.92rem; color: var(--heading); }
+    .cert-issuer { font-size: 0.82rem; color: var(--accent2); }
+    .cert-date { font-size: 0.78rem; color: var(--muted); }
 
+    .edu-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .edu-degree { font-weight: 600; color: var(--heading); font-size: 0.95rem; }
+    .edu-school { color: var(--accent2); font-size: 0.87rem; }
+    .edu-date { color: var(--muted); font-size: 0.8rem; }
+
+    .learn-list { display: grid; gap: 0.6rem; }
     .learn-item {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -319,9 +355,32 @@
       font-size: 0.93rem;
       transition: border-color 0.2s;
     }
-
     .learn-item:hover { border-color: var(--accent); }
     .learn-item .focus { color: var(--muted); font-size: 0.85rem; }
+
+    /* ── Scroll-to-top ──────────────────────────────── */
+    #back-to-top {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 200;
+    }
+    #back-to-top.visible { opacity: 1; pointer-events: auto; }
+    #back-to-top:hover { transform: translateY(-3px); }
 
     /* ── Stats ──────────────────────────────────────── */
     .stats-wrap {
@@ -443,7 +502,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#stack">Stack</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#learning">Learning</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#stats">Stats</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
@@ -576,23 +635,52 @@
     <!-- ── TECH STACK ──────────────────────────────── -->
     <section id="stack" class="fade-in">
       <h2>🛠️ Tech Stack</h2>
-      <div class="tech-wrap">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-        <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
-        <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
-        <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
-        <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
-        <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
-        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
-        <img src="https://img.shields.io/badge/XGBoost-189C2A?style=flat-square&logoColor=white" alt="XGBoost" />
-        <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" alt="MLflow" />
-        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-        <img src="https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white" alt="Terraform" />
-        <img src="https://img.shields.io/badge/Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" alt="Apache Airflow" />
-        <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
-        <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="GCP" />
-        <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white" alt="AWS" />
-        <img src="https://img.shields.io/badge/BigQuery-4285F4?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+      <div class="tech-categories">
+
+        <div class="tech-category">
+          <h3>Languages &amp; Data</h3>
+          <div class="tech-wrap">
+            <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+            <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
+            <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
+            <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>ML &amp; AI</h3>
+          <div class="tech-wrap">
+            <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+            <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
+            <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
+            <img src="https://img.shields.io/badge/XGBoost-189C2A?style=flat-square&logoColor=white" alt="XGBoost" />
+            <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="HuggingFace" />
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>MLOps &amp; Engineering</h3>
+          <div class="tech-wrap">
+            <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" alt="MLflow" />
+            <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+            <img src="https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white" alt="Terraform" />
+            <img src="https://img.shields.io/badge/Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" alt="Apache Airflow" />
+            <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+            <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>Cloud &amp; Platforms</h3>
+          <div class="tech-wrap">
+            <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="GCP" />
+            <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white" alt="AWS" />
+            <img src="https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure" />
+            <img src="https://img.shields.io/badge/BigQuery-4285F4?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+            <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="Databricks" />
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -644,33 +732,88 @@
       </div>
     </section>
 
-    <!-- ── LEARNING & COMMUNITY ────────────────────── -->
-    <section id="learning" class="fade-in">
-      <h2>📚 Learning &amp; Community</h2>
+    <!-- ── EDUCATION ──────────────────────────────── -->
+    <section id="education" class="fade-in">
+      <h2>🎓 Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-degree">M.Sc. Mechanical Engineering</div>
+        <div class="edu-school">IST — Instituto Superior Técnico · Lisbon</div>
+        <div class="edu-date">2005 – 2007 &nbsp;·&nbsp; Road accident reconstruction, FEA &amp; forensic simulation (IDMEC research lab)</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">MBA — Business Administration &amp; Management</div>
+        <div class="edu-school">ISEG — Lisbon School of Economics &amp; Management</div>
+        <div class="edu-date">2011 – 2013 &nbsp;·&nbsp; Team leader in Heidrick/H2SO4 at Global Management Challenge 2012</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">Lean Six Sigma Black Belt</div>
+        <div class="edu-school">IST — Instituto Superior Técnico</div>
+        <div class="edu-date">2014 &nbsp;·&nbsp; ASQ CSSBB certified · DMAIC methodology, process improvement &amp; statistical analysis</div>
+      </div>
+
+      <h2 style="margin-top:2rem;">🏅 Bootcamps &amp; Programmes</h2>
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <span class="cert-title">Data Science &amp; AI Bootcamp</span>
+          <span class="cert-issuer">Le Wagon · Lisbon</span>
+          <span class="cert-date">Oct – Dec 2023 &nbsp;·&nbsp; Python · SQL · ML · Deep Learning · MLEng · GCP</span>
+        </div>
+
+        <div class="cert-card">
+          <span class="cert-title">Data Science Starters Academy</span>
+          <span class="cert-issuer">Lisbon Data Science Academy</span>
+          <span class="cert-date">Nov 2023 – Jul 2024 &nbsp;·&nbsp; 34 Learning Units · 5 Hackathons · 1 Capstone project</span>
+        </div>
+
+        <div class="cert-card">
+          <span class="cert-title">Full Stack Developer Bootcamp</span>
+          <span class="cert-issuer">Code for All_ (Academia de Código)</span>
+          <span class="cert-date">Jan – Apr 2022 &nbsp;·&nbsp; Java · OOP · Spring · SQL · JS · Frontend</span>
+        </div>
+
+      </div>
+
+      <h2 style="margin-top:2rem;">🏅 Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <span class="cert-title">Data Engineering Zoomcamp</span>
+          <span class="cert-issuer">DataTalks.Club</span>
+          <span class="cert-date">2026 · <a href="https://github.com/RuiFSP/dataengineering-zoomcamp-2026" target="_blank">repo ↗</a></span>
+        </div>
+        <div class="cert-card">
+          <span class="cert-title">MLOps Zoomcamp</span>
+          <span class="cert-issuer">DataTalks.Club</span>
+          <span class="cert-date">2025 · <a href="https://github.com/RuiFSP/mlops-zoomcamp-2025" target="_blank">repo ↗</a></span>
+        </div>
+        <div class="cert-card">
+          <span class="cert-title">ML Zoomcamp</span>
+          <span class="cert-issuer">DataTalks.Club</span>
+          <span class="cert-date">2024 · <a href="https://github.com/RuiFSP/ml-zoomcamp-2024" target="_blank">repo ↗</a></span>
+        </div>
+        <div class="cert-card">
+          <span class="cert-title">ASQ Certified Six Sigma Black Belt</span>
+          <span class="cert-issuer">ASQ</span>
+          <span class="cert-date">2014</span>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2rem;">🤝 Community &amp; Open Source</h2>
       <div class="learn-list">
-        <div class="learn-item">
-          <a href="https://github.com/RuiFSP/dataengineering-zoomcamp-2026" target="_blank">dataengineering-zoomcamp-2026</a>
-          <span class="focus">Data Engineering Zoomcamp 2026 homeworks</span>
-        </div>
-        <div class="learn-item">
-          <a href="https://github.com/RuiFSP/mlops-zoomcamp-2025" target="_blank">mlops-zoomcamp-2025</a>
-          <span class="focus">MLOps Zoomcamp 2025 homeworks</span>
-        </div>
-        <div class="learn-item">
-          <a href="https://github.com/RuiFSP/ml-zoomcamp-2024" target="_blank">ml-zoomcamp-2024</a>
-          <span class="focus">ML Zoomcamp 2024 homeworks</span>
-        </div>
         <div class="learn-item">
           <a href="https://github.com/RuiFSP/100-days-of-code" target="_blank">100-days-of-code</a>
           <span class="focus">100-day coding journal — Python, data science, Flask</span>
         </div>
         <div class="learn-item">
           <a href="https://github.com/RuiFSP/advent_code_2024" target="_blank">advent_code_2024</a>
-          <span class="focus">Advent of Code 2024 solutions in Python</span>
+          <span class="focus">Advent of Code 2024 — Python solutions</span>
         </div>
         <div class="learn-item">
           <a href="https://github.com/RuiFSP/ai-engineer-handbook" target="_blank">ai-engineer-handbook</a>
-          <span class="focus">Curated AI engineer resources: books, courses, communities</span>
+          <span class="focus">Curated AI engineering resources: books, courses, communities</span>
         </div>
       </div>
     </section>
@@ -708,6 +851,8 @@
     </section>
 
   </div><!-- /container -->
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <footer>
     <p>⭐️ If you find my work useful, feel free to star a repo!</p>
@@ -767,6 +912,13 @@
       { rootMargin: '-40% 0px -55% 0px' }
     );
     sections.forEach(s => navObserver.observe(s));
+
+    /* ── Scroll-to-top ──────────────────────────────── */
+    const btt = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY > 400);
+    });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
 </body>
