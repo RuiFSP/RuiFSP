@@ -135,4 +135,37 @@
     <rect x="75" y="82" width="2" height="1"/>
     <rect x="77" y="81" width="2" height="1"/>
   </g>
+
+  <g fill="#2f7f55" opacity="0.9">
+    <rect x="206" y="58" width="8" height="8"/>
+    <rect x="214" y="58" width="8" height="8"/>
+    <rect x="222" y="58" width="8" height="8"/>
+    <rect x="214" y="66" width="8" height="8"/>
+    <rect x="222" y="66" width="8" height="8"/>
+    <rect x="230" y="66" width="8" height="8"/>
+  </g>
+
+  <g fill="#66b676" opacity="0.95">
+    <rect x="248" y="82" width="8" height="8"/>
+    <rect x="256" y="82" width="8" height="8"/>
+    <rect x="264" y="82" width="8" height="8"/>
+    <rect x="256" y="90" width="8" height="8"/>
+    <rect x="264" y="90" width="8" height="8"/>
+  </g>
+
+  <g fill="#f7cf67" opacity="0.95">
+    <rect x="58" y="98" width="12" height="4"/>
+    <rect x="58" y="102" width="4" height="10"/>
+  </g>
+
+  <g fill="#9de9ff" opacity="0.6">
+    <rect x="96" y="108" width="80" height="2"/>
+    <rect x="176" y="108" width="54" height="2"/>
+    <rect x="230" y="108" width="42" height="2"/>
+  </g>
+
+  <g fill="#ff6f61" opacity="0.95">
+    <rect x="61" y="100" width="3" height="3"/>
+    <rect x="63" y="102" width="3" height="3"/>
+  </g>
 </svg>

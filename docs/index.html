@@ -6,15 +6,15 @@
   <title>Rui Pinto | Dev Quest Terminal</title>
   <link rel="icon" type="image/png" href="https://github.com/RuiFSP.png" />
 
-  <meta name="description" content="Data Scientist and ML Engineer. Build practical ML systems from prototype to production." />
-  <meta property="og:title" content="Rui Pinto | Dev Quest Terminal" />
-  <meta property="og:description" content="Retro-inspired profile dashboard for projects, stats, and activity." />
+  <meta name="description" content="Rui Pinto - Data Scientist and ML Engineer building production-ready ML systems, MLOps pipelines, and LLM workflows." />
+  <meta property="og:title" content="Rui Pinto | ML Engineer Portfolio" />
+  <meta property="og:description" content="Recruiter-friendly portfolio with live GitHub stats, featured projects, and recent engineering activity." />
   <meta property="og:image" content="https://github.com/RuiFSP.png" />
   <meta property="og:url" content="https://ruifsp.github.io/RuiFSP/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Rui Pinto | Dev Quest Terminal" />
-  <meta name="twitter:description" content="Retro-inspired profile dashboard for projects, stats, and activity." />
+  <meta name="twitter:title" content="Rui Pinto | ML Engineer Portfolio" />
+  <meta name="twitter:description" content="Recruiter-friendly portfolio with live GitHub stats, featured projects, and recent engineering activity." />
   <meta name="twitter:image" content="https://github.com/RuiFSP.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -272,13 +272,14 @@
       position: absolute;
       left: 23%;
       top: 52%;
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       border-radius: 2px;
       border: 2px solid #ffe7af;
       background: #b97f56;
-      box-shadow: 0 0 0 2px #621f1b;
+      box-shadow: 0 0 0 2px #621f1b, 0 0 10px rgba(255, 111, 97, 0.45);
       animation: node-pulse 1.2s steps(1, end) infinite;
+      z-index: 2;
     }
 
     @keyframes node-pulse {
@@ -329,6 +330,65 @@
       font-size: 8px;
       padding: 4px 6px;
       line-height: 1.3;
+    }
+
+    .map-focus {
+      position: absolute;
+      right: 12px;
+      top: 42px;
+      z-index: 2;
+      width: 120px;
+      border: 2px solid #ffe7af;
+      border-radius: 4px;
+      background: rgba(5, 24, 58, 0.86);
+      box-shadow: 0 0 0 2px rgba(98, 31, 27, 0.85);
+      padding: 4px;
+    }
+
+    .map-focus-label {
+      font-family: "Press Start 2P", monospace;
+      font-size: 8px;
+      line-height: 1.3;
+      color: #ffe7af;
+      margin-bottom: 4px;
+    }
+
+    .map-focus-grid {
+      position: relative;
+      height: 56px;
+      border: 2px solid rgba(217, 241, 255, 0.55);
+      background:
+        linear-gradient(180deg, #1b5f9a 0%, #154f84 100%),
+        repeating-linear-gradient(to right, rgba(217, 241, 255, 0.2) 0, rgba(217, 241, 255, 0.2) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(to bottom, rgba(217, 241, 255, 0.2) 0, rgba(217, 241, 255, 0.2) 1px, transparent 1px, transparent 10px);
+      overflow: hidden;
+    }
+
+    .map-focus-region {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      width: 24px;
+      height: 24px;
+      border-radius: 2px;
+      background: #2f7f55;
+      box-shadow:
+        8px 0 0 #2f7f55,
+        0 8px 0 #2f7f55,
+        8px 8px 0 #66b676,
+        16px 8px 0 #2f7f55,
+        16px 16px 0 #1f5f3e;
+    }
+
+    .map-focus-node {
+      position: absolute;
+      left: 26px;
+      top: 30px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #ffe7af;
+      background: #ff6f61;
+      box-shadow: 0 0 6px rgba(255, 111, 97, 0.65);
     }
 
     .map-sprites {
@@ -473,6 +533,27 @@
       border: 2px solid rgba(217, 241, 255, 0.35);
       border-radius: 4px;
       padding: 6px 2px;
+    }
+
+    .build-block {
+      border-top: 2px dashed rgba(217, 241, 255, 0.35);
+      padding-top: 8px;
+    }
+
+    .build-list {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+    }
+
+    .build-list li {
+      border: 1px solid rgba(217, 241, 255, 0.34);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-size: 20px;
+      color: #d8eaff;
+      line-height: 1.1;
     }
 
     .party-icon {
@@ -834,8 +915,8 @@
           <article class="panel mission-box">
             <div>
               <h1 class="panel-title">Current Mission</h1>
-              <p class="mission-text">Build practical ML systems.</p>
-              <p class="mission-sub">Conquer data chaos.<br />Ship reliable models.</p>
+              <p class="mission-text">Build ML products recruiters can verify fast.</p>
+              <p class="mission-sub">From data pipelines to serving.<br />From prototype to production.</p>
               <div class="mission-flair" aria-hidden="true">
                 <img src="assets/sprites/sprite-mercenary.svg" alt="" />
                 <img src="assets/sprites/sprite-bird.svg" alt="" />
@@ -852,9 +933,17 @@
               <img class="map-sprite crystal" src="assets/sprites/sprite-crystal.svg" alt="" />
             </div>
             <div class="map-label">Western Europe Mission Map</div>
+            <div class="map-focus" aria-hidden="true">
+              <div class="map-focus-label">Portugal Focus</div>
+              <div class="map-focus-grid">
+                <span class="map-focus-region"></span>
+                <span class="map-focus-node"></span>
+              </div>
+            </div>
             <div class="map-hud" aria-hidden="true">
               <span class="map-chip">Region: Europe</span>
               <span class="map-chip">Node: Lisbon, PT</span>
+              <span class="map-chip">Mode: Remote / Hybrid</span>
             </div>
           </article>
         </div>
@@ -890,6 +979,15 @@
               <div class="party-slot"><img class="party-icon" src="assets/icons/icon-llm.svg" alt="" aria-hidden="true" />LLM</div>
               <div class="party-slot"><img class="party-icon" src="assets/icons/icon-cloud.svg" alt="" aria-hidden="true" />Cloud</div>
             </div>
+          </div>
+
+          <div class="build-block">
+            <h3 class="panel-title">What I Build</h3>
+            <ul class="build-list" aria-label="Key capabilities">
+              <li>Batch + streaming data workflows</li>
+              <li>Model APIs with monitoring loops</li>
+              <li>MLOps pipelines with CI/CD</li>
+            </ul>
           </div>
         </aside>
       </section>
@@ -952,7 +1050,7 @@
 
         <article class="panel" id="profiles">
           <h2 class="panel-title">Professional Profiles</h2>
-          <p class="profiles-intro">Looking to collaborate, hire, or connect? Start here.</p>
+          <p class="profiles-intro">Looking for an ML engineer who can ship end-to-end systems? Start here.</p>
           <ul class="actions">
             <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">GitHub</span><span class="action-sub">Code and featured projects</span></span></a></li>
             <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">LinkedIn</span><span class="action-sub">Experience and background</span></span></a></li>
@@ -964,8 +1062,8 @@
     </div>
 
     <footer class="status-strip">
-      <span>Welcome to the portfolio quest board. Explore projects, activity, and profile links.</span>
-      <span>Status: Operational</span>
+      <span>Portfolio quest board with live project telemetry and verified public work.</span>
+      <span>Status: Open to ML engineering opportunities</span>
     </footer>
   </main>
 
@@ -975,8 +1073,8 @@
       var clock = document.getElementById("clock");
       var typing = document.getElementById("typing");
       var lines = [
-        "Initializing quest log",
-        "Tracking experiments",
+        "Initializing recruiter briefing",
+        "Tracking experiments and impact",
         "Deploying model artifacts",
         "Monitoring production health"
       ];
