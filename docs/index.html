@@ -247,17 +247,52 @@
     }
 
     .mission-flair {
-      display: flex;
-      justify-content: flex-end;
-      gap: 6px;
-      margin-top: 8px;
+      margin-top: 10px;
+      position: relative;
+      height: 30px;
+      overflow: hidden;
+      border-top: 1px dashed rgba(217, 241, 255, 0.28);
+    }
+
+    .mission-runner {
+      position: absolute;
+      left: -56px;
+      top: 2px;
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 4px;
+      animation: runner-lane 7s linear infinite;
+      will-change: left;
     }
 
     .mission-flair img {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       image-rendering: pixelated;
       filter: drop-shadow(0 0 3px rgba(116, 255, 152, 0.35));
+    }
+
+    .mission-runner .runner-pet {
+      animation: runner-hop 0.55s steps(2, end) infinite;
+    }
+
+    @keyframes runner-lane {
+      from {
+        left: -56px;
+      }
+      to {
+        left: calc(100% + 8px);
+      }
+    }
+
+    @keyframes runner-hop {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-2px);
+      }
     }
 
     .mission-text {
@@ -612,6 +647,9 @@
       border: 2px solid rgba(217, 241, 255, 0.35);
       border-radius: 4px;
       padding: 6px 2px;
+      display: grid;
+      justify-items: center;
+      gap: 3px;
     }
 
     .build-block {
@@ -636,11 +674,15 @@
     }
 
     .party-icon {
-      width: 20px;
-      height: 20px;
-      margin: 0 auto 5px;
+      width: 24px;
+      height: 24px;
       image-rendering: pixelated;
       display: block;
+    }
+
+    .party-slot span {
+      display: block;
+      line-height: 1.2;
     }
 
     .stat-label {
@@ -827,8 +869,13 @@
     .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
       gap: 8px;
       list-style: none;
+    }
+
+    .actions li {
+      display: flex;
     }
 
     .profiles-intro {
@@ -853,6 +900,8 @@
       text-decoration: none;
       transition: background 0.2s ease, transform 0.2s ease;
       padding: 8px;
+      width: 100%;
+      height: 100%;
     }
 
     .action-copy {
@@ -1000,12 +1049,14 @@
           <article class="panel mission-box">
             <div>
               <h1 class="panel-title">Current Mission</h1>
-              <p class="mission-text">Build ML products recruiters can verify fast.</p>
+              <p class="mission-text">Building ML/AI products for Business</p>
               <p class="mission-sub">From data pipelines to serving.<br />From prototype to production.</p>
               <p class="mission-badge"><span class="mission-badge-dot" aria-hidden="true"></span>Open to ML engineering roles</p>
               <div class="mission-flair" aria-hidden="true">
-                <img src="assets/sprites/sprite-mercenary.svg" alt="" />
-                <img src="assets/sprites/sprite-bird.svg" alt="" />
+                <div class="mission-runner">
+                  <img src="assets/sprites/sprite-mercenary.svg" alt="" />
+                  <img class="runner-pet" src="assets/sprites/sprite-bird.svg" alt="" />
+                </div>
               </div>
             </div>
             <p class="typing" id="typing">Initializing quest log<span class="cursor"></span></p>
@@ -1060,10 +1111,10 @@
           <div>
             <h3 class="panel-title">Party</h3>
             <div class="party-row">
-              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-data.svg" alt="" aria-hidden="true" />Data</div>
-              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-mlops.svg" alt="" aria-hidden="true" />MLOps</div>
-              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-llm.svg" alt="" aria-hidden="true" />LLM</div>
-              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-cloud.svg" alt="" aria-hidden="true" />Cloud</div>
+              <div class="party-slot"><img class="party-icon" src="assets/sprites/sprite-party-data.svg" alt="" aria-hidden="true" /><span>Data</span></div>
+              <div class="party-slot"><img class="party-icon" src="assets/sprites/sprite-party-mlops.svg" alt="" aria-hidden="true" /><span>MLOps</span></div>
+              <div class="party-slot"><img class="party-icon" src="assets/sprites/sprite-party-llm.svg" alt="" aria-hidden="true" /><span>LLM</span></div>
+              <div class="party-slot"><img class="party-icon" src="assets/sprites/sprite-party-cloud.svg" alt="" aria-hidden="true" /><span>Cloud</span></div>
             </div>
           </div>
 
@@ -1139,9 +1190,9 @@
           <p class="profiles-intro">Looking for an ML engineer who can ship end-to-end systems? Start here.</p>
           <ul class="actions">
             <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">GitHub</span><span class="action-sub">Code and featured projects</span></span></a></li>
-            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">LinkedIn</span><span class="action-sub">Experience and background</span></span></a></li>
+            <li><a class="action-btn" href="https://x.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">X / Twitter</span><span class="action-sub">Updates and project notes</span></span></a></li>
             <li><a class="action-btn" href="https://www.kaggle.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">Kaggle</span><span class="action-sub">ML notebooks and competitions</span></span></a></li>
-            <li><a class="action-btn" href="mailto:rui.fspinto@gmail.com"><img class="action-icon" src="assets/icons/icon-sword.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">Contact</span><span class="action-sub">Collaboration and consulting</span></span></a></li>
+            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-branch.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">LinkedIn</span><span class="action-sub">Experience and background</span></span></a></li>
           </ul>
         </article>
       </section>
