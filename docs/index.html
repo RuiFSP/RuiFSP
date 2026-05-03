@@ -839,7 +839,7 @@
 
         <article class="panel">
           <h2 class="panel-title">Recent Activity</h2>
-          <ul class="activity-list">
+          <ul class="activity-list" id="activity-list">
             <li>merged pull request #128 | 2h ago</li>
             <li>starred data pipeline project | 5h ago</li>
             <li>opened issue #87 | 1d ago</li>
@@ -925,6 +925,131 @@
         });
 
         applyRepoSearch();
+      }
+
+      function formatRelativeTime(isoString) {
+        if (!isoString) {
+          return "recently";
+        }
+        var seconds = Math.floor((Date.now() - new Date(isoString).getTime()) / 1000);
+        if (seconds < 60) {
+          return "just now";
+        }
+        if (seconds < 3600) {
+          return Math.floor(seconds / 60) + "m ago";
+        }
+        if (seconds < 86400) {
+          return Math.floor(seconds / 3600) + "h ago";
+        }
+        return Math.floor(seconds / 86400) + "d ago";
+      }
+
+      function eventToLine(event) {
+        var repoName = event.repo && event.repo.name ? event.repo.name.split("/").pop() : "repo";
+        var payload = event.payload || {};
+
+        if (event.type === "PushEvent") {
+          var commitCount = (payload.commits || []).length;
+          var commitLabel = commitCount > 0 ? commitCount + " commit" + (commitCount === 1 ? "" : "s") : "updates";
+          return "pushed " + commitLabel + " to " + repoName;
+        }
+
+        if (event.type === "PullRequestEvent") {
+          var prAction = payload.action || "updated";
+          var prNumber = payload.pull_request && payload.pull_request.number ? " #" + payload.pull_request.number : "";
+          return prAction + " pull request" + prNumber + " in " + repoName;
+        }
+
+        if (event.type === "IssuesEvent") {
+          var issueAction = payload.action || "updated";
+          var issueNumber = payload.issue && payload.issue.number ? " #" + payload.issue.number : "";
+          return issueAction + " issue" + issueNumber + " in " + repoName;
+        }
+
+        if (event.type === "ReleaseEvent") {
+          var tagName = payload.release && payload.release.tag_name ? " " + payload.release.tag_name : "";
+          return "published release" + tagName + " in " + repoName;
+        }
+
+        if (event.type === "WatchEvent") {
+          return "starred " + repoName;
+        }
+
+        if (event.type === "CreateEvent") {
+          var refType = payload.ref_type || "resource";
+          return "created " + refType + " in " + repoName;
+        }
+
+        return null;
+      }
+
+      function renderActivity(items, sourceLabel) {
+        var list = document.getElementById("activity-list");
+        if (!list || !items || !items.length) {
+          return;
+        }
+
+        list.innerHTML = "";
+        items.slice(0, 4).forEach(function (item) {
+          var li = document.createElement("li");
+          li.textContent = item.text + " | " + item.time;
+          list.appendChild(li);
+        });
+
+        if (sourceLabel) {
+          var liSource = document.createElement("li");
+          liSource.textContent = sourceLabel;
+          liSource.style.color = "#94b8de";
+          list.appendChild(liSource);
+        }
+      }
+
+      async function hydrateRecentActivity() {
+        var cacheKey = "quest-activity-cache-v1";
+        var eventsUrl = "https://api.github.com/users/" + githubUser + "/events/public?per_page=30";
+
+        try {
+          var events = await fetchJson(eventsUrl);
+          var mapped = events
+            .map(function (event) {
+              var text = eventToLine(event);
+              if (!text) {
+                return null;
+              }
+              return {
+                text: text,
+                time: formatRelativeTime(event.created_at),
+                createdAt: event.created_at
+              };
+            })
+            .filter(Boolean)
+            .slice(0, 4);
+
+          if (mapped.length) {
+            renderActivity(mapped, "live sync");
+            localStorage.setItem(cacheKey, JSON.stringify({
+              updatedAt: Date.now(),
+              items: mapped
+            }));
+          }
+          return;
+        } catch (err) {
+          console.warn("Recent activity live sync failed.", err);
+        }
+
+        try {
+          var rawCache = localStorage.getItem(cacheKey);
+          if (!rawCache) {
+            return;
+          }
+          var parsed = JSON.parse(rawCache);
+          if (!parsed || !Array.isArray(parsed.items) || !parsed.items.length) {
+            return;
+          }
+          renderActivity(parsed.items, "cached snapshot");
+        } catch (cacheErr) {
+          console.warn("Recent activity cache unavailable.", cacheErr);
+        }
       }
 
       function applyRepoSearch() {
@@ -1094,6 +1219,7 @@
       }
 
       hydrateGitHubStats();
+      hydrateRecentActivity();
     })();
   </script>
 </body>
