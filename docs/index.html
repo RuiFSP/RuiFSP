@@ -186,12 +186,12 @@
 
     .hero-main {
       display: grid;
-      grid-template-columns: 1.05fr 1.45fr;
+      grid-template-columns: 0.85fr 1.75fr;
       gap: 10px;
     }
 
     .mission-box {
-      min-height: 250px;
+      min-height: 300px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -233,7 +233,7 @@
     }
 
     .map-box {
-      min-height: 250px;
+      min-height: 300px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -318,7 +318,7 @@
     }
 
     .profile-box {
-      min-height: 250px;
+      min-height: 300px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -545,7 +545,7 @@
 
     .actions {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 8px;
       list-style: none;
     }
@@ -557,7 +557,7 @@
       color: var(--text-main);
       font-family: "Press Start 2P", monospace;
       font-size: 10px;
-      min-height: 40px;
+      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -614,6 +614,12 @@
         grid-template-columns: 1fr;
       }
 
+      .map-box,
+      .mission-box,
+      .profile-box {
+        min-height: 250px;
+      }
+
       .repo-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -667,7 +673,7 @@
       <ul class="menu" aria-label="Primary">
         <li><a href="#repos" class="active">Repositories</a></li>
         <li><a href="#activity">Activity</a></li>
-        <li><a href="#actions">Actions</a></li>
+        <li><a href="#links">Links</a></li>
         <li><a href="https://github.com/RuiFSP" target="_blank" rel="noreferrer">GitHub</a></li>
       </ul>
       <div class="top-clock" id="clock">Session 00:00:00</div>
@@ -732,27 +738,27 @@
       </section>
 
       <section class="panel reveal" id="repos">
-        <h2 class="panel-title">Featured Repositories</h2>
-        <div class="repo-grid">
-          <a class="repo-card" data-repo="RuiFSP/dezoomcamp-2026-final-project" href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank" rel="noreferrer">
-            <h3>dezoomcamp-2026</h3>
-            <p>Batch data platform from ingestion to dashboard.</p>
-            <p class="repo-meta"><span class="repo-stars">2.1k stars</span><span class="repo-lang">Python</span></p>
+        <h2 class="panel-title">Featured Repositories (Your Projects)</h2>
+        <div class="repo-grid" id="featured-grid">
+          <a class="repo-card" href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank" rel="noreferrer">
+            <h3>dezoomcamp-2026-final-project</h3>
+            <p>Batch data platform from ingestion to dashboard in GCP.</p>
+            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Python</span></p>
           </a>
-          <a class="repo-card" data-repo="RuiFSP/kedro-bike-demand-pipeline" href="https://github.com/RuiFSP/kedro-bike-demand-pipeline" target="_blank" rel="noreferrer">
-            <h3>kedro-bike-demand-pipeline</h3>
-            <p>Production-style forecasting pipeline with dashboard.</p>
-            <p class="repo-meta"><span class="repo-stars">1.3k stars</span><span class="repo-lang">Python</span></p>
+          <a class="repo-card" href="https://github.com/RuiFSP/mlops-2025-final_project" target="_blank" rel="noreferrer">
+            <h3>mlops-2025-final_project</h3>
+            <p>End-to-end MLOps system with serving and monitoring.</p>
+            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Python</span></p>
           </a>
-          <a class="repo-card" data-repo="RuiFSP/mlops-2025-final_project" href="https://github.com/RuiFSP/mlops-2025-final_project" target="_blank" rel="noreferrer">
-            <h3>mlops-2025</h3>
-            <p>End-to-end MLOps lifecycle, serving, monitoring.</p>
-            <p class="repo-meta"><span class="repo-stars">987 stars</span><span class="repo-lang">FastAPI</span></p>
-          </a>
-          <a class="repo-card" data-repo="RuiFSP/llm_engineering" href="https://github.com/RuiFSP/llm_engineering" target="_blank" rel="noreferrer">
+          <a class="repo-card" href="https://github.com/RuiFSP/llm_engineering" target="_blank" rel="noreferrer">
             <h3>llm_engineering</h3>
-            <p>Applied LLM experiments with RAG and agents.</p>
-            <p class="repo-meta"><span class="repo-stars">654 stars</span><span class="repo-lang">Notebooks</span></p>
+            <p>Applied LLM and RAG workflows for real-world tasks.</p>
+            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Notebook</span></p>
+          </a>
+          <a class="repo-card" href="https://github.com/RuiFSP/mlzoomcamp2024-final-project" target="_blank" rel="noreferrer">
+            <h3>mlzoomcamp2024-final-project</h3>
+            <p>Production-style ML service with reproducible deployment.</p>
+            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Python</span></p>
           </a>
         </div>
       </section>
@@ -776,20 +782,20 @@
           </ul>
         </article>
 
-        <article class="panel" id="actions">
-          <h2 class="panel-title">What Will You Do?</h2>
+        <article class="panel" id="links">
+          <h2 class="panel-title">Portfolio Links</h2>
           <ul class="actions">
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=repositories" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" />Clone</a></li>
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=stars" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />Star</a></li>
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=projects" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" />Build</a></li>
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=overview&from=2026-01-01&to=2026-12-31" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-sword.svg" alt="" aria-hidden="true" />Merge</a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" />GitHub Profile</a></li>
+            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />LinkedIn</a></li>
+            <li><a class="action-btn" href="https://www.kaggle.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" />Kaggle</a></li>
+            <li><a class="action-btn" href="mailto:rui.fspinto@gmail.com"><img class="action-icon" src="assets/icons/icon-sword.svg" alt="" aria-hidden="true" />Contact</a></li>
           </ul>
         </article>
       </section>
     </div>
 
     <footer class="status-strip">
-      <span>Welcome to the quest board. Select an action and continue your adventure.</span>
+      <span>Welcome to the portfolio quest board. Explore projects, activity, and profile links.</span>
       <span>Status: Operational</span>
     </footer>
   </main>
@@ -812,6 +818,47 @@
         return Number(num || 0).toLocaleString("en-US");
       }
 
+      function renderFeaturedRepos(repos) {
+        var grid = document.getElementById("featured-grid");
+        if (!grid || !repos || !repos.length) {
+          return;
+        }
+
+        grid.innerHTML = "";
+
+        repos.forEach(function (repo) {
+          var card = document.createElement("a");
+          card.className = "repo-card";
+          card.href = repo.html_url;
+          card.target = "_blank";
+          card.rel = "noreferrer";
+
+          var title = document.createElement("h3");
+          title.textContent = repo.name;
+
+          var desc = document.createElement("p");
+          desc.textContent = repo.description || "Repository in active development.";
+
+          var meta = document.createElement("p");
+          meta.className = "repo-meta";
+
+          var stars = document.createElement("span");
+          stars.className = "repo-stars";
+          stars.textContent = formatCount(repo.stargazers_count || 0) + " stars";
+
+          var lang = document.createElement("span");
+          lang.className = "repo-lang";
+          lang.textContent = repo.language || "Mixed";
+
+          meta.appendChild(stars);
+          meta.appendChild(lang);
+          card.appendChild(title);
+          card.appendChild(desc);
+          card.appendChild(meta);
+          grid.appendChild(card);
+        });
+      }
+
       async function fetchJson(url) {
         var res = await fetch(url, {
           headers: { "Accept": "application/vnd.github+json" }
@@ -829,57 +876,62 @@
         var issuesEl = document.getElementById("stat-issues");
         var expText = document.getElementById("exp-text");
         var expBar = document.getElementById("exp-bar");
-        var repoCards = Array.from(document.querySelectorAll(".repo-card[data-repo]"));
+        var userUrl = "https://api.github.com/users/" + githubUser;
+        var reposUrl = "https://api.github.com/users/" + githubUser + "/repos?per_page=100";
+        var prsUrl = "https://api.github.com/search/issues?q=" + encodeURIComponent("type:pr author:" + githubUser);
+        var issuesUrl = "https://api.github.com/search/issues?q=" + encodeURIComponent("type:issue author:" + githubUser);
 
-        try {
-          var userUrl = "https://api.github.com/users/" + githubUser;
-          var reposUrl = "https://api.github.com/users/" + githubUser + "/repos?per_page=100";
-          var prsUrl = "https://api.github.com/search/issues?q=" + encodeURIComponent("type:pr author:" + githubUser);
-          var issuesUrl = "https://api.github.com/search/issues?q=" + encodeURIComponent("type:issue author:" + githubUser);
+        var result = await Promise.allSettled([
+          fetchJson(userUrl),
+          fetchJson(reposUrl),
+          fetchJson(prsUrl),
+          fetchJson(issuesUrl)
+        ]);
 
-          var result = await Promise.all([
-            fetchJson(userUrl),
-            fetchJson(reposUrl),
-            fetchJson(prsUrl),
-            fetchJson(issuesUrl)
-          ]);
+        var user = result[0].status === "fulfilled" ? result[0].value : null;
+        var repos = result[1].status === "fulfilled" ? result[1].value : [];
+        var prs = result[2].status === "fulfilled" ? result[2].value : null;
+        var issues = result[3].status === "fulfilled" ? result[3].value : null;
 
-          var user = result[0];
-          var repos = result[1];
-          var prs = result[2];
-          var issues = result[3];
+        if (repos.length) {
+          var ownRepos = repos.filter(function (repo) { return !repo.fork; });
+          var featuredRepos = ownRepos
+            .slice()
+            .sort(function (a, b) {
+              var starsDiff = (b.stargazers_count || 0) - (a.stargazers_count || 0);
+              if (starsDiff !== 0) {
+                return starsDiff;
+              }
+              return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
+            })
+            .slice(0, 4);
 
-          var totalStars = repos.reduce(function (acc, repo) { return acc + (repo.stargazers_count || 0); }, 0);
-          var totalForks = repos.reduce(function (acc, repo) { return acc + (repo.forks_count || 0); }, 0);
+          var totalStars = ownRepos.reduce(function (acc, repo) { return acc + (repo.stargazers_count || 0); }, 0);
+          var totalForks = ownRepos.reduce(function (acc, repo) { return acc + (repo.forks_count || 0); }, 0);
 
           starsEl.textContent = formatCount(totalStars);
           forksEl.textContent = formatCount(totalForks);
+          renderFeaturedRepos(featuredRepos);
+
+          if (user) {
+            var expCurrent = totalStars + (user.followers || 0) * 12 + ownRepos.length * 20;
+            var expTarget = Math.max(1000, Math.ceil((expCurrent + 250) / 500) * 500);
+            var expPercent = Math.min(100, Math.round((expCurrent / expTarget) * 100));
+            expText.textContent = "Exp " + formatCount(expCurrent) + " / " + formatCount(expTarget);
+            expBar.style.width = expPercent + "%";
+          }
+        }
+
+        if (prs) {
           prsEl.textContent = formatCount(prs.total_count || 0);
+        }
+
+        if (issues) {
           issuesEl.textContent = formatCount(issues.total_count || 0);
+        }
 
-          var expCurrent = totalStars + (user.followers || 0) * 12 + (user.public_repos || 0) * 20;
-          var expTarget = Math.max(1000, Math.ceil((expCurrent + 250) / 500) * 500);
-          var expPercent = Math.min(100, Math.round((expCurrent / expTarget) * 100));
-          expText.textContent = "Exp " + formatCount(expCurrent) + " / " + formatCount(expTarget);
-          expBar.style.width = expPercent + "%";
-
-          repoCards.forEach(function (card) {
-            var repoFullName = card.getAttribute("data-repo");
-            var match = repos.find(function (repo) { return repo.full_name === repoFullName; });
-            if (!match) {
-              return;
-            }
-            var starsNode = card.querySelector(".repo-stars");
-            var langNode = card.querySelector(".repo-lang");
-            if (starsNode) {
-              starsNode.textContent = formatCount(match.stargazers_count || 0) + " stars";
-            }
-            if (langNode) {
-              langNode.textContent = match.language || "Mixed";
-            }
-          });
-        } catch (err) {
-          console.warn("Live GitHub stats unavailable.", err);
+        if (result.some(function (r) { return r.status === "rejected"; })) {
+          console.warn("Some live GitHub data is unavailable (possibly rate limits). Showing best available data.");
         }
       }
 
