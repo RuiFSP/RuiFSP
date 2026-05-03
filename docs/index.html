@@ -189,17 +189,17 @@
       white-space: nowrap;
     }
 
-    .music-select {
-      border: 2px solid rgba(217, 241, 255, 0.45);
-      border-radius: 3px;
-      background: #10397f;
-      color: #e6f2ff;
-      font-family: "VT323", monospace;
-      font-size: 20px;
-      padding: 0 4px;
-      min-width: 136px;
-      height: 28px;
-      outline: none;
+    .music-volume-label {
+      font-family: "Press Start 2P", monospace;
+      font-size: 8px;
+      color: #cfe2ff;
+      margin-left: 2px;
+      white-space: nowrap;
+    }
+
+    .music-volume {
+      width: 84px;
+      accent-color: #74ff98;
     }
 
     .music-toggle {
@@ -986,12 +986,10 @@
         <li><a href="https://github.com/RuiFSP" target="_blank" rel="noreferrer">GitHub</a></li>
       </ul>
       <div class="music-control" aria-label="Background music controls">
-        <label for="music-track">BGM</label>
-        <select class="music-select" id="music-track">
-          <option value="assets/audio/nastelbom-fantasy-454036.mp3">Fantasy</option>
-          <option value="assets/audio/the_mountain-final-scene-186304.mp3">Mountain</option>
-        </select>
-        <button class="music-toggle" id="music-toggle" type="button">Play</button>
+        <label for="music-toggle">BGM</label>
+        <button class="music-toggle" id="music-toggle" type="button">Pause</button>
+        <label class="music-volume-label" for="music-volume">Vol</label>
+        <input class="music-volume" id="music-volume" type="range" min="0" max="100" value="25" aria-label="Background music volume" />
       </div>
       <div class="top-clock" id="clock">Session 00:00:00</div>
     </header>
@@ -1153,7 +1151,7 @@
       <span>Portfolio quest board with live project telemetry and verified public work.</span>
       <span>Status: Open to ML engineering opportunities</span>
     </footer>
-    <audio id="bgm-audio" preload="none" loop></audio>
+    <audio id="bgm-audio" src="assets/audio/the_mountain-final-scene-186304.mp3" preload="auto" loop></audio>
   </main>
 
   <script>
@@ -1169,7 +1167,7 @@
       var lineIndex = 0;
       var githubUser = "RuiFSP";
       var musicButton = document.getElementById("music-toggle");
-      var musicSelect = document.getElementById("music-track");
+      var musicVolume = document.getElementById("music-volume");
       var musicAudio = document.getElementById("bgm-audio");
 
       function updateMusicButtonState() {
@@ -1179,41 +1177,22 @@
         musicButton.textContent = musicAudio.paused ? "Play" : "Pause";
       }
 
-      function syncMusicSource() {
-        if (!musicSelect || !musicAudio) {
-          return;
-        }
-        var selectedSrc = musicSelect.value;
-        if (!selectedSrc) {
-          return;
-        }
-        if (musicAudio.getAttribute("src") !== selectedSrc) {
-          musicAudio.setAttribute("src", selectedSrc);
-          musicAudio.load();
-        }
-      }
-
       function initMusicControls() {
-        if (!musicButton || !musicSelect || !musicAudio) {
+        if (!musicButton || !musicAudio) {
           return;
         }
 
-        musicAudio.volume = 0.25;
-        syncMusicSource();
+        var initialVolume = musicVolume ? Number(musicVolume.value || 25) / 100 : 0.25;
+        musicAudio.volume = initialVolume;
         updateMusicButtonState();
 
-        musicSelect.addEventListener("change", function () {
-          var wasPlaying = !musicAudio.paused;
-          syncMusicSource();
-          if (wasPlaying) {
-            musicAudio.play().catch(function () {
-              updateMusicButtonState();
-            });
-          }
-        });
+        if (musicVolume) {
+          musicVolume.addEventListener("input", function () {
+            musicAudio.volume = Number(musicVolume.value || 0) / 100;
+          });
+        }
 
         musicButton.addEventListener("click", function () {
-          syncMusicSource();
           if (musicAudio.paused) {
             musicAudio.play().then(function () {
               updateMusicButtonState();
@@ -1230,6 +1209,13 @@
         musicAudio.addEventListener("pause", updateMusicButtonState);
         musicAudio.addEventListener("error", function () {
           musicButton.textContent = "No file";
+        });
+
+        // Try to start music by default; browsers may block until user interaction.
+        musicAudio.play().then(function () {
+          updateMusicButtonState();
+        }).catch(function () {
+          updateMusicButtonState();
         });
       }
 
