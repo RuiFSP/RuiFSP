@@ -247,7 +247,7 @@
     }
 
     .map-box {
-      min-height: 300px;
+      min-height: 330px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -329,6 +329,43 @@
       font-size: 8px;
       padding: 4px 6px;
       line-height: 1.3;
+    }
+
+    .map-sprites {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .map-sprite {
+      position: absolute;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 0 3px rgba(159, 226, 255, 0.4));
+      animation: map-float 4.5s ease-in-out infinite;
+    }
+
+    .map-sprite.airship {
+      width: 34px;
+      right: 18%;
+      top: 34%;
+      animation-delay: 0.4s;
+    }
+
+    .map-sprite.crystal {
+      width: 22px;
+      right: 10%;
+      bottom: 28%;
+    }
+
+    @keyframes map-float {
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
     }
 
     .profile-box {
@@ -556,6 +593,11 @@
       border-color: var(--accent-green);
       background: rgba(116, 255, 152, 0.14);
       color: #d9ffe7;
+    }
+
+    .search-chip-utility {
+      border-color: rgba(247, 207, 103, 0.55);
+      color: #ffe7a1;
     }
 
     .repo-meta {
@@ -805,6 +847,10 @@
           <article class="panel map-box" aria-label="Quest world map">
             <img class="map-art" src="assets/map-europe-portugal-pixel.svg" alt="Pixel map of Europe with Portugal and Lisbon highlighted" />
             <div class="map-pin" aria-hidden="true"></div>
+            <div class="map-sprites" aria-hidden="true">
+              <img class="map-sprite airship" src="assets/sprites/sprite-airship.svg" alt="" />
+              <img class="map-sprite crystal" src="assets/sprites/sprite-crystal.svg" alt="" />
+            </div>
             <div class="map-label">Western Europe Mission Map</div>
             <div class="map-hud" aria-hidden="true">
               <span class="map-chip">Region: Europe</span>
@@ -882,6 +928,8 @@
             <button id="repo-search-btn" type="button">Scan</button>
           </div>
           <div class="search-chips" aria-label="Quick filters">
+            <button class="search-chip search-chip-utility" type="button" data-action="clear">Clear</button>
+            <button class="search-chip search-chip-utility" type="button" data-action="preset-stack">ML Stack</button>
             <button class="search-chip" type="button" data-chip="python">Python</button>
             <button class="search-chip" type="button" data-chip="mlops">MLOps</button>
             <button class="search-chip" type="button" data-chip="llm">LLM</button>
@@ -1116,7 +1164,7 @@
         }
 
         var term = input.value.trim().toLowerCase();
-        var activeChips = Array.from(document.querySelectorAll(".search-chip.active")).map(function (chip) {
+        var activeChips = Array.from(document.querySelectorAll(".search-chip[data-chip].active")).map(function (chip) {
           return chip.getAttribute("data-chip");
         });
         var cards = Array.from(grid.querySelectorAll(".repo-card"));
@@ -1289,6 +1337,28 @@
 
       Array.from(document.querySelectorAll(".search-chip")).forEach(function (chip) {
         chip.addEventListener("click", function () {
+          var action = chip.getAttribute("data-action");
+          if (action === "clear") {
+            if (searchInput) {
+              searchInput.value = "";
+            }
+            Array.from(document.querySelectorAll(".search-chip[data-chip]")).forEach(function (keywordChip) {
+              keywordChip.classList.remove("active");
+            });
+            applyRepoSearch();
+            return;
+          }
+
+          if (action === "preset-stack") {
+            var stack = ["python", "mlops", "llm", "data", "cloud"];
+            Array.from(document.querySelectorAll(".search-chip[data-chip]")).forEach(function (keywordChip) {
+              var value = keywordChip.getAttribute("data-chip");
+              keywordChip.classList.toggle("active", stack.indexOf(value) !== -1);
+            });
+            applyRepoSearch();
+            return;
+          }
+
           chip.classList.toggle("active");
           applyRepoSearch();
         });
