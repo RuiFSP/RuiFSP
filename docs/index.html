@@ -237,61 +237,84 @@
       position: relative;
       overflow: hidden;
       display: flex;
-      align-items: flex-end;
+      align-items: stretch;
       justify-content: center;
-      background:
-        radial-gradient(circle at 72% 35%, #8bdcff 0 17%, transparent 18%),
-        radial-gradient(circle at 67% 36%, #2b9fd8 0 24%, transparent 25%),
-        linear-gradient(180deg, #7ad1ff 0%, #4d96d3 45%, #2e7fc0 46%, #195d99 100%);
+      padding: 8px;
+      background: linear-gradient(180deg, #1d68a8 0%, #155385 100%);
     }
 
-    .map-box::before {
-      content: "";
+    .map-art {
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(217, 241, 255, 0.6);
+      border-radius: 4px;
+      image-rendering: pixelated;
+      object-fit: contain;
+      background: #0d3167;
+      box-shadow: inset 0 0 0 2px rgba(7, 22, 52, 0.45);
+    }
+
+    .map-pin {
       position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(165deg, transparent 0 44%, #3d8f53 45% 100%),
-        linear-gradient(18deg, #2b6a43 0 18%, transparent 20% 100%),
-        radial-gradient(circle at 12% 80%, #205f31 0 18%, transparent 19%),
-        radial-gradient(circle at 80% 84%, #205f31 0 16%, transparent 17%);
-      mix-blend-mode: multiply;
-      opacity: 0.82;
-    }
-
-    .castle,
-    .town {
-      position: absolute;
-      border: 2px solid #f8f2e3;
-      background: #7a808a;
-      box-shadow: 0 0 0 2px #2f343d;
-    }
-
-    .castle {
-      width: 70px;
-      height: 52px;
-      left: 44%;
-      top: 36%;
-    }
-
-    .town {
-      width: 52px;
-      height: 36px;
-      left: 73%;
-      top: 56%;
+      left: 23%;
+      top: 52%;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      border: 2px solid #ffe7af;
       background: #b97f56;
+      box-shadow: 0 0 0 2px #621f1b;
+      animation: node-pulse 1.2s steps(1, end) infinite;
+    }
+
+    @keyframes node-pulse {
+      0%,
+      100% {
+        transform: scale(1);
+        background: #ff6f61;
+      }
+      50% {
+        transform: scale(1.15);
+        background: #f7cf67;
+      }
     }
 
     .map-label {
-      position: relative;
+      position: absolute;
+      top: 12px;
+      left: 12px;
       z-index: 1;
-      margin-bottom: 8px;
       background: rgba(4, 20, 46, 0.74);
       border: 2px solid var(--border);
       border-radius: 4px;
       padding: 5px 9px;
       font-family: "Press Start 2P", monospace;
-      font-size: 10px;
+      font-size: 9px;
       color: var(--accent-green);
+    }
+
+    .map-hud {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .map-chip {
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      background: rgba(4, 20, 46, 0.82);
+      color: var(--text-main);
+      font-family: "Press Start 2P", monospace;
+      font-size: 8px;
+      padding: 4px 6px;
+      line-height: 1.3;
     }
 
     .profile-box {
@@ -387,11 +410,24 @@
     }
 
     .party-icon {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       margin: 0 auto 5px;
-      border-radius: 2px;
-      background: linear-gradient(180deg, #f7cf67, #ce8f35);
+      image-rendering: pixelated;
+      display: block;
+    }
+
+    .stat-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-label img {
+      width: 14px;
+      height: 14px;
+      image-rendering: pixelated;
+      flex: 0 0 auto;
     }
 
     .repo-grid {
@@ -422,6 +458,18 @@
       font-size: 10px;
       line-height: 1.4;
       margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .repo-card h3::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+      background: url("assets/icons/icon-folder.svg") center / cover no-repeat;
+      image-rendering: pixelated;
     }
 
     .repo-card p {
@@ -510,10 +558,19 @@
       font-family: "Press Start 2P", monospace;
       font-size: 10px;
       min-height: 40px;
-      display: grid;
-      place-items: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       text-decoration: none;
       transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .action-icon {
+      width: 14px;
+      height: 14px;
+      image-rendering: pixelated;
+      flex: 0 0 auto;
     }
 
     .action-btn:hover,
@@ -629,9 +686,13 @@
           </article>
 
           <article class="panel map-box" aria-label="Quest world map">
-            <div class="castle" aria-hidden="true"></div>
-            <div class="town" aria-hidden="true"></div>
-            <div class="map-label">Northern Build Region</div>
+            <img class="map-art" src="assets/map-europe-portugal-pixel.svg" alt="Pixel map of Europe with Portugal and Lisbon highlighted" />
+            <div class="map-pin" aria-hidden="true"></div>
+            <div class="map-label">Western Europe Mission Map</div>
+            <div class="map-hud" aria-hidden="true">
+              <span class="map-chip">Region: Europe</span>
+              <span class="map-chip">Node: Lisbon, PT</span>
+            </div>
           </article>
         </div>
 
@@ -642,7 +703,7 @@
               <img class="avatar" src="https://github.com/RuiFSP.png" alt="Rui Pinto profile avatar" />
               <div>
                 <p class="name">Rui Pinto<br />Data Scientist</p>
-                <p class="level">Level 42 Engineer</p>
+                <p class="level">Rank ML Engineer</p>
               </div>
             </div>
             <div class="exp-wrap">
@@ -652,19 +713,19 @@
           </div>
 
           <ul class="stat-list" aria-label="Stats">
-            <li><span>Stars</span><span>12,345</span></li>
-            <li><span>Forks</span><span>6,789</span></li>
-            <li><span>Pull Requests</span><span>321</span></li>
-            <li><span>Issues</span><span>98</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />Stars</span><span>12,345</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-branch.svg" alt="" aria-hidden="true" />Forks</span><span>6,789</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-pr.svg" alt="" aria-hidden="true" />Pull Requests</span><span>321</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-issue.svg" alt="" aria-hidden="true" />Issues</span><span>98</span></li>
           </ul>
 
           <div>
             <h3 class="panel-title">Party</h3>
             <div class="party-row">
-              <div class="party-slot"><div class="party-icon"></div>Data</div>
-              <div class="party-slot"><div class="party-icon"></div>MLOps</div>
-              <div class="party-slot"><div class="party-icon"></div>LLM</div>
-              <div class="party-slot"><div class="party-icon"></div>Cloud</div>
+              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-data.svg" alt="" aria-hidden="true" />Data</div>
+              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-mlops.svg" alt="" aria-hidden="true" />MLOps</div>
+              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-llm.svg" alt="" aria-hidden="true" />LLM</div>
+              <div class="party-slot"><img class="party-icon" src="assets/icons/icon-cloud.svg" alt="" aria-hidden="true" />Cloud</div>
             </div>
           </div>
         </aside>
@@ -718,10 +779,10 @@
         <article class="panel" id="actions">
           <h2 class="panel-title">What Will You Do?</h2>
           <ul class="actions">
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=repositories" target="_blank" rel="noreferrer">Clone</a></li>
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=stars" target="_blank" rel="noreferrer">Star</a></li>
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=projects" target="_blank" rel="noreferrer">Build</a></li>
-            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=overview&from=2026-01-01&to=2026-12-31" target="_blank" rel="noreferrer">Merge</a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=repositories" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" />Clone</a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=stars" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />Star</a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=projects" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" />Build</a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP?tab=overview&from=2026-01-01&to=2026-12-31" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-sword.svg" alt="" aria-hidden="true" />Merge</a></li>
           </ul>
         </article>
       </section>
