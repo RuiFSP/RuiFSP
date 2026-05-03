@@ -359,6 +359,21 @@
       line-height: 1.45;
     }
 
+    .name-main {
+      color: #f8fbff;
+      line-height: 1.35;
+    }
+
+    .name-role {
+      color: #b8d2f2;
+      font-family: "VT323", monospace;
+      font-size: 24px;
+      line-height: 1;
+      margin-top: 1px;
+      margin-bottom: 3px;
+      letter-spacing: 0.5px;
+    }
+
     .level {
       color: var(--accent-gold);
       font-size: 24px;
@@ -509,6 +524,38 @@
       margin-top: 8px;
       color: var(--text-dim);
       font-size: 20px;
+    }
+
+    .search-chips {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .search-chip {
+      border: 2px solid rgba(217, 241, 255, 0.48);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #cfe2ff;
+      font-family: "Press Start 2P", monospace;
+      font-size: 8px;
+      padding: 4px 8px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .search-chip:hover,
+    .search-chip:focus-visible {
+      border-color: var(--accent-gold);
+      color: #fff8d4;
+      outline: none;
+    }
+
+    .search-chip.active {
+      border-color: var(--accent-green);
+      background: rgba(116, 255, 152, 0.14);
+      color: #d9ffe7;
     }
 
     .repo-meta {
@@ -772,7 +819,7 @@
             <div class="profile-main">
               <img class="avatar" src="https://github.com/RuiFSP.png" alt="Rui Pinto profile avatar" />
               <div>
-                <p class="name">Rui Pinto<br />Data Scientist</p>
+                <p class="name"><span class="name-main">Rui Pinto</span><br /><span class="name-role">Data Scientist</span></p>
                 <p class="level">Rank ML Engineer</p>
               </div>
             </div>
@@ -802,7 +849,7 @@
       </section>
 
       <section class="panel reveal" id="repos">
-        <h2 class="panel-title">Featured Repositories (Your Projects)</h2>
+        <h2 class="panel-title">Featured Repositories</h2>
         <div class="repo-grid" id="featured-grid">
           <a class="repo-card" href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank" rel="noreferrer">
             <h3>dezoomcamp-2026-final-project</h3>
@@ -833,6 +880,14 @@
           <div class="search-row">
             <input id="repo-search-input" type="search" placeholder="Search your guild stash..." aria-label="Search repositories" />
             <button id="repo-search-btn" type="button">Scan</button>
+          </div>
+          <div class="search-chips" aria-label="Quick filters">
+            <button class="search-chip" type="button" data-chip="python">Python</button>
+            <button class="search-chip" type="button" data-chip="mlops">MLOps</button>
+            <button class="search-chip" type="button" data-chip="llm">LLM</button>
+            <button class="search-chip" type="button" data-chip="notebook">Notebook</button>
+            <button class="search-chip" type="button" data-chip="data">Data</button>
+            <button class="search-chip" type="button" data-chip="cloud">Cloud</button>
           </div>
           <p class="search-help" id="repo-search-help">Type repo name, description, or language.</p>
         </article>
@@ -1061,24 +1116,38 @@
         }
 
         var term = input.value.trim().toLowerCase();
+        var activeChips = Array.from(document.querySelectorAll(".search-chip.active")).map(function (chip) {
+          return chip.getAttribute("data-chip");
+        });
         var cards = Array.from(grid.querySelectorAll(".repo-card"));
         var visibleCount = 0;
 
         cards.forEach(function (card) {
           var text = card.textContent.toLowerCase();
-          var isVisible = !term || text.indexOf(term) !== -1;
+          var textMatch = !term || text.indexOf(term) !== -1;
+          var chipMatch = activeChips.length === 0 || activeChips.some(function (chip) {
+            return text.indexOf(chip) !== -1;
+          });
+          var isVisible = textMatch && chipMatch;
           card.classList.toggle("repo-hidden", !isVisible);
           if (isVisible) {
             visibleCount += 1;
           }
         });
 
-        if (!term) {
+        if (!term && activeChips.length === 0) {
           help.textContent = "Type repo name, description, or language.";
           return;
         }
 
-        help.textContent = visibleCount + " result" + (visibleCount === 1 ? "" : "s") + " for \"" + term + "\"";
+        var filters = [];
+        if (term) {
+          filters.push("\"" + term + "\"");
+        }
+        if (activeChips.length) {
+          filters.push("chips: " + activeChips.join(", "));
+        }
+        help.textContent = visibleCount + " result" + (visibleCount === 1 ? "" : "s") + " for " + filters.join(" + ");
       }
 
       async function fetchJson(url) {
@@ -1217,6 +1286,13 @@
       if (searchButton) {
         searchButton.addEventListener("click", applyRepoSearch);
       }
+
+      Array.from(document.querySelectorAll(".search-chip")).forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          chip.classList.toggle("active");
+          applyRepoSearch();
+        });
+      });
 
       hydrateGitHubStats();
       hydrateRecentActivity();
