@@ -78,44 +78,6 @@
       z-index: 20;
     }
 
-    .side-art {
-      position: fixed;
-      bottom: 14px;
-      width: 120px;
-      height: 300px;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.92;
-      filter: drop-shadow(0 10px 16px rgba(1, 7, 22, 0.62));
-      animation: side-float 5.6s ease-in-out infinite;
-    }
-
-    .side-art.left {
-      left: clamp(8px, calc((100vw - 1180px) / 2 - 140px), 52px);
-    }
-
-    .side-art.right {
-      right: clamp(8px, calc((100vw - 1180px) / 2 - 140px), 52px);
-      animation-delay: 0.8s;
-    }
-
-    .side-art img {
-      width: 100%;
-      height: 100%;
-      image-rendering: pixelated;
-      object-fit: contain;
-    }
-
-    @keyframes side-float {
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-4px);
-      }
-    }
-
     .hud {
       max-width: var(--content-max);
       margin: 0 auto;
@@ -949,10 +911,6 @@
     }
 
     @media (max-width: 1080px) {
-      .side-art {
-        display: none;
-      }
-
       .hero-grid {
         grid-template-columns: 1fr;
       }
@@ -1015,12 +973,6 @@
   </style>
 </head>
 <body>
-  <div class="side-art left" aria-hidden="true">
-    <img src="assets/sprites/sprite-side-mercenary.svg" alt="" />
-  </div>
-  <div class="side-art right" aria-hidden="true">
-    <img src="assets/sprites/sprite-side-healer.svg" alt="" />
-  </div>
   <main class="hud">
     <header class="topbar">
       <a class="brand" href="#home" aria-label="Go to top">
@@ -1210,7 +1162,6 @@
       var clock = document.getElementById("clock");
       var typing = document.getElementById("typing");
       var lines = [
-        "Initializing recruiter briefing",
         "Tracking experiments and impact",
         "Deploying model artifacts",
         "Monitoring production health"
