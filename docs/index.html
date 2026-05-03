@@ -197,6 +197,20 @@
       justify-content: space-between;
     }
 
+    .mission-flair {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .mission-flair img {
+      width: 24px;
+      height: 24px;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 0 3px rgba(116, 255, 152, 0.35));
+    }
+
     .mission-text {
       font-size: 30px;
       line-height: 1.08;
@@ -446,6 +460,8 @@
       flex-direction: column;
       gap: 8px;
       transition: transform 0.2s ease, border-color 0.2s ease;
+      color: var(--text-main);
+      text-decoration: none;
     }
 
     .repo-card:hover {
@@ -461,6 +477,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      color: #9de9ff;
     }
 
     .repo-card h3::before {
@@ -474,9 +491,24 @@
 
     .repo-card p {
       font-size: 22px;
-      color: var(--text-dim);
+      color: #d8eaff;
       line-height: 1.1;
       flex: 1;
+    }
+
+    .repo-card:hover h3,
+    .repo-card:focus-visible h3 {
+      color: var(--accent-green);
+    }
+
+    .repo-hidden {
+      display: none;
+    }
+
+    .search-help {
+      margin-top: 8px;
+      color: var(--text-dim);
+      font-size: 20px;
     }
 
     .repo-meta {
@@ -545,7 +577,7 @@
 
     .actions {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
       list-style: none;
     }
@@ -560,10 +592,27 @@
       min-height: 46px;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 6px;
       text-decoration: none;
       transition: background 0.2s ease, transform 0.2s ease;
+      padding: 8px;
+    }
+
+    .action-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    .action-title {
+      color: var(--text-main);
+    }
+
+    .action-sub {
+      color: var(--text-dim);
+      font-family: "VT323", monospace;
+      font-size: 18px;
+      line-height: 1;
     }
 
     .action-icon {
@@ -627,6 +676,10 @@
       .bottom-grid {
         grid-template-columns: 1fr;
       }
+
+      .actions {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 620px) {
@@ -687,6 +740,10 @@
               <h1 class="panel-title">Current Mission</h1>
               <p class="mission-text">Build practical ML systems.</p>
               <p class="mission-sub">Conquer data chaos.<br />Ship reliable models.</p>
+              <div class="mission-flair" aria-hidden="true">
+                <img src="assets/sprites/sprite-mercenary.svg" alt="" />
+                <img src="assets/sprites/sprite-bird.svg" alt="" />
+              </div>
             </div>
             <p class="typing" id="typing">Initializing quest log<span class="cursor"></span></p>
           </article>
@@ -767,9 +824,10 @@
         <article class="panel">
           <h2 class="panel-title">Search Repositories</h2>
           <div class="search-row">
-            <input type="search" placeholder="Search your guild stash..." aria-label="Search repositories" />
-            <button type="button">Scan</button>
+            <input id="repo-search-input" type="search" placeholder="Search your guild stash..." aria-label="Search repositories" />
+            <button id="repo-search-btn" type="button">Scan</button>
           </div>
+          <p class="search-help" id="repo-search-help">Type repo name, description, or language.</p>
         </article>
 
         <article class="panel">
@@ -785,10 +843,10 @@
         <article class="panel" id="links">
           <h2 class="panel-title">Portfolio Links</h2>
           <ul class="actions">
-            <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" />GitHub Profile</a></li>
-            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />LinkedIn</a></li>
-            <li><a class="action-btn" href="https://www.kaggle.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" />Kaggle</a></li>
-            <li><a class="action-btn" href="mailto:rui.fspinto@gmail.com"><img class="action-icon" src="assets/icons/icon-sword.svg" alt="" aria-hidden="true" />Contact</a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">GitHub</span><span class="action-sub">Source + projects</span></span></a></li>
+            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">LinkedIn</span><span class="action-sub">Career profile</span></span></a></li>
+            <li><a class="action-btn" href="https://www.kaggle.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">Kaggle</span><span class="action-sub">Competitions + notebooks</span></span></a></li>
+            <li><a class="action-btn" href="mailto:rui.fspinto@gmail.com"><img class="action-icon" src="assets/icons/icon-sword.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">Contact</span><span class="action-sub">Email collaboration</span></span></a></li>
           </ul>
         </article>
       </section>
@@ -857,6 +915,37 @@
           card.appendChild(meta);
           grid.appendChild(card);
         });
+
+        applyRepoSearch();
+      }
+
+      function applyRepoSearch() {
+        var input = document.getElementById("repo-search-input");
+        var help = document.getElementById("repo-search-help");
+        var grid = document.getElementById("featured-grid");
+        if (!input || !help || !grid) {
+          return;
+        }
+
+        var term = input.value.trim().toLowerCase();
+        var cards = Array.from(grid.querySelectorAll(".repo-card"));
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+          var text = card.textContent.toLowerCase();
+          var isVisible = !term || text.indexOf(term) !== -1;
+          card.classList.toggle("repo-hidden", !isVisible);
+          if (isVisible) {
+            visibleCount += 1;
+          }
+        });
+
+        if (!term) {
+          help.textContent = "Type repo name, description, or language.";
+          return;
+        }
+
+        help.textContent = visibleCount + " result" + (visibleCount === 1 ? "" : "s") + " for \"" + term + "\"";
       }
 
       async function fetchJson(url) {
@@ -986,6 +1075,15 @@
         item.style.transitionDelay = (idx * 0.12) + "s";
         observer.observe(item);
       });
+
+      var searchInput = document.getElementById("repo-search-input");
+      var searchButton = document.getElementById("repo-search-btn");
+      if (searchInput) {
+        searchInput.addEventListener("input", applyRepoSearch);
+      }
+      if (searchButton) {
+        searchButton.addEventListener("click", applyRepoSearch);
+      }
 
       hydrateGitHubStats();
     })();
