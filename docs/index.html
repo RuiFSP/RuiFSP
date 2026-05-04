@@ -365,7 +365,7 @@
       position: relative;
       overflow: hidden;
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
       justify-content: center;
       padding: 8px;
       background:
@@ -374,7 +374,7 @@
 
     .map-art {
       width: 100%;
-      height: 68%;
+      height: 100%;
       border: 2px solid rgba(217, 241, 255, 0.6);
       border-radius: 4px;
       image-rendering: pixelated;
@@ -385,8 +385,8 @@
 
     .map-pin {
       position: absolute;
-      left: 23%;
-      top: 52%;
+      left: 19%;
+      top: 36%;
       width: 16px;
       height: 16px;
       border-radius: 2px;
@@ -515,9 +515,11 @@
 
     .map-sprites {
       position: absolute;
-      inset: 0;
+      inset: 10px;
       pointer-events: none;
       z-index: 1;
+      overflow: hidden;
+      border-radius: 4px;
     }
 
     .map-sprite {
@@ -562,7 +564,7 @@
     /* Boat: sails left-to-right across the bottom ocean */
     .map-sprite.boat {
       width: 36px;
-      bottom: 16%;
+      bottom: 12%;
       animation: boat-sail 28s linear infinite;
       filter: drop-shadow(0 2px 4px rgba(0, 30, 80, 0.6));
     }
@@ -580,7 +582,7 @@
     /* Second boat: smaller, further back, delayed */
     .map-sprite.boat2 {
       width: 24px;
-      bottom: 10%;
+      bottom: 6%;
       animation: boat-sail 38s linear infinite;
       animation-delay: -14s;
       filter: drop-shadow(0 2px 3px rgba(0, 30, 80, 0.5)) opacity(0.7);
@@ -626,10 +628,11 @@
     /* Radar sweep overlay */
     .map-radar {
       position: absolute;
-      inset: 0;
+      inset: 10px;
       pointer-events: none;
       z-index: 2;
       overflow: hidden;
+      border-radius: 4px;
     }
 
     .map-radar::after {
@@ -1134,7 +1137,7 @@
       .map-box,
       .mission-box,
       .profile-box {
-        min-height: 320px;
+        min-height: 340px;
       }
 
       .repo-grid {
@@ -1237,14 +1240,16 @@
             </div>
             <div class="map-radar" aria-hidden="true"></div>
             <!-- Captured city nodes -->
-            <div class="map-capture" style="left:23%;top:46%;" aria-hidden="true"><span class="map-capture-label">Lisbon</span></div>
+            <div class="map-capture" style="left:19%;top:36%;" aria-hidden="true"><span class="map-capture-label">Lisbon</span></div>
             <div class="map-capture" style="left:37%;top:24%;" aria-hidden="true"><span class="map-capture-label">London</span></div>
-            <div class="map-capture" style="left:51%;top:22%;" aria-hidden="true"><span class="map-capture-label">Berlin</span></div>
-            <div class="map-capture" style="left:43%;top:28%;" aria-hidden="true"><span class="map-capture-label">Paris</span></div>
+            <div class="map-capture" style="left:52%;top:24%;" aria-hidden="true"><span class="map-capture-label">Berlin</span></div>
+            <div class="map-capture" style="left:43%;top:29%;" aria-hidden="true"><span class="map-capture-label">Paris</span></div>
             <div class="map-capture" style="left:47%;top:34%;" aria-hidden="true"><span class="map-capture-label">Geneva</span></div>
-            <div class="map-capture" style="left:55%;top:36%;" aria-hidden="true"><span class="map-capture-label">Vienna</span></div>
-            <div class="map-capture" style="left:30%;top:38%;" aria-hidden="true"><span class="map-capture-label">Madrid</span></div>
-            <div class="map-capture" style="left:56%;top:44%;" aria-hidden="true"><span class="map-capture-label">Rome</span></div>
+            <div class="map-capture" style="left:56%;top:34%;" aria-hidden="true"><span class="map-capture-label">Vienna</span></div>
+            <div class="map-capture" style="left:30%;top:39%;" aria-hidden="true"><span class="map-capture-label">Madrid</span></div>
+            <div class="map-capture" style="left:56%;top:42%;" aria-hidden="true"><span class="map-capture-label">Rome</span></div>
+            <div class="map-capture" style="left:72%;top:27%;" aria-hidden="true"><span class="map-capture-label">Moscow</span></div>
+            <div class="map-capture" style="left:67%;top:58%;" aria-hidden="true"><span class="map-capture-label">Cairo</span></div>
             <div class="map-label">Global Ops Map</div>
             <div class="map-focus" aria-hidden="true">
               <div class="map-focus-label">Portugal Focus</div>
@@ -1386,9 +1391,9 @@
       var clock = document.getElementById("clock");
       var typing = document.getElementById("typing");
       var lines = [
-        "Tracking experiments and impact",
-        "Deploying model artifacts",
-        "Monitoring production health"
+        "Track and evaluate experiments to understand real world impact",
+        "Deploy, version, and maintain model artifacts in production",
+        "Monitor production health with continuous performance insights"
       ];
       var lineIndex = 0;
       var githubUser = "RuiFSP";
