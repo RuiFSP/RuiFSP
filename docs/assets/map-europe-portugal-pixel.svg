@@ -273,6 +273,10 @@
     <rect x="166" y="200" width="10" height="8"/>
     <rect x="200" y="198" width="10" height="8"/>
     <rect x="232" y="194" width="10" height="8"/>
+    <rect x="106" y="206" width="10" height="8"/>
+    <rect x="140" y="206" width="10" height="8"/>
+    <rect x="174" y="208" width="10" height="8"/>
+    <rect x="208" y="206" width="10" height="8"/>
   </g>
 
   <!-- African interior plateau to make southern expansion clearer -->
@@ -302,6 +306,12 @@
     <rect x="188" y="182" width="12" height="10"/>
     <rect x="202" y="180" width="12" height="10"/>
     <rect x="216" y="176" width="12" height="10"/>
+    <rect x="126" y="194" width="12" height="10"/>
+    <rect x="140" y="196" width="12" height="10"/>
+    <rect x="154" y="198" width="12" height="10"/>
+    <rect x="168" y="198" width="12" height="10"/>
+    <rect x="182" y="196" width="12" height="10"/>
+    <rect x="196" y="194" width="12" height="10"/>
   </g>
 
   <!-- West Africa coastline extension -->
@@ -323,6 +333,9 @@
     <rect x="138" y="192" width="8" height="8"/>
     <rect x="172" y="194" width="8" height="8"/>
     <rect x="204" y="190" width="8" height="8"/>
+    <rect x="146" y="202" width="8" height="8"/>
+    <rect x="178" y="204" width="8" height="8"/>
+    <rect x="196" y="202" width="8" height="8"/>
   </g>
 
   <!-- Eastern Mediterranean / Middle East coast fill -->
