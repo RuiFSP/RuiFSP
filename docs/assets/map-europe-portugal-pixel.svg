@@ -268,6 +268,11 @@
     <rect x="156" y="190" width="10" height="8"/>
     <rect x="188" y="188" width="10" height="8"/>
     <rect x="220" y="186" width="10" height="8"/>
+    <rect x="98" y="198" width="10" height="8"/>
+    <rect x="132" y="198" width="10" height="8"/>
+    <rect x="166" y="200" width="10" height="8"/>
+    <rect x="200" y="198" width="10" height="8"/>
+    <rect x="232" y="194" width="10" height="8"/>
   </g>
 
   <!-- African interior plateau to make southern expansion clearer -->
@@ -289,6 +294,14 @@
     <rect x="174" y="170" width="12" height="10"/>
     <rect x="188" y="168" width="12" height="10"/>
     <rect x="202" y="166" width="12" height="10"/>
+    <rect x="118" y="182" width="12" height="10"/>
+    <rect x="132" y="184" width="12" height="10"/>
+    <rect x="146" y="186" width="12" height="10"/>
+    <rect x="160" y="186" width="12" height="10"/>
+    <rect x="174" y="184" width="12" height="10"/>
+    <rect x="188" y="182" width="12" height="10"/>
+    <rect x="202" y="180" width="12" height="10"/>
+    <rect x="216" y="176" width="12" height="10"/>
   </g>
 
   <!-- West Africa coastline extension -->
@@ -307,6 +320,9 @@
     <rect x="132" y="174" width="8" height="8"/>
     <rect x="170" y="176" width="8" height="8"/>
     <rect x="208" y="172" width="8" height="8"/>
+    <rect x="138" y="192" width="8" height="8"/>
+    <rect x="172" y="194" width="8" height="8"/>
+    <rect x="204" y="190" width="8" height="8"/>
   </g>
 
   <!-- Eastern Mediterranean / Middle East coast fill -->
@@ -411,5 +427,22 @@
     <rect x="36" y="166" width="4" height="3"/>
     <rect x="286" y="178" width="4" height="3"/>
     <rect x="292" y="182" width="4" height="3"/>
+    <rect x="16" y="148" width="4" height="3"/>
+    <rect x="24" y="154" width="4" height="3"/>
+    <rect x="262" y="186" width="5" height="3"/>
+    <rect x="270" y="192" width="5" height="3"/>
+    <rect x="278" y="198" width="5" height="3"/>
+    <rect x="238" y="206" width="5" height="3"/>
+    <rect x="246" y="210" width="5" height="3"/>
+  </g>
+
+  <!-- Sandy island chains (Canary/Cape Verde/Madagascar vibe) -->
+  <g fill="#c8a45a" opacity="0.88">
+    <rect x="30" y="160" width="5" height="3"/>
+    <rect x="38" y="166" width="5" height="3"/>
+    <rect x="46" y="172" width="5" height="3"/>
+    <rect x="258" y="198" width="6" height="4"/>
+    <rect x="266" y="206" width="6" height="4"/>
+    <rect x="274" y="214" width="6" height="4"/>
   </g>
 </svg>
