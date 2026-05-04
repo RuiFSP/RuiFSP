@@ -361,14 +361,14 @@
     }
 
     .map-box {
-      min-height: 330px;
+      min-height: 420px;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: stretch;
       justify-content: center;
       padding: 8px;
-      background: linear-gradient(180deg, #1d68a8 0%, #155385 100%);
+      background: linear-gradient(180deg, #1a5a99 0%, #0e3d6e 55%, #071f42 100%);
     }
 
     .map-art {
@@ -516,30 +516,155 @@
       position: absolute;
       image-rendering: pixelated;
       filter: drop-shadow(0 0 3px rgba(159, 226, 255, 0.4));
-      animation: map-float 4.5s ease-in-out infinite;
     }
 
+    /* Airship: horizontal patrol across top of map */
     .map-sprite.airship {
-      width: 34px;
-      right: 18%;
-      top: 34%;
-      animation-delay: 0.4s;
+      width: 40px;
+      top: 22%;
+      animation: airship-patrol 18s linear infinite;
     }
 
+    @keyframes airship-patrol {
+      0%   { right: 5%;  transform: translateY(0px) scaleX(1); }
+      10%  { right: 5%;  transform: translateY(-4px) scaleX(1); }
+      20%  { right: 55%; transform: translateY(-2px) scaleX(1); }
+      30%  { right: 55%; transform: translateY(-6px) scaleX(1); }
+      45%  { right: 75%; transform: translateY(-3px) scaleX(1); }
+      46%  { right: 75%; transform: translateY(-3px) scaleX(-1); }
+      65%  { right: 40%; transform: translateY(-5px) scaleX(-1); }
+      80%  { right: 10%; transform: translateY(-2px) scaleX(-1); }
+      99%  { right: 5%;  transform: translateY(0px) scaleX(-1); }
+      100% { right: 5%;  transform: translateY(0px) scaleX(1); }
+    }
+
+    /* Airship exhaust trail */
+    .map-sprite.airship::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: -8px;
+      width: 6px;
+      height: 2px;
+      background: rgba(157, 233, 255, 0.55);
+      box-shadow: -4px 0 0 rgba(157, 233, 255, 0.3), -8px 0 0 rgba(157, 233, 255, 0.1);
+      border-radius: 1px;
+    }
+
+    /* Boat: sails left-to-right across the bottom ocean */
+    .map-sprite.boat {
+      width: 36px;
+      bottom: 10%;
+      animation: boat-sail 28s linear infinite;
+      filter: drop-shadow(0 2px 4px rgba(0, 30, 80, 0.6));
+    }
+
+    @keyframes boat-sail {
+      0%   { left: -5%;  transform: translateY(0px); }
+      15%  { left: 15%;  transform: translateY(-2px); }
+      30%  { left: 32%;  transform: translateY(1px); }
+      50%  { left: 52%;  transform: translateY(-1px); }
+      70%  { left: 70%;  transform: translateY(2px); }
+      85%  { left: 85%;  transform: translateY(-1px); }
+      100% { left: 108%; transform: translateY(0px); }
+    }
+
+    /* Crystal: shimmer + float */
     .map-sprite.crystal {
       width: 22px;
       right: 10%;
       bottom: 28%;
+      animation: crystal-shimmer 3s ease-in-out infinite;
     }
 
-    @keyframes map-float {
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-4px);
-      }
+    @keyframes crystal-shimmer {
+      0%   { transform: translateY(0px);   filter: drop-shadow(0 0 4px rgba(116, 255, 152, 0.7)); }
+      25%  { transform: translateY(-3px);  filter: drop-shadow(0 0 8px rgba(157, 233, 255, 0.9)); }
+      50%  { transform: translateY(-5px);  filter: drop-shadow(0 0 6px rgba(247, 207, 103, 0.8)); }
+      75%  { transform: translateY(-3px);  filter: drop-shadow(0 0 8px rgba(116, 255, 152, 0.9)); }
+      100% { transform: translateY(0px);   filter: drop-shadow(0 0 4px rgba(116, 255, 152, 0.7)); }
+    }
+
+    /* Radar sweep overlay */
+    .map-radar {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .map-radar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(116, 255, 152, 0.18) 40%,
+        rgba(116, 255, 152, 0.35) 50%,
+        rgba(116, 255, 152, 0.18) 60%,
+        transparent 100%
+      );
+      animation: radar-sweep 6s linear infinite;
+      top: 0;
+    }
+
+    @keyframes radar-sweep {
+      0%   { top: -2%; opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 1; }
+      100% { top: 102%; opacity: 0; }
+    }
+
+    /* Capture nodes — pulsing dots for city landmarks */
+    .map-capture {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: #ff6f61;
+      border: 1px solid #ffe7af;
+      box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.35);
+      z-index: 3;
+      animation: capture-pulse 1.8s steps(1, end) infinite;
+    }
+
+    .map-capture::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 207, 103, 0.45);
+      animation: capture-ring 1.8s ease-out infinite;
+    }
+
+    @keyframes capture-pulse {
+      0%, 100% { background: #ff6f61; box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.35); }
+      50%       { background: #f7cf67; box-shadow: 0 0 8px rgba(247, 207, 103, 0.7); }
+    }
+
+    @keyframes capture-ring {
+      0%   { transform: scale(1);   opacity: 0.8; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* Flag label on capture node */
+    .map-capture-label {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Press Start 2P", monospace;
+      font-size: 6px;
+      color: #f7cf67;
+      white-space: nowrap;
+      background: rgba(4, 20, 46, 0.82);
+      border: 1px solid rgba(217, 241, 255, 0.4);
+      padding: 2px 3px;
+      border-radius: 2px;
+      pointer-events: none;
     }
 
     .profile-box {
@@ -971,7 +1096,7 @@
       .map-box,
       .mission-box,
       .profile-box {
-        min-height: 250px;
+        min-height: 300px;
       }
 
       .repo-grid {
@@ -1068,8 +1193,14 @@
             <div class="map-sprites" aria-hidden="true">
               <img class="map-sprite airship" src="assets/sprites/sprite-airship.svg" alt="" />
               <img class="map-sprite crystal" src="assets/sprites/sprite-crystal.svg" alt="" />
+              <img class="map-sprite boat" src="assets/sprites/sprite-boat.svg" alt="" />
             </div>
-            <div class="map-label">Western Europe Mission Map</div>
+            <div class="map-radar" aria-hidden="true"></div>
+            <!-- Captured city nodes -->
+            <div class="map-capture" style="left:23%;top:52%;" aria-hidden="true"><span class="map-capture-label">Lisbon</span></div>
+            <div class="map-capture" style="left:38%;top:28%;" aria-hidden="true"><span class="map-capture-label">London</span></div>
+            <div class="map-capture" style="left:52%;top:26%;" aria-hidden="true"><span class="map-capture-label">Berlin</span></div>
+            <div class="map-label">Global Ops Map</div>
             <div class="map-focus" aria-hidden="true">
               <div class="map-focus-label">Portugal Focus</div>
               <div class="map-focus-grid">
@@ -1081,6 +1212,7 @@
               <span class="map-chip">Region: Europe</span>
               <span class="map-chip">Node: Lisbon, PT</span>
               <span class="map-chip">Mode: Remote / Hybrid</span>
+              <span class="map-chip">🌍 World: 12%</span>
             </div>
           </article>
         </div>
