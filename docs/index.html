@@ -426,7 +426,7 @@
     .map-hud {
       position: absolute;
       right: 12px;
-      bottom: 12px;
+      top: 12px;
       z-index: 4;
       display: flex;
       flex-direction: column;
@@ -452,65 +452,6 @@
       color: var(--accent-gold);
       background: rgba(4, 20, 46, 0.85);
       font-size: 8px;
-    }
-
-    .map-focus {
-      position: absolute;
-      right: 12px;
-      top: 42px;
-      z-index: 2;
-      width: 120px;
-      border: 2px solid #ffe7af;
-      border-radius: 4px;
-      background: rgba(5, 24, 58, 0.86);
-      box-shadow: 0 0 0 2px rgba(98, 31, 27, 0.85);
-      padding: 4px;
-    }
-
-    .map-focus-label {
-      font-family: "Press Start 2P", monospace;
-      font-size: 8px;
-      line-height: 1.3;
-      color: #ffe7af;
-      margin-bottom: 4px;
-    }
-
-    .map-focus-grid {
-      position: relative;
-      height: 56px;
-      border: 2px solid rgba(217, 241, 255, 0.55);
-      background:
-        linear-gradient(180deg, #1b5f9a 0%, #154f84 100%),
-        repeating-linear-gradient(to right, rgba(217, 241, 255, 0.2) 0, rgba(217, 241, 255, 0.2) 1px, transparent 1px, transparent 10px),
-        repeating-linear-gradient(to bottom, rgba(217, 241, 255, 0.2) 0, rgba(217, 241, 255, 0.2) 1px, transparent 1px, transparent 10px);
-      overflow: hidden;
-    }
-
-    .map-focus-region {
-      position: absolute;
-      left: 18px;
-      top: 16px;
-      width: 24px;
-      height: 24px;
-      border-radius: 2px;
-      background: #2f7f55;
-      box-shadow:
-        8px 0 0 #2f7f55,
-        0 8px 0 #2f7f55,
-        8px 8px 0 #66b676,
-        16px 8px 0 #2f7f55,
-        16px 16px 0 #1f5f3e;
-    }
-
-    .map-focus-node {
-      position: absolute;
-      left: 26px;
-      top: 30px;
-      width: 8px;
-      height: 8px;
-      border: 1px solid #ffe7af;
-      background: #ff6f61;
-      box-shadow: 0 0 6px rgba(255, 111, 97, 0.65);
     }
 
     .map-sprites {
@@ -1260,14 +1201,10 @@
             <div class="map-capture" style="left:56%;top:42%;" aria-hidden="true"><span class="map-capture-label">Rome</span></div>
             <div class="map-capture" style="left:72%;top:27%;" aria-hidden="true"><span class="map-capture-label">Moscow</span></div>
             <div class="map-capture" style="left:67%;top:58%;" aria-hidden="true"><span class="map-capture-label">Cairo</span></div>
+            <div class="map-capture" style="left:59%;top:26%;" aria-hidden="true"><span class="map-capture-label">Warsaw</span></div>
+            <div class="map-capture" style="left:64%;top:44%;" aria-hidden="true"><span class="map-capture-label">Istanbul</span></div>
+            <div class="map-capture" style="left:49%;top:59%;" aria-hidden="true"><span class="map-capture-label">Algiers</span></div>
             <div class="map-label">Global Ops Map</div>
-            <div class="map-focus" aria-hidden="true">
-              <div class="map-focus-label">Portugal Focus</div>
-              <div class="map-focus-grid">
-                <span class="map-focus-region"></span>
-                <span class="map-focus-node"></span>
-              </div>
-            </div>
             <div class="map-hud" aria-hidden="true">
               <span class="map-chip highlight">🌍 World: 12%</span>
             </div>
