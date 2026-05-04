@@ -378,7 +378,7 @@
       border: 2px solid rgba(217, 241, 255, 0.6);
       border-radius: 4px;
       image-rendering: pixelated;
-      object-fit: contain;
+      object-fit: cover;
       background: #123567;
       box-shadow: inset 0 0 0 2px rgba(7, 22, 52, 0.45);
     }
@@ -609,7 +609,7 @@
     /* Boat: sails left-to-right across the bottom ocean */
     .map-sprite.boat {
       width: 36px;
-      bottom: 30%;
+      bottom: 9%;
       animation: boat-sail 28s linear infinite;
       filter: drop-shadow(0 2px 4px rgba(0, 30, 80, 0.6));
     }
@@ -627,7 +627,7 @@
     /* Second boat: smaller, further back, delayed */
     .map-sprite.boat2 {
       width: 24px;
-      bottom: 24%;
+      bottom: 4%;
       animation: boat-sail-reverse 38s linear infinite;
       animation-delay: -14s;
       filter: drop-shadow(0 2px 3px rgba(0, 30, 80, 0.5)) opacity(0.7);
@@ -654,6 +654,15 @@
       opacity: 0.85;
     }
 
+    .map-sprite.airship3 {
+      width: 22px;
+      top: 52%;
+      animation: airship3-patrol 20s linear infinite;
+      animation-delay: -5s;
+      filter: drop-shadow(0 0 2px rgba(157, 233, 255, 0.55));
+      opacity: 0.8;
+    }
+
     @keyframes airship2-patrol {
       0%   { left: 5%;   transform: translateY(0px) scaleX(1); }
       20%  { left: 30%;  transform: translateY(-3px) scaleX(1); }
@@ -662,6 +671,16 @@
       70%  { left: 25%;  transform: translateY(-4px) scaleX(-1); }
       99%  { left: 5%;   transform: translateY(0px) scaleX(-1); }
       100% { left: 5%;   transform: translateY(0px) scaleX(1); }
+    }
+
+    @keyframes airship3-patrol {
+      0%   { right: 8%;  transform: translateY(0px) scaleX(1); }
+      20%  { right: 28%; transform: translateY(-2px) scaleX(1); }
+      40%  { right: 46%; transform: translateY(-4px) scaleX(1); }
+      41%  { right: 46%; transform: translateY(-4px) scaleX(-1); }
+      65%  { right: 24%; transform: translateY(-1px) scaleX(-1); }
+      90%  { right: 8%;  transform: translateY(-3px) scaleX(-1); }
+      100% { right: 8%;  transform: translateY(0px) scaleX(1); }
     }
 
     /* Crystal: shimmer + float */
@@ -1315,6 +1334,7 @@
             <div class="map-sprites" aria-hidden="true">
               <img class="map-sprite airship" src="assets/sprites/sprite-airship.svg" alt="" />
               <img class="map-sprite airship2" src="assets/sprites/sprite-airship.svg" alt="" />
+              <img class="map-sprite airship3" src="assets/sprites/sprite-airship.svg" alt="" />
               <img class="map-sprite crystal" src="assets/sprites/sprite-crystal.svg" alt="" />
               <img class="map-sprite boat" src="assets/sprites/sprite-boat.svg" alt="" />
               <img class="map-sprite boat2" src="assets/sprites/sprite-boat.svg" alt="" />
@@ -1334,6 +1354,9 @@
             <div class="map-capture" style="left:59%;top:26%;" aria-hidden="true"><span class="map-capture-label down">Warsaw</span></div>
             <div class="map-capture" style="left:64%;top:44%;" aria-hidden="true"><span class="map-capture-label right">Istanbul</span></div>
             <div class="map-capture" style="left:49%;top:59%;" aria-hidden="true"><span class="map-capture-label down">Algiers</span></div>
+            <div class="map-capture" style="left:56%;top:61%;" aria-hidden="true"><span class="map-capture-label down">Tripoli</span></div>
+            <div class="map-capture" style="left:39%;top:66%;" aria-hidden="true"><span class="map-capture-label down">Lagos</span></div>
+            <div class="map-capture" style="left:67%;top:67%;" aria-hidden="true"><span class="map-capture-label down">Khartoum</span></div>
             <div class="map-label">Global Ops Map</div>
             <div class="map-hud" aria-hidden="true">
               <span class="map-chip highlight">🌍 World: 12%</span>
