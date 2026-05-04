@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" shape-rendering="crispEdges">
-  <rect width="320" height="220" fill="#114473"/>
-  <rect y="146" width="320" height="74" fill="#0d3861"/>
-  <rect y="182" width="320" height="38" fill="#09294a"/>
+  <rect width="320" height="220" fill="#103b6d"/>
+  <rect y="146" width="320" height="74" fill="#0c315b"/>
+  <rect y="182" width="320" height="38" fill="#082548"/>
 
   <!-- Grid overlay -->
   <g fill="#1f5b8e" opacity="0.35">
