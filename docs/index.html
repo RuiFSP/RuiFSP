@@ -1819,7 +1819,11 @@
 
         if (repos.length) {
           var ownRepos = repos.filter(function (repo) { return !repo.fork; });
-          var featuredRepos = ownRepos
+          var pinnedFeaturedRepoNames = ["llm-zoomcamp-2026"];
+          var pinnedFeaturedRepos = pinnedFeaturedRepoNames.map(function (name) {
+            return ownRepos.find(function (repo) { return repo.name === name; });
+          }).filter(Boolean);
+          var rankedRepos = ownRepos
             .slice()
             .sort(function (a, b) {
               var starsDiff = (b.stargazers_count || 0) - (a.stargazers_count || 0);
@@ -1827,7 +1831,11 @@
                 return starsDiff;
               }
               return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
-            })
+            });
+          var featuredRepos = pinnedFeaturedRepos
+            .concat(rankedRepos.filter(function (repo) {
+              return pinnedFeaturedRepoNames.indexOf(repo.name) === -1;
+            }))
             .slice(0, 4);
 
           var totalStars = ownRepos.reduce(function (acc, repo) { return acc + (repo.stargazers_count || 0); }, 0);

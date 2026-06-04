@@ -44,6 +44,7 @@
 | Repo | Focus |
 |------|-------|
 | [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026) | Data Engineering Zoomcamp 2026 homeworks |
+| [**llm-zoomcamp-2026**](https://github.com/RuiFSP/llm-zoomcamp-2026) | LLM Zoomcamp 2026 homeworks |
 | [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025) | MLOps Zoomcamp 2025 homeworks |
 | [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024) | ML Zoomcamp 2024 homeworks |
 | [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code) | 100-day coding journal — Python, data science, Flask |
