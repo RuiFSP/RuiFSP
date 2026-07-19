@@ -1680,8 +1680,9 @@
       pointer-events: none; z-index: 2;
       background: radial-gradient(ellipse at 50% 60%, transparent 50%, rgba(2, 9, 26, 0.55) 85%, rgba(2, 9, 26, 0.85) 100%);
     }
-    @media (max-width: 1100px) {
+    @media (max-width: 620px) {
       .sky-scene .moon { display: none; }
+      .sky-scene .comet { display: none; }
     }
 
     /* === RESPONSIVE LOADING ADJUSTMENTS === */
@@ -2814,6 +2815,91 @@
         });
       }
 
+      // === CRITICAL VISUALS (always run, before init) ===
+      // Fireflies
+      (function() {
+        var container = document.createElement("div");
+        container.className = "firefly-container";
+        try { document.body.appendChild(container); } catch(e) {}
+        var colors = ["rgba(247,207,103,0.8)", "rgba(157,233,255,0.8)", "rgba(116,255,152,0.7)"];
+        for (var i = 0; i < 28; i++) {
+          var ff = document.createElement("div");
+          ff.className = "firefly";
+          var size = 1.5 + Math.random() * 2.5;
+          ff.style.cssText = "left:" + (Math.random() * 100) + "%;top:" + (Math.random() * 100) + "%;width:" + size + "px;height:" + size + "px;animation-delay:" + (Math.random() * 10) + "s;animation-duration:" + (4 + Math.random() * 5) + "s;opacity:0.5;";
+          ff.style.background = "radial-gradient(circle at center, " + colors[i % 3] + ", transparent)";
+          try { container.appendChild(ff); } catch(e) {}
+        }
+        for (var j = 0; j < 16; j++) {
+          var ff2 = document.createElement("div");
+          ff2.className = "firefly";
+          var size2 = 3 + Math.random() * 4;
+          ff2.style.cssText = "left:" + (Math.random() * 100) + "%;top:" + (60 + Math.random() * 40) + "%;width:" + size2 + "px;height:" + size2 + "px;animation-delay:" + (Math.random() * 12) + "s;animation-duration:" + (8 + Math.random() * 6) + "s;opacity:0.7;";
+          ff2.style.background = "radial-gradient(circle at center, " + colors[j % 3] + ", transparent)";
+          try { container.appendChild(ff2); } catch(e) {}
+        }
+      })();
+
+      // Cityscape
+      (function buildCityscape() {
+        try {
+          var city = document.createElement("div");
+          city.className = "cityscape";
+          document.body.appendChild(city);
+          var totalW = Math.max(window.innerWidth + 200, 1600);
+          var x = -100;
+          while (x < totalW) {
+            var w = 12 + Math.floor(Math.random() * 40);
+            var tier = Math.random();
+            var h = tier < 0.2 ? 30 + Math.floor(Math.random() * 40) : tier < 0.55 ? 60 + Math.floor(Math.random() * 60) : 110 + Math.floor(Math.random() * 80);
+            var b = document.createElement("div");
+            b.className = "building";
+            b.style.cssText = "left:" + x + "px;width:" + w + "px;height:" + h + "px;";
+            city.appendChild(b);
+            if (h > 100 && Math.random() > 0.4) {
+              var ah = 8 + Math.floor(Math.random() * 14);
+              var ant = document.createElement("div");
+              ant.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 1) + "px;bottom:" + h + "px;width:2px;height:" + ah + "px;background:#0a1e4a;";
+              city.appendChild(ant);
+              var tip = document.createElement("div");
+              tip.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 2) + "px;bottom:" + (h + ah) + "px;width:4px;height:2px;background:#ff6f61;box-shadow:0 0 6px rgba(255,111,97,0.8);animation:win-blink 1.5s steps(1,end) infinite;";
+              city.appendChild(tip);
+            }
+            x += w + 1 + Math.floor(Math.random() * 3);
+            var numWins = 3 + Math.floor(Math.random() * 6);
+            for (var k = 0; k < numWins; k++) {
+              var wx = 3 + Math.floor(Math.random() * Math.max(1, w - 9));
+              var wy = 5 + Math.floor(Math.random() * Math.max(1, h - 14));
+              var win = document.createElement("div");
+              var lit = Math.random() > 0.35;
+              win.className = "window" + (lit ? " lit" : "");
+              win.style.cssText = "left:" + (x - w + wx) + "px;bottom:" + wy + "px;";
+              if (lit) {
+                win.style.animation = "win-blink " + (2 + Math.random() * 5) + "s steps(1, end) infinite";
+                win.style.animationDelay = (Math.random() * 4) + "s";
+              }
+              city.appendChild(win);
+            }
+          }
+        } catch(e) {}
+      })();
+
+      // Sky scene stars
+      (function() {
+        try {
+          var sky = document.getElementById("sky-scene");
+          if (!sky) return;
+          for (var si = 0; si < 90; si++) {
+            var star = document.createElement("div");
+            var isLarge = Math.random() > 0.85;
+            var side = Math.random() > 0.5 ? "left" : "right";
+            star.className = "side-star" + (isLarge ? " side-star-lg" : "");
+            star.style.cssText = "left:" + (side === "left" ? Math.random() * 18 : 65 + Math.random() * 30) + "%;top:" + (2 + Math.random() * 35) + "%;animation-delay:" + (Math.random() * 3) + "s;animation-duration:" + (2 + Math.random() * 3) + "s;";
+            sky.appendChild(star);
+          }
+        } catch(e) {}
+      })();
+
       // === LOADING SCREEN ===
       var loadingScreen = document.getElementById("loading-screen");
       var loadingBar = document.getElementById("loading-bar");
@@ -2855,134 +2941,6 @@
       setTimeout(dismissLoading, 2800);
       // Safety net: force dismiss after 5s no matter what
       setTimeout(dismissLoading, 5000);
-
-      // === FIREFLIES ===
-      function createFireflies() {
-        var container = document.createElement("div");
-        container.className = "firefly-container";
-        document.body.appendChild(container);
-        var colors = ["rgba(247,207,103,0.8)", "rgba(157,233,255,0.8)", "rgba(116,255,152,0.7)"];
-        // Layer 1: small fast fireflies scattered across full screen
-        for (var i = 0; i < 28; i++) {
-          var ff = document.createElement("div");
-          ff.className = "firefly";
-          var size = 1.5 + Math.random() * 2.5;
-          ff.style.cssText = "left:" + (Math.random() * 100) + "%;top:" + (Math.random() * 100) + "%;width:" + size + "px;height:" + size + "px;animation-delay:" + (Math.random() * 10) + "s;animation-duration:" + (4 + Math.random() * 5) + "s;opacity:0.5;";
-          ff.style.background = "radial-gradient(circle at center, " + colors[i % 3] + ", transparent)";
-          container.appendChild(ff);
-        }
-        // Layer 2: larger slow fireflies near bottom for depth
-        for (var j = 0; j < 16; j++) {
-          var ff2 = document.createElement("div");
-          ff2.className = "firefly";
-          var size2 = 3 + Math.random() * 4;
-          ff2.style.cssText = "left:" + (Math.random() * 100) + "%;top:" + (60 + Math.random() * 40) + "%;width:" + size2 + "px;height:" + size2 + "px;animation-delay:" + (Math.random() * 12) + "s;animation-duration:" + (8 + Math.random() * 6) + "s;opacity:0.7;";
-          ff2.style.background = "radial-gradient(circle at center, " + colors[j % 3] + ", transparent)";
-          container.appendChild(ff2);
-        }
-      }
-      createFireflies();
-
-      // === CITYSCAPE ===
-      function createCityscape() {
-        var city = document.createElement("div");
-        city.className = "cityscape";
-        document.body.appendChild(city);
-
-        function buildSkyline(container, startX) {
-          var totalWidth = Math.max(window.innerWidth + 200, 1600);
-          var x = startX;
-          while (x < totalWidth) {
-            var w = 12 + Math.floor(Math.random() * 40);
-            var tier = Math.random();
-            var h;
-            if (tier < 0.2) h = 30 + Math.floor(Math.random() * 40);
-            else if (tier < 0.55) h = 60 + Math.floor(Math.random() * 60);
-            else h = 110 + Math.floor(Math.random() * 80);
-
-            var b = document.createElement("div");
-            b.className = "building";
-            b.style.cssText = "left:" + x + "px;width:" + w + "px;height:" + h + "px;";
-            container.appendChild(b);
-
-            if (h > 100 && Math.random() > 0.4) {
-              var ant = document.createElement("div");
-              var ah = 8 + Math.floor(Math.random() * 14);
-              ant.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 1) + "px;bottom:" + h + "px;width:2px;height:" + ah + "px;background:#0a1e4a;";
-              container.appendChild(ant);
-              var tip = document.createElement("div");
-              tip.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 2) + "px;bottom:" + (h + ah) + "px;width:4px;height:2px;background:#ff6f61;box-shadow:0 0 6px rgba(255,111,97,0.8);animation:win-blink 1.5s steps(1,end) infinite;";
-              container.appendChild(tip);
-            }
-
-            x += w + 1 + Math.floor(Math.random() * 3);
-
-            var numWins = 3 + Math.floor(Math.random() * 6);
-            for (var j = 0; j < numWins; j++) {
-              var wx = 3 + Math.floor(Math.random() * Math.max(1, w - 9));
-              var wy = 5 + Math.floor(Math.random() * Math.max(1, h - 14));
-              var win = document.createElement("div");
-              var lit = Math.random() > 0.35;
-              win.className = "window" + (lit ? " lit" : "");
-              win.style.cssText = "left:" + (x - w + wx) + "px;bottom:" + wy + "px;";
-              if (lit) {
-                win.style.animation = "win-blink " + (2 + Math.random() * 5) + "s steps(1, end) infinite";
-                win.style.animationDelay = (Math.random() * 4) + "s";
-              }
-              container.appendChild(win);
-            }
-          }
-        }
-
-        buildSkyline(city, -100);
-
-        var resizeTimer;
-        window.addEventListener("resize", function () {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(function () {
-            city.innerHTML = "";
-            buildSkyline(city, -100);
-          }, 400);
-        });
-      }
-              nb.style.cssText = "left:" + nx + "px;width:" + nw + "px;height:" + nh + "px;";
-              city.appendChild(nb);
-              nx += nw + 1 + Math.floor(Math.random() * 3);
-              var nWins = 2 + Math.floor(Math.random() * 5);
-              for (var k = 0; k < nWins; k++) {
-                var nwx = 3 + Math.floor(Math.random() * Math.max(1, nw - 9));
-                var nwy = 5 + Math.floor(Math.random() * Math.max(1, nh - 14));
-                var nwin = document.createElement("div");
-                var nlit = Math.random() > 0.4;
-                nwin.className = "window" + (nlit ? " lit" : "");
-                nwin.style.cssText = "left:" + (nx - nw + nwx) + "px;bottom:" + nwy + "px;";
-                if (nlit) {
-                  nwin.style.animation = "win-blink " + (2 + Math.random() * 5) + "s steps(1, end) infinite";
-                  nwin.style.animationDelay = (Math.random() * 4) + "s";
-                }
-                city.appendChild(nwin);
-              }
-            }
-          }, 400);
-        });
-      }
-      createCityscape();
-
-      // === SKY SCENE STARS ===
-      (function () {
-        var sky = document.getElementById("sky-scene");
-        if (!sky) return;
-        var starCount = 90;
-        for (var i = 0; i < starCount; i++) {
-          var star = document.createElement("div");
-          var isLarge = Math.random() > 0.85;
-          var side = Math.random() > 0.5 ? "left" : "right";
-          var leftPos = side === "left" ? Math.random() * 18 : 65 + Math.random() * 30;
-          star.className = "side-star" + (isLarge ? " side-star-lg" : "");
-          star.style.cssText = "left:" + leftPos + "%;top:" + (2 + Math.random() * 35) + "%;animation-delay:" + (Math.random() * 3) + "s;animation-duration:" + (2 + Math.random() * 3) + "s;";
-          sky.appendChild(star);
-        }
-      })();
 
       // === MATERIA LEVEL-UP ANIMATION ===
       var originalUpdateMateria = updateMateriaLevels;
