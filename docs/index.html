@@ -1464,9 +1464,141 @@
       .repo-grid { grid-template-columns: 1fr; }
       .materia-grid { grid-template-columns: repeat(3, 1fr); }
     }
+
+    /* === LOADING SCREEN === */
+    .loading-screen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #071634;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .loading-screen.done { opacity: 0; transform: scale(1.08); pointer-events: none; }
+    .loading-content { text-align: center; }
+    .loading-title {
+      font-family: "Press Start 2P", monospace;
+      font-size: 18px; color: var(--accent-gold);
+      margin-bottom: 16px;
+      animation: load-pulse 0.8s steps(2, end) infinite;
+    }
+    @keyframes load-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .loading-bar-track {
+      width: 240px; height: 14px;
+      border: 3px solid var(--border); border-radius: 3px;
+      background: rgba(255,255,255,0.05); overflow: hidden; margin: 0 auto;
+    }
+    .loading-bar-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--accent-green), #9de9ff);
+      transition: width 2.2s ease;
+    }
+    .loading-hint {
+      font-family: "VT323", monospace; font-size: 22px;
+      color: var(--text-dim); margin-top: 12px;
+    }
+    .loading-meteor {
+      display: block; margin: 0 auto 20px;
+      width: 48px; height: 48px;
+      image-rendering: pixelated;
+      animation: meteor-fall 2s ease-in-out infinite;
+    }
+    @keyframes meteor-fall {
+      0% { transform: translateY(-20px) rotate(-10deg); opacity: 0.5; }
+      50% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-20px) rotate(10deg); opacity: 0.5; }
+    }
+
+    /* === FIREFLY PARTICLES === */
+    .firefly-container { position: fixed; inset: 0; pointer-events: none; z-index: 15; overflow: hidden; }
+    .firefly {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(247,207,103,0.8), rgba(157,233,255,0.3));
+      box-shadow: 0 0 8px rgba(247,207,103,0.4);
+      animation: firefly-drift 6s ease-in-out infinite;
+    }
+    @keyframes firefly-drift {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      40% { transform: translateY(-80px) translateX(20px); opacity: 0.8; }
+      60% { transform: translateY(-130px) translateX(-15px); opacity: 0.5; }
+      80% { transform: translateY(-180px) translateX(10px); opacity: 0.3; }
+      100% { transform: translateY(-220px) translateX(0); opacity: 0; }
+    }
+
+    /* === CITYSCAPE === */
+    .cityscape { position: fixed; bottom: 0; left: 0; right: 0; height: 140px; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.35; }
+    .cityscape .building {
+      position: absolute; bottom: 0;
+      background: linear-gradient(180deg, #0c1f4a, #071634);
+      border-top: 1px solid rgba(217,241,255,0.08);
+    }
+    .cityscape .window {
+      position: absolute;
+      width: 3px; height: 4px;
+      background: #1a3d6e;
+    }
+    .cityscape .window.lit {
+      background: #f7cf67;
+      box-shadow: 0 0 4px rgba(247,207,103,0.5);
+    }
+    @keyframes win-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    /* === AVATAR IDLE === */
+    .avatar {
+      animation: avatar-breathe 3s ease-in-out infinite;
+    }
+    @keyframes avatar-breathe {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.03) translateY(-1px); }
+    }
+
+    /* === MATERIA LEVEL-UP === */
+    @keyframes materia-levelup {
+      0% { transform: scale(1); box-shadow: 0 0 8px currentColor; }
+      20% { transform: scale(1.25); box-shadow: 0 0 25px currentColor; }
+      40% { transform: scale(1.1); box-shadow: 0 0 15px currentColor; }
+      60% { transform: scale(1.2); box-shadow: 0 0 20px currentColor; }
+      100% { transform: scale(1); box-shadow: 0 0 8px currentColor; }
+    }
+    .materia-orb.leveling .materia-orb-inner {
+      animation: materia-levelup 0.6s ease-out;
+    }
+    .level-up-text {
+      position: absolute;
+      top: -18px; left: 50%;
+      transform: translateX(-50%);
+      font-family: "Press Start 2P", monospace;
+      font-size: 7px;
+      color: var(--accent-gold);
+      white-space: nowrap;
+      text-shadow: 0 0 8px rgba(247,207,103,0.8);
+      animation: levelup-float 0.8s ease-out forwards;
+      pointer-events: none;
+      z-index: 5;
+    }
+    @keyframes levelup-float {
+      0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    }
+
+    /* === RESPONSIVE LOADING ADJUSTMENTS === */
+    @media (max-width: 620px) {
+      .loading-title { font-size: 14px; }
+      .loading-bar-track { width: 180px; }
+    }
   </style>
 </head>
 <body>
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-content">
+      <img class="loading-meteor" src="assets/sprites/sprite-crystal.svg" alt="" />
+      <p class="loading-title">Now Loading</p>
+      <div class="loading-bar-track">
+        <div class="loading-bar-fill" id="loading-bar"></div>
+      </div>
+      <p class="loading-hint" id="loading-hint">Initializing quest data...</p>
+    </div>
+  </div>
   <div class="limit-break-overlay" id="limit-break-overlay"></div>
 
   <main class="hud">
@@ -2580,18 +2712,134 @@
         saveCrystal.addEventListener("click", function () { playSfx("save"); });
       }
 
-      // Resume button - try to find a resume PDF
+      // Resume button
       var resumeBtn = document.getElementById("resume-btn");
       if (resumeBtn) {
         resumeBtn.addEventListener("click", function (e) {
-          // If no resume URL configured, link to LinkedIn
-          if (!resumeBtn.getAttribute("href") || resumeBtn.getAttribute("href") === "#") {
-            e.preventDefault();
-            window.open("https://www.linkedin.com/in/ruifspinto", "_blank");
-          }
           playSfx("save");
         });
       }
+
+      // === LOADING SCREEN ===
+      var loadingScreen = document.getElementById("loading-screen");
+      var loadingBar = document.getElementById("loading-bar");
+      var loadingHint = document.getElementById("loading-hint");
+      var hints = [
+        "Initializing quest data...",
+        "Equipping Materia...",
+        "Calibrating airship...",
+        "Loading pixel textures...",
+        "Summoning party members...",
+        "Almost there..."
+      ];
+
+      setTimeout(function () {
+        loadingBar.style.width = "100%";
+        var hi = 0;
+        var hintTimer = setInterval(function () {
+          hi += 1;
+          if (hi < hints.length && loadingHint) {
+            loadingHint.textContent = hints[hi];
+          }
+        }, 380);
+        setTimeout(function () { clearInterval(hintTimer); }, 2500);
+      }, 200);
+
+      setTimeout(function () {
+        if (loadingScreen) {
+          loadingScreen.classList.add("done");
+          setTimeout(function () { loadingScreen.style.display = "none"; }, 600);
+        }
+        if (musicAudio && musicAudio.paused) {
+          musicAudio.play().catch(function () {});
+        }
+      }, 2800);
+
+      // === FIREFLIES ===
+      function createFireflies() {
+        var container = document.createElement("div");
+        container.className = "firefly-container";
+        document.body.appendChild(container);
+        var colors = ["rgba(247,207,103,0.8)", "rgba(157,233,255,0.8)", "rgba(116,255,152,0.7)"];
+        for (var i = 0; i < 22; i++) {
+          var ff = document.createElement("div");
+          ff.className = "firefly";
+          var size = 2 + Math.random() * 4;
+          ff.style.cssText = "left:" + (Math.random() * 100) + "%;top:" + (50 + Math.random() * 50) + "%;width:" + size + "px;height:" + size + "px;animation-delay:" + (Math.random() * 8) + "s;animation-duration:" + (5 + Math.random() * 6) + "s;";
+          ff.style.background = "radial-gradient(circle at center, " + colors[i % 3] + ", transparent)";
+          container.appendChild(ff);
+        }
+      }
+      createFireflies();
+
+      // === CITYSCAPE ===
+      function createCityscape() {
+        var city = document.createElement("div");
+        city.className = "cityscape";
+        document.body.appendChild(city);
+        var numBuildings = 28;
+        var x = -10;
+        for (var i = 0; i < numBuildings; i++) {
+          var w = 14 + Math.floor(Math.random() * 30);
+          var h = 30 + Math.floor(Math.random() * 90);
+          var b = document.createElement("div");
+          b.className = "building";
+          b.style.cssText = "left:" + x + "px;width:" + w + "px;height:" + h + "px;";
+          city.appendChild(b);
+          x += w + 1 + Math.floor(Math.random() * 4);
+          var numWins = 2 + Math.floor(Math.random() * 4);
+          for (var j = 0; j < numWins; j++) {
+            var wx = 3 + Math.floor(Math.random() * (w - 8));
+            var wy = 5 + Math.floor(Math.random() * (h - 12));
+            var win = document.createElement("div");
+            var lit = Math.random() > 0.45;
+            win.className = "window" + (lit ? " lit" : "");
+            win.style.cssText = "left:" + (x - w + wx) + "px;bottom:" + wy + "px;";
+            if (lit) {
+              win.style.animation = "win-blink " + (2 + Math.random() * 4) + "s steps(1, end) infinite";
+              win.style.animationDelay = (Math.random() * 3) + "s";
+            }
+            city.appendChild(win);
+          }
+        }
+      }
+      createCityscape();
+
+      // === MATERIA LEVEL-UP ANIMATION ===
+      var originalUpdateMateria = updateMateriaLevels;
+      updateMateriaLevels = function (repos) {
+        if (typeof originalUpdateMateria === "function") {
+          originalUpdateMateria(repos);
+        }
+        var orbs = document.querySelectorAll(".materia-orb");
+        orbs.forEach(function (orb, idx) {
+          setTimeout(function () {
+            orb.classList.add("leveling");
+            var lvlEl = orb.querySelector(".materia-orb-lvl");
+            var finalLvl = parseInt(lvlEl.textContent.replace("Lv.", ""), 10);
+            var startLvl = Math.max(1, finalLvl - 20 - Math.floor(Math.random() * 15));
+            var steps = 8;
+            var step = 0;
+            var counter = setInterval(function () {
+              step += 1;
+              var current = startLvl + Math.floor((finalLvl - startLvl) * (step / steps));
+              lvlEl.textContent = "Lv." + current;
+              if (step >= steps) {
+                clearInterval(counter);
+                lvlEl.textContent = "Lv." + finalLvl;
+                orb.classList.remove("leveling");
+                // Level Up text
+                var lu = document.createElement("span");
+                lu.className = "level-up-text";
+                lu.textContent = "Level Up!";
+                orb.appendChild(lu);
+                setTimeout(function () { lu.remove(); }, 1000);
+                playSfx("limit");
+              }
+            }, 60);
+          }, idx * 250);
+        });
+      };
 
       initMusicControls();
       hydrateGitHubStats();
