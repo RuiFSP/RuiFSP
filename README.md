@@ -30,6 +30,7 @@
 
 | Project | Description | Stack |
 |---------|-------------|-------|
+| [**llmzoomcamp-2026-final-project**](https://github.com/RuiFSP/llmzoomcamp-2026-final-project) | Final project for LLM Zoomcamp 2026 — end-to-end LLM application and evaluation | Python · LLMs · RAG · Streamlit |
 | [**dezoomcamp-2026**](https://github.com/RuiFSP/dezoomcamp-2026-final-project) | Batch data platform from ingestion to dashboard using cloud-native orchestration | Python · Bruin · Terraform · GCS · BigQuery · Streamlit · Cloud Run |
 | [**kedro-bike-demand-pipeline**](https://github.com/RuiFSP/kedro-bike-demand-pipeline) | Production-style ML pipeline forecasting next-hour bike demand — Kedro orchestration, CatBoost, live Dash dashboard, fully Dockerised | Python · Kedro · CatBoost · Dash · Docker Compose · uv |
 | [**mlops-2025**](https://github.com/RuiFSP/mlops-2025-final_project) | End-to-end MLOps lifecycle: tracking, packaging, deployment, monitoring | Python · FastAPI · MLflow · Prefect · PostgreSQL · Grafana · Docker · GitHub Actions |
@@ -43,13 +44,12 @@
 
 | Repo | Focus |
 |------|-------|
-| [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026) | Data Engineering Zoomcamp 2026 homeworks |
 | [**llm-zoomcamp-2026**](https://github.com/RuiFSP/llm-zoomcamp-2026) | LLM Zoomcamp 2026 homeworks |
+| [**dataengineering-zoomcamp-2026**](https://github.com/RuiFSP/dataengineering-zoomcamp-2026) | Data Engineering Zoomcamp 2026 homeworks |
 | [**mlops-zoomcamp-2025**](https://github.com/RuiFSP/mlops-zoomcamp-2025) | MLOps Zoomcamp 2025 homeworks |
 | [**ml-zoomcamp-2024**](https://github.com/RuiFSP/ml-zoomcamp-2024) | ML Zoomcamp 2024 homeworks |
 | [**100-days-of-code**](https://github.com/RuiFSP/100-days-of-code) | 100-day coding journal — Python, data science, Flask |
 | [**advent_code_2024**](https://github.com/RuiFSP/advent_code_2024) | Advent of Code 2024 solutions in Python |
-| [**ai-engineer-handbook**](https://github.com/RuiFSP/ai-engineer-handbook) | Curated AI engineer resources: books, courses, communities |
 
 ---
 
