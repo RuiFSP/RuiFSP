@@ -1616,16 +1616,16 @@
     }
     .sky-scene .moon {
       position: absolute;
-      top: 5%; left: 5%;
-      width: 36px; height: 36px;
+      top: 4%; left: 4%;
+      width: 52px; height: 52px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, #e8f0ff, #c4d8f0 60%, #8aacd4);
-      box-shadow: 0 0 40px rgba(196, 216, 240, 0.4), 0 0 80px rgba(196, 216, 240, 0.15);
-      animation: moon-float 6s ease-in-out infinite;
+      box-shadow: 0 0 50px rgba(196, 216, 240, 0.45), 0 0 100px rgba(196, 216, 240, 0.2);
+      animation: moon-float 5s ease-in-out infinite;
     }
     @keyframes moon-float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-10px); }
     }
     .sky-scene .moon-crater {
       position: absolute;
@@ -1635,18 +1635,18 @@
     .sky-scene .comet {
       position: absolute;
       top: 8%;
-      right: -80px;
-      width: 8px; height: 8px;
+      right: -100px;
+      width: 60px; height: auto;
       image-rendering: pixelated;
-      animation: comet-fly 8s linear infinite;
+      animation: comet-fly 7s linear infinite;
     }
     @keyframes comet-fly {
-      0% { right: -80px; top: 8%; opacity: 0; }
-      5% { opacity: 1; }
-      30% { right: 60%; top: 18%; opacity: 1; }
-      50% { right: 80%; top: 25%; opacity: 0.7; }
-      70% { right: 95%; top: 32%; opacity: 0.3; }
-      100% { right: 120%; top: 45%; opacity: 0; }
+      0% { right: -80px; top: 6%; opacity: 0; }
+      4% { opacity: 1; }
+      25% { right: 50%; top: 14%; opacity: 1; }
+      45% { right: 75%; top: 20%; opacity: 0.7; }
+      65% { right: 92%; top: 28%; opacity: 0.4; }
+      100% { right: 120%; top: 40%; opacity: 0; }
     }
     .sky-scene .side-star {
       position: absolute;
@@ -1708,11 +1708,12 @@
   <div class="mako-glow"></div>
   <div class="sky-scene" id="sky-scene">
     <div class="moon" id="moon">
-      <div class="moon-crater" style="top:8px;left:8px;width:8px;height:6px;"></div>
-      <div class="moon-crater" style="top:18px;left:18px;width:5px;height:5px;"></div>
-      <div class="moon-crater" style="top:10px;left:24px;width:4px;height:4px;"></div>
+      <div class="moon-crater" style="top:12px;left:12px;width:10px;height:8px;"></div>
+      <div class="moon-crater" style="top:26px;left:28px;width:8px;height:7px;"></div>
+      <div class="moon-crater" style="top:16px;left:36px;width:5px;height:5px;"></div>
+      <div class="moon-crater" style="top:34px;left:14px;width:4px;height:4px;"></div>
     </div>
-    <img class="comet" src="assets/sprites/sprite-crystal.svg" alt="" />
+    <img class="comet" src="assets/sprites/sprite-comet.svg" alt="" />
   </div>
 
   <main class="hud">

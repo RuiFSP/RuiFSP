@@ -1,0 +1,25 @@
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 12" shape-rendering="crispEdges">
+    <rect width="48" height="12" fill="none"/>
+    <!-- Trail tail (fading out) -->
+    <rect x="2" y="5" width="4" height="2" fill="#74ff98" opacity="0.15"/>
+    <rect x="6" y="5" width="4" height="2" fill="#74ff98" opacity="0.25"/>
+    <rect x="10" y="4" width="4" height="4" fill="#a0ffb8" opacity="0.35"/>
+    <rect x="14" y="4" width="4" height="4" fill="#a0ffb8" opacity="0.5"/>
+    <rect x="18" y="3" width="4" height="6" fill="#a0ffb8" opacity="0.65"/>
+    <rect x="22" y="3" width="4" height="6" fill="#d9ffe7" opacity="0.8"/>
+    <rect x="26" y="2" width="4" height="8" fill="#d9ffe7"/>
+    <rect x="30" y="2" width="4" height="8" fill="#d9ffe7"/>
+    <rect x="34" y="2" width="4" height="8" fill="#d9ffe7"/>
+    <!-- Comet head (bright) -->
+    <rect x="38" y="1" width="4" height="10" fill="#d9ffe7"/>
+    <rect x="39" y="1" width="2" height="10" fill="#ffffff"/>
+    <rect x="40" y="0" width="2" height="12" fill="#ffffff"/>
+    <rect x="38" y="0" width="2" height="2" fill="#ffffff"/>
+    <rect x="38" y="10" width="2" height="2" fill="#ffffff"/>
+    <!-- Head glow -->
+    <rect x="42" y="2" width="2" height="8" fill="#d9ffe7" opacity="0.6"/>
+    <rect x="44" y="4" width="2" height="4" fill="#a0ffb8" opacity="0.3"/>
+    <!-- Spark particle -->
+    <rect x="36" y="0" width="2" height="2" fill="#ffffff"/>
+    <rect x="36" y="10" width="2" height="2" fill="#ffffff"/>
+  </svg>
