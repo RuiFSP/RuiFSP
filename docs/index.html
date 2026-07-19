@@ -651,6 +651,63 @@
     .map-capture-label.left { left: auto; right: 12px; transform: none; }
     .map-capture-label.right { left: 12px; transform: none; }
 
+    /* MAP CLOUDS */
+    .map-cloud {
+      position: absolute;
+      width: 48px; height: 14px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.3;
+      animation: cloud-drift 40s linear infinite;
+    }
+    .map-cloud::before {
+      content: "";
+      position: absolute;
+      width: 20px; height: 8px;
+      background: rgba(217, 241, 255, 0.5);
+      border-radius: 4px;
+      top: 3px; left: 4px;
+    }
+    .map-cloud::after {
+      content: "";
+      position: absolute;
+      width: 32px; height: 6px;
+      background: rgba(217, 241, 255, 0.4);
+      border-radius: 3px;
+      top: 8px; left: 8px;
+    }
+    .map-cloud.c2 { animation-duration: 55s; animation-delay: -12s; opacity: 0.2; }
+    .map-cloud.c3 { animation-duration: 35s; animation-delay: -25s; opacity: 0.25; }
+
+    @keyframes cloud-drift {
+      from { left: -60px; }
+      to { left: calc(100% + 60px); }
+    }
+
+    /* MAP CHocobo */
+    .map-sprite.chocobo {
+      width: 28px;
+      bottom: 52%;
+      left: 46%;
+      animation: chocobo-run 6s steps(1, end) infinite;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    @keyframes chocobo-run {
+      0% { left: 46%; bottom: 52%; }
+      20% { left: 50%; bottom: 50%; }
+      40% { left: 55%; bottom: 48%; }
+      60% { left: 50%; bottom: 52%; }
+      80% { left: 42%; bottom: 54%; }
+      100% { left: 46%; bottom: 52%; }
+    }
+
+    /* MAP SECONDARY ROUTES */
+    .map-route.secondary {
+      opacity: 0.35;
+      border-color: rgba(157, 233, 255, 0.3);
+      background: repeating-linear-gradient(to right, rgba(157, 233, 255, 0.3) 0, rgba(157, 233, 255, 0.3) 3px, transparent 3px, transparent 8px);
+    }
+
     /* PROFILE PANEL (expanded) */
     .profile-box {
       min-height: 330px;
@@ -1613,32 +1670,22 @@
     }
     .scene-side {
       position: fixed;
-      top: 12%;
+      top: 10%;
+      left: 6px;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.75;
+      opacity: 0.7;
       image-rendering: pixelated;
-      transition: opacity 0.3s ease;
-      filter: drop-shadow(0 0 6px rgba(116,255,152,0.15));
-    }
-    .scene-side.left {
-      left: 6px;
-      width: 96px;
+      transition: opacity 0.4s ease;
+      width: 110px;
       height: auto;
-      animation: scene-fade-in 1.5s ease-out;
-    }
-    .scene-side.right {
-      right: 6px;
-      width: 72px;
-      height: auto;
-      animation: scene-fade-in 1.5s ease-out 0.3s both;
+      animation: scene-fade-in 1.8s ease-out;
     }
     @keyframes scene-fade-in {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 0.75; transform: translateY(0); }
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 0.7; transform: translateX(0); }
     }
-    .scene-side.left:hover { opacity: 1; }
-    .scene-side.right:hover { opacity: 1; }
+    .scene-side:hover { opacity: 1; }
     @media (max-width: 1100px) {
       .scene-side { display: none; }
       .sky-scene .moon { display: none; }
@@ -1672,8 +1719,7 @@
       <div class="moon-crater" style="top:8px;left:18px;width:3px;height:3px;"></div>
     </div>
   </div>
-  <img class="scene-side left" src="assets/sprites/sprite-scene-network.svg" alt="" aria-hidden="true" />
-  <img class="scene-side right" src="assets/sprites/sprite-scene-coderain.svg" alt="" aria-hidden="true" />
+  <img class="scene-side" src="assets/sprites/sprite-scene-midgar.svg" alt="" aria-hidden="true" />
 
   <main class="hud">
     <header class="topbar">
@@ -1732,8 +1778,23 @@
               <span class="map-star s4"></span>
               <span class="map-star s5"></span>
               <span class="map-star s6"></span>
-              <span class="map-route"></span>
+              <span class="map-star s7" style="left:32%;top:22%;animation-delay:0.4s;"></span>
+              <span class="map-star s8" style="left:55%;top:18%;animation-delay:1.3s;"></span>
+              <span class="map-star s9" style="left:70%;top:20%;animation-delay:0.8s;"></span>
+              <span class="map-star s10" style="left:85%;top:12%;animation-delay:1.9s;"></span>
+              <!-- Main route: Lisbon ↔ Paris ↔ London ↔ Berlin -->
+              <span class="map-route" style="left:19%;right:48%;top:36%;"></span>
+              <span class="map-route" style="left:37%;right:56%;top:26%;"></span>
+              <!-- Secondary routes -->
+              <span class="map-route secondary" style="left:30%;right:65%;top:33%;"></span>
+              <span class="map-route secondary" style="left:43%;right:52%;top:31%;"></span>
+              <span class="map-route secondary" style="left:52%;right:28%;top:28%;"></span>
+              <span class="map-route secondary" style="left:56%;right:36%;top:38%;"></span>
             </div>
+            <!-- Clouds -->
+            <div class="map-cloud" aria-hidden="true" style="top:18%;"></div>
+            <div class="map-cloud c2" aria-hidden="true" style="top:42%;"></div>
+            <div class="map-cloud c3" aria-hidden="true" style="top:65%;"></div>
             <div class="map-pin" aria-hidden="true"></div>
             <div class="map-sprites" aria-hidden="true">
               <img class="map-sprite airship" src="assets/sprites/sprite-airship.svg" alt="" />
@@ -1744,8 +1805,10 @@
               <img class="map-sprite crystal3" src="assets/sprites/sprite-crystal.svg" alt="" />
               <img class="map-sprite boat" src="assets/sprites/sprite-boat.svg" alt="" />
               <img class="map-sprite boat2" src="assets/sprites/sprite-boat.svg" alt="" />
+              <img class="map-sprite chocobo" src="assets/sprites/sprite-chocobo.svg" alt="" />
             </div>
             <div class="map-radar" aria-hidden="true"></div>
+            <!-- Major cities -->
             <div class="map-capture" style="left:19%;top:36%;" aria-hidden="true"><span class="map-capture-label left">Lisbon</span></div>
             <div class="map-capture" style="left:37%;top:24%;" aria-hidden="true"><span class="map-capture-label">London</span></div>
             <div class="map-capture" style="left:52%;top:24%;" aria-hidden="true"><span class="map-capture-label">Berlin</span></div>
@@ -1762,9 +1825,26 @@
             <div class="map-capture" style="left:56%;top:61%;" aria-hidden="true"><span class="map-capture-label down">Tripoli</span></div>
             <div class="map-capture" style="left:39%;top:72%;" aria-hidden="true"><span class="map-capture-label down">Lagos</span></div>
             <div class="map-capture" style="left:67%;top:73%;" aria-hidden="true"><span class="map-capture-label down">Khartoum</span></div>
+            <!-- Additional cities -->
+            <div class="map-capture" style="left:45%;top:21%;" aria-hidden="true"><span class="map-capture-label down">Amsterdam</span></div>
+            <div class="map-capture" style="left:48%;top:12%;" aria-hidden="true"><span class="map-capture-label down">Oslo</span></div>
+            <div class="map-capture" style="left:52%;top:14%;" aria-hidden="true"><span class="map-capture-label down">Stockholm</span></div>
+            <div class="map-capture" style="left:50%;top:18%;" aria-hidden="true"><span class="map-capture-label down">Copenhagen</span></div>
+            <div class="map-capture" style="left:34%;top:22%;" aria-hidden="true"><span class="map-capture-label down">Dublin</span></div>
+            <div class="map-capture" style="left:49%;top:31%;" aria-hidden="true"><span class="map-capture-label left">Zurich</span></div>
+            <div class="map-capture" style="left:51%;top:38%;" aria-hidden="true"><span class="map-capture-label right">Milan</span></div>
+            <div class="map-capture" style="left:42%;top:44%;" aria-hidden="true"><span class="map-capture-label">Barcelona</span></div>
+            <div class="map-capture" style="left:55%;top:45%;" aria-hidden="true"><span class="map-capture-label down">Naples</span></div>
+            <div class="map-capture" style="left:62%;top:39%;" aria-hidden="true"><span class="map-capture-label down">Bucharest</span></div>
+            <div class="map-capture" style="left:62%;top:29%;" aria-hidden="true"><span class="map-capture-label">Kyiv</span></div>
+            <div class="map-capture" style="left:62%;top:51%;" aria-hidden="true"><span class="map-capture-label">Athens</span></div>
+            <div class="map-capture" style="left:51%;top:32%;" aria-hidden="true"><span class="map-capture-label left">Munich</span></div>
+            <div class="map-capture" style="left:54%;top:25%;" aria-hidden="true"><span class="map-capture-label down">Prague</span></div>
+            <div class="map-capture" style="left:57%;top:31%;" aria-hidden="true"><span class="map-capture-label down">Budapest</span></div>
+            <div class="map-capture" style="left:60%;top:37%;" aria-hidden="true"><span class="map-capture-label down">Belgrade</span></div>
             <div class="map-label">Global Ops Map</div>
             <div class="map-hud" aria-hidden="true">
-              <span class="map-chip highlight">&#x1F30D; World: 12%</span>
+              <span class="map-chip highlight">&#x1F30D; World: 18%</span>
             </div>
           </article>
         </div>
