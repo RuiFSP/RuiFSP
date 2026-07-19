@@ -2737,6 +2737,7 @@
       }
 
       // === INIT ===
+      try {
       setInterval(updateClock, 1000);
       updateClock();
 
@@ -2827,8 +2828,21 @@
         "Almost there..."
       ];
 
+      function dismissLoading() {
+        if (!loadingScreen) return;
+        if (loadingScreen.classList.contains("done")) return;
+        loadingScreen.classList.add("done");
+        if (loadingBar) loadingBar.style.width = "100%";
+        setTimeout(function () {
+          loadingScreen.style.display = "none";
+          if (musicAudio && musicAudio.paused) {
+            musicAudio.play().catch(function () {});
+          }
+        }, 600);
+      }
+
       setTimeout(function () {
-        loadingBar.style.width = "100%";
+        if (loadingBar) loadingBar.style.width = "100%";
         var hi = 0;
         var hintTimer = setInterval(function () {
           hi += 1;
@@ -2839,15 +2853,9 @@
         setTimeout(function () { clearInterval(hintTimer); }, 2500);
       }, 200);
 
-      setTimeout(function () {
-        if (loadingScreen) {
-          loadingScreen.classList.add("done");
-          setTimeout(function () { loadingScreen.style.display = "none"; }, 600);
-        }
-        if (musicAudio && musicAudio.paused) {
-          musicAudio.play().catch(function () {});
-        }
-      }, 2800);
+      setTimeout(dismissLoading, 2800);
+      // Safety net: force dismiss after 5s no matter what
+      setTimeout(dismissLoading, 5000);
 
       // === FIREFLIES ===
       function createFireflies() {
@@ -3016,6 +3024,7 @@
       initMusicControls();
       hydrateGitHubStats();
       hydrateRecentActivity();
+      } catch (e) { console.warn("Init error:", e); dismissLoading(); }
     })();
   </script>
 </body>
