@@ -1,0 +1,28 @@
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <rect width="32" height="32" fill="none"/>
+    <!-- Trophy cup -->
+    <rect x="12" y="4" width="8" height="2" fill="#f7cf67"/>
+    <rect x="10" y="6" width="12" height="2" fill="#f7cf67"/>
+    <rect x="9" y="8" width="14" height="8" fill="#f7cf67"/>
+    <rect x="10" y="8" width="12" height="6" fill="#ffe7a1"/>
+    <!-- Trophy handles -->
+    <rect x="7" y="8" width="2" height="6" fill="#d9a52e"/>
+    <rect x="23" y="8" width="2" height="6" fill="#d9a52e"/>
+    <!-- Trophy stem -->
+    <rect x="13" y="16" width="6" height="2" fill="#d9a52e"/>
+    <rect x="14" y="18" width="4" height="4" fill="#d9a52e"/>
+    <!-- Base -->
+    <rect x="10" y="22" width="12" height="2" fill="#f7cf67"/>
+    <rect x="8" y="24" width="16" height="2" fill="#d9a52e"/>
+    <!-- Star on trophy -->
+    <rect x="14" y="9" width="4" height="4" fill="#f0f8ff"/>
+    <rect x="15" y="8" width="2" height="2" fill="#f0f8ff"/>
+    <rect x="15" y="12" width="2" height="2" fill="#f0f8ff"/>
+    <rect x="13" y="10" width="2" height="2" fill="#f0f8ff"/>
+    <rect x="17" y="10" width="2" height="2" fill="#f0f8ff"/>
+    <!-- Sparkles -->
+    <rect x="4" y="4" width="2" height="2" fill="#9de9ff"/>
+    <rect x="26" y="4" width="2" height="2" fill="#9de9ff"/>
+    <rect x="2" y="14" width="2" height="2" fill="#9de9ff"/>
+    <rect x="28" y="12" width="2" height="2" fill="#9de9ff"/>
+  </svg>

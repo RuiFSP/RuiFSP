@@ -1,14 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="crispEdges">
-  <rect width="24" height="24" fill="none"/>
-  <rect x="9" y="2" width="6" height="4" fill="#f5d0b2"/>
-  <rect x="8" y="2" width="2" height="2" fill="#f0f8ff"/>
-  <rect x="14" y="2" width="2" height="2" fill="#f0f8ff"/>
-  <rect x="8" y="6" width="8" height="2" fill="#243b6e"/>
-  <rect x="7" y="8" width="10" height="6" fill="#1f7f55"/>
-  <rect x="6" y="10" width="2" height="3" fill="#d9f1ff"/>
-  <rect x="17" y="10" width="2" height="3" fill="#d9f1ff"/>
-  <rect x="8" y="14" width="8" height="5" fill="#2b5ea3"/>
-  <rect x="8" y="19" width="3" height="3" fill="#7a808a"/>
-  <rect x="13" y="19" width="3" height="3" fill="#7a808a"/>
-  <rect x="18" y="7" width="2" height="8" fill="#f7cf67"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" fill="none"/>
+  <!-- Spiky hair -->
+  <rect x="13" y="1" width="2" height="2" fill="#3d1f0e"/>
+  <rect x="17" y="1" width="2" height="2" fill="#3d1f0e"/>
+  <rect x="11" y="2" width="4" height="2" fill="#3d1f0e"/>
+  <rect x="17" y="2" width="4" height="2" fill="#3d1f0e"/>
+  <rect x="10" y="3" width="3" height="2" fill="#3d1f0e"/>
+  <rect x="19" y="3" width="3" height="2" fill="#3d1f0e"/>
+  <rect x="9" y="4" width="14" height="2" fill="#3d1f0e"/>
+  <rect x="8" y="5" width="16" height="2" fill="#3d1f0e"/>
+  <!-- Face -->
+  <rect x="11" y="6" width="10" height="6" fill="#f5d0b2"/>
+  <!-- Glasses -->
+  <rect x="9" y="7" width="14" height="3" fill="#4aa7dd"/>
+  <rect x="9" y="7" width="2" height="3" fill="#2b5ea3"/>
+  <rect x="21" y="7" width="2" height="3" fill="#2b5ea3"/>
+  <rect x="14" y="7" width="1" height="3" fill="#2b5ea3"/>
+  <rect x="17" y="7" width="1" height="3" fill="#2b5ea3"/>
+  <!-- Eyes -->
+  <rect x="12" y="8" width="2" height="1" fill="#d9f1ff"/>
+  <rect x="18" y="8" width="2" height="1" fill="#d9f1ff"/>
+  <rect x="12" y="8" width="1" height="1" fill="#0c3f7a"/>
+  <rect x="19" y="8" width="1" height="1" fill="#0c3f7a"/>
+  <!-- Mouth -->
+  <rect x="14" y="11" width="4" height="1" fill="#d9a88c"/>
+  <!-- Neck -->
+  <rect x="13" y="12" width="6" height="2" fill="#f5d0b2"/>
+  <!-- Coat -->
+  <rect x="7" y="14" width="18" height="10" fill="#1a3d6e"/>
+  <rect x="8" y="14" width="16" height="10" fill="#243b6e"/>
+  <!-- Coat collar -->
+  <rect x="11" y="13" width="10" height="2" fill="#1f5f8a"/>
+  <!-- Inner shirt -->
+  <rect x="12" y="14" width="8" height="6" fill="#d9f1ff"/>
+  <!-- Materia on chest -->
+  <rect x="14" y="15" width="4" height="4" fill="#7dcfff"/>
+  <rect x="15" y="15" width="2" height="4" fill="#4aa7dd"/>
+  <rect x="14" y="16" width="4" height="2" fill="#9de9ff"/>
+  <rect x="15" y="17" width="2" height="1" fill="#f0f8ff"/>
+  <!-- Materia glow -->
+  <rect x="13" y="14" width="6" height="6" fill="none" stroke="#9de9ff" stroke-width="1" rx="1"/>
+  <!-- Laptop bag strap -->
+  <rect x="7" y="16" width="1" height="8" fill="#f7cf67"/>
+  <rect x="24" y="14" width="1" height="8" fill="#f7cf67"/>
+  <!-- Belt -->
+  <rect x="8" y="23" width="16" height="2" fill="#7a808a"/>
+  <rect x="14" y="23" width="4" height="2" fill="#f7cf67"/>
+  <!-- Legs -->
+  <rect x="10" y="25" width="5" height="4" fill="#1a2d4e"/>
+  <rect x="17" y="25" width="5" height="4" fill="#1a2d4e"/>
+  <!-- Boots -->
+  <rect x="9" y="28" width="7" height="3" fill="#3d1f0e"/>
+  <rect x="16" y="28" width="7" height="3" fill="#3d1f0e"/>
+  <!-- Boot soles -->
+  <rect x="9" y="30" width="7" height="1" fill="#2b150a"/>
+  <rect x="16" y="30" width="7" height="1" fill="#2b150a"/>
 </svg>
