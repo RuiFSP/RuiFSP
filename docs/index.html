@@ -1581,6 +1581,83 @@
       100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
     }
 
+    /* === SKY SCENE === */
+    .sky-scene {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      overflow: hidden;
+    }
+    .sky-scene .moon {
+      position: absolute;
+      top: 6%; left: 50%;
+      width: 28px; height: 28px;
+      margin-left: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #e8f0ff, #c4d8f0 60%, #8aacd4);
+      box-shadow: 0 0 30px rgba(196, 216, 240, 0.3), 0 0 60px rgba(196, 216, 240, 0.1);
+    }
+    .sky-scene .moon-crater {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(160, 180, 210, 0.4);
+    }
+    .sky-scene .side-star {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: #d9f1ff;
+      box-shadow: 0 0 4px rgba(217,241,255,0.6);
+      animation: star-twinkle 2.5s steps(1, end) infinite;
+    }
+    .sky-scene .side-star-lg {
+      width: 3px; height: 3px;
+      box-shadow: 0 0 6px rgba(217,241,255,0.8);
+    }
+    @keyframes star-twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+    .mako-glow {
+      position: fixed;
+      bottom: -40px; left: 0; right: 0;
+      height: 200px;
+      pointer-events: none; z-index: 1;
+      background: linear-gradient(0deg, rgba(116,255,152,0.06) 0%, rgba(116,255,152,0.03) 40%, transparent 100%);
+      animation: mako-pulse 4s ease-in-out infinite;
+    }
+    @keyframes mako-pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .vignette {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 2;
+      background: radial-gradient(ellipse at 50% 60%, transparent 50%, rgba(2, 9, 26, 0.55) 85%, rgba(2, 9, 26, 0.85) 100%);
+    }
+    .character-side {
+      position: fixed;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.55;
+      image-rendering: pixelated;
+    }
+    .character-side.left {
+      left: -8px;
+      width: 120px;
+      height: auto;
+      transform: scaleX(1);
+    }
+    .character-side.right {
+      right: -4px;
+      width: 100px;
+      height: auto;
+      transform: scaleX(-1);
+      opacity: 0.3;
+    }
+    @media (max-width: 900px) {
+      .character-side { display: none; }
+      .sky-scene .moon { display: none; }
+    }
+
     /* === RESPONSIVE LOADING ADJUSTMENTS === */
     @media (max-width: 620px) {
       .loading-title { font-size: 14px; }
@@ -1600,6 +1677,17 @@
     </div>
   </div>
   <div class="limit-break-overlay" id="limit-break-overlay"></div>
+  <div class="vignette"></div>
+  <div class="mako-glow"></div>
+  <div class="sky-scene" id="sky-scene">
+    <div class="moon" id="moon">
+      <div class="moon-crater" style="top:6px;left:6px;width:6px;height:5px;"></div>
+      <div class="moon-crater" style="top:14px;left:14px;width:4px;height:4px;"></div>
+      <div class="moon-crater" style="top:8px;left:18px;width:3px;height:3px;"></div>
+    </div>
+  </div>
+  <img class="character-side left" src="assets/sprites/sprite-silhouette.svg" alt="" aria-hidden="true" />
+  <img class="character-side right" src="assets/sprites/sprite-silhouette.svg" alt="" aria-hidden="true" />
 
   <main class="hud">
     <header class="topbar">
@@ -2875,6 +2963,22 @@
         });
       }
       createCityscape();
+
+      // === SKY SCENE STARS ===
+      (function () {
+        var sky = document.getElementById("sky-scene");
+        if (!sky) return;
+        var starCount = 45;
+        for (var i = 0; i < starCount; i++) {
+          var star = document.createElement("div");
+          var isLarge = Math.random() > 0.85;
+          var side = Math.random() > 0.5 ? "left" : "right";
+          var leftPos = side === "left" ? Math.random() * 18 : 65 + Math.random() * 30;
+          star.className = "side-star" + (isLarge ? " side-star-lg" : "");
+          star.style.cssText = "left:" + leftPos + "%;top:" + (2 + Math.random() * 35) + "%;animation-delay:" + (Math.random() * 3) + "s;animation-duration:" + (2 + Math.random() * 3) + "s;";
+          sky.appendChild(star);
+        }
+      })();
 
       // === MATERIA LEVEL-UP ANIMATION ===
       var originalUpdateMateria = updateMateriaLevels;
