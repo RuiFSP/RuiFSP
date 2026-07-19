@@ -31,10 +31,10 @@
 | Project | Description | Stack |
 |---------|-------------|-------|
 | [**llmzoomcamp-2026-final-project**](https://github.com/RuiFSP/llmzoomcamp-2026-final-project) | Final project for LLM Zoomcamp 2026 — end-to-end LLM application and evaluation | Python · LLMs · RAG · Streamlit |
-| [**dezoomcamp-2026**](https://github.com/RuiFSP/dezoomcamp-2026-final-project) | Batch data platform from ingestion to dashboard using cloud-native orchestration | Python · Bruin · Terraform · GCS · BigQuery · Streamlit · Cloud Run |
+| [**dezoomcamp-2026-final-project**](https://github.com/RuiFSP/dezoomcamp-2026-final-project) | Batch data platform from ingestion to dashboard using cloud-native orchestration | Python · Bruin · Terraform · GCS · BigQuery · Streamlit · Cloud Run |
 | [**kedro-bike-demand-pipeline**](https://github.com/RuiFSP/kedro-bike-demand-pipeline) | Production-style ML pipeline forecasting next-hour bike demand — Kedro orchestration, CatBoost, live Dash dashboard, fully Dockerised | Python · Kedro · CatBoost · Dash · Docker Compose · uv |
-| [**mlops-2025**](https://github.com/RuiFSP/mlops-2025-final_project) | End-to-end MLOps lifecycle: tracking, packaging, deployment, monitoring | Python · FastAPI · MLflow · Prefect · PostgreSQL · Grafana · Docker · GitHub Actions |
-| [**mlzoomcamp2024-final**](https://github.com/RuiFSP/mlzoomcamp2024-final-project) | Production-style ML service with reproducible training and serving flow | Python · TensorFlow/Keras · Flask · Docker · AWS Elastic Beanstalk · Streamlit |
+| [**mlops-2025-final-project**](https://github.com/RuiFSP/mlops-2025-final_project) | End-to-end MLOps lifecycle: tracking, packaging, deployment, monitoring | Python · FastAPI · MLflow · Prefect · PostgreSQL · Grafana · Docker · GitHub Actions |
+| [**mlzoomcamp2024-final-project**](https://github.com/RuiFSP/mlzoomcamp2024-final-project) | Production-style ML service with reproducible training and serving flow | Python · TensorFlow/Keras · Flask · Docker · AWS Elastic Beanstalk · Streamlit |
 | [**mlzoomcamp2024-midterm**](https://github.com/RuiFSP/mlzoomcamp2024-midterm-project) | Cloud-deployed ML app with containerized training and inference pipeline | Python · scikit-learn · XGBoost · Docker · AWS Elastic Beanstalk · Streamlit |
 | [**llm_engineering**](https://github.com/RuiFSP/llm_engineering) | Applied LLM experiments with RAG pipelines and agent workflows | Jupyter Notebook · Python · Ollama · OpenAI APIs · Anthropic APIs · Google Colab |
 
