@@ -1617,17 +1617,37 @@
     }
     .sky-scene .moon {
       position: absolute;
-      top: 6%; left: 50%;
-      width: 28px; height: 28px;
-      margin-left: 80px;
+      top: 5%; left: 5%;
+      width: 36px; height: 36px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, #e8f0ff, #c4d8f0 60%, #8aacd4);
-      box-shadow: 0 0 30px rgba(196, 216, 240, 0.3), 0 0 60px rgba(196, 216, 240, 0.1);
+      box-shadow: 0 0 40px rgba(196, 216, 240, 0.4), 0 0 80px rgba(196, 216, 240, 0.15);
+      animation: moon-float 6s ease-in-out infinite;
+    }
+    @keyframes moon-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
     .sky-scene .moon-crater {
       position: absolute;
       border-radius: 50%;
       background: rgba(160, 180, 210, 0.4);
+    }
+    .sky-scene .comet {
+      position: absolute;
+      top: 8%;
+      right: -80px;
+      width: 8px; height: 8px;
+      image-rendering: pixelated;
+      animation: comet-fly 8s linear infinite;
+    }
+    @keyframes comet-fly {
+      0% { right: -80px; top: 8%; opacity: 0; }
+      5% { opacity: 1; }
+      30% { right: 60%; top: 18%; opacity: 1; }
+      50% { right: 80%; top: 25%; opacity: 0.7; }
+      70% { right: 95%; top: 32%; opacity: 0.3; }
+      100% { right: 120%; top: 45%; opacity: 0; }
     }
     .sky-scene .side-star {
       position: absolute;
@@ -1688,12 +1708,12 @@
   <div class="mako-glow"></div>
   <div class="sky-scene" id="sky-scene">
     <div class="moon" id="moon">
-      <div class="moon-crater" style="top:6px;left:6px;width:6px;height:5px;"></div>
-      <div class="moon-crater" style="top:14px;left:14px;width:4px;height:4px;"></div>
-      <div class="moon-crater" style="top:8px;left:18px;width:3px;height:3px;"></div>
+      <div class="moon-crater" style="top:8px;left:8px;width:8px;height:6px;"></div>
+      <div class="moon-crater" style="top:18px;left:18px;width:5px;height:5px;"></div>
+      <div class="moon-crater" style="top:10px;left:24px;width:4px;height:4px;"></div>
     </div>
+    <img class="comet" src="assets/sprites/sprite-crystal.svg" alt="" />
   </div>
-  <!-- scene removed -->
 
   <main class="hud">
     <header class="topbar">
