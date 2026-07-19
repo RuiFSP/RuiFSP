@@ -1616,28 +1616,29 @@
       top: 12%;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.4;
+      opacity: 0.75;
       image-rendering: pixelated;
       transition: opacity 0.3s ease;
+      filter: drop-shadow(0 0 6px rgba(116,255,152,0.15));
     }
     .scene-side.left {
-      left: 4px;
-      width: 80px;
+      left: 6px;
+      width: 96px;
       height: auto;
       animation: scene-fade-in 1.5s ease-out;
     }
     .scene-side.right {
-      right: 4px;
-      width: 60px;
+      right: 6px;
+      width: 72px;
       height: auto;
       animation: scene-fade-in 1.5s ease-out 0.3s both;
     }
     @keyframes scene-fade-in {
       from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 0.4; transform: translateY(0); }
+      to { opacity: 0.75; transform: translateY(0); }
     }
-    .scene-side.left:hover { opacity: 0.7; }
-    .scene-side.right:hover { opacity: 0.7; }
+    .scene-side.left:hover { opacity: 1; }
+    .scene-side.right:hover { opacity: 1; }
     @media (max-width: 1100px) {
       .scene-side { display: none; }
       .sky-scene .moon { display: none; }
