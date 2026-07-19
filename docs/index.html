@@ -1813,7 +1813,7 @@
           <p>Save your progress — download my resume or connect on LinkedIn.</p>
         </div>
         <div class="save-point-actions">
-          <a class="save-btn primary" href="#" id="resume-btn" target="_blank" rel="noreferrer">&#x1F4BE; Download CV</a>
+          <a class="save-btn primary" href="https://www.linkedin.com/in/ruifspinto" id="resume-btn" target="_blank" rel="noreferrer">&#x1F4BE; Download CV</a>
           <a class="save-btn secondary" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer">&#x1F4E1; Connect</a>
         </div>
       </section>
@@ -2324,6 +2324,39 @@
         return res.json();
       }
 
+      // === MATERIA LEVELS ===
+      function updateMateriaLevels(repos) {
+        var ownRepos = repos.filter(function (r) { return !r.fork; });
+        var names = ownRepos.map(function (r) { return r.name.toLowerCase(); });
+        var descs = ownRepos.map(function (r) { return (r.description || "").toLowerCase(); });
+        var langs = ownRepos.map(function (r) { return (r.language || "").toLowerCase(); });
+        var combined = names.map(function (n, i) { return n + " " + descs[i] + " " + langs[i]; });
+
+        function scoreFor(keywords) {
+          var base = 30;
+          var count = combined.filter(function (c) { return keywords.some(function (k) { return c.indexOf(k) !== -1; }); }).length;
+          var sizeScore = Math.min(30, Math.floor(ownRepos.reduce(function (a, r) { return a + (r.size || 0); }, 0) / 200));
+          return Math.min(99, base + count * 8 + sizeScore);
+        }
+
+        var levels = {
+          Python: scoreFor(["python", "flask", "fastapi", "django", "pandas", "numpy", "scikit", "tensorflow", "pytorch"]),
+          MLOps: scoreFor(["mlops", "deploy", "pipeline", "serving", "monitor", "ci/cd", "mlflow", "prefect"]),
+          LLM: scoreFor(["llm", "rag", "openai", "anthropic", "ollama", "langchain", "notebook", "agent"]),
+          Cloud: scoreFor(["gcp", "cloud", "terraform", "docker", "bigquery", "aws", "cloud run", "gcs"]),
+          Data: scoreFor(["data", "etl", "pipeline", "analytics", "dashboard", "warehouse", "bruin", "streamlit"]),
+          SQL: scoreFor(["sql", "postgres", "bigquery", "query", "database", "warehouse", "analytics"])
+        };
+
+        var orbs = document.querySelectorAll(".materia-orb");
+        orbs.forEach(function (orb) {
+          var skill = orb.getAttribute("data-skill");
+          var lvl = levels[skill] || 50;
+          var lvlEl = orb.querySelector(".materia-orb-lvl");
+          if (lvlEl) lvlEl.textContent = "Lv." + lvl;
+        });
+      }
+
       // === ACHIEVEMENTS ===
       function updateAchievements(repos) {
         var badges = document.querySelectorAll(".achievement-badge");
@@ -2404,6 +2437,9 @@
 
           // Side quests
           renderSideQuests(repos);
+
+          // Materia levels
+          updateMateriaLevels(repos);
 
           // Achievements
           updateAchievements(repos);
