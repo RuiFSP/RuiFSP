@@ -1555,7 +1555,7 @@
     }
 
     /* === CITYSCAPE === */
-    .cityscape { position: fixed; bottom: 0; left: 0; right: 0; height: 140px; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.35; }
+    .cityscape { position: fixed; bottom: 0; left: 0; right: 0; height: 200px; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.5; }
     .cityscape .building {
       position: absolute; bottom: 0;
       background: linear-gradient(180deg, #0c1f4a, #071634);
@@ -1646,10 +1646,10 @@
     }
     .mako-glow {
       position: fixed;
-      bottom: -40px; left: 0; right: 0;
-      height: 200px;
+      bottom: -60px; left: 0; right: 0;
+      height: 280px;
       pointer-events: none; z-index: 1;
-      background: linear-gradient(0deg, rgba(116,255,152,0.06) 0%, rgba(116,255,152,0.03) 40%, transparent 100%);
+      background: linear-gradient(0deg, rgba(116,255,152,0.08) 0%, rgba(116,255,152,0.03) 40%, transparent 100%);
       animation: mako-pulse 4s ease-in-out infinite;
     }
     @keyframes mako-pulse {
@@ -1661,26 +1661,7 @@
       pointer-events: none; z-index: 2;
       background: radial-gradient(ellipse at 50% 60%, transparent 50%, rgba(2, 9, 26, 0.55) 85%, rgba(2, 9, 26, 0.85) 100%);
     }
-    .scene-side {
-      position: fixed;
-      top: 8%;
-      left: 8px;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.65;
-      image-rendering: pixelated;
-      transition: opacity 0.4s ease;
-      width: 100px;
-      height: auto;
-      animation: scene-fade-in 1.8s ease-out;
-    }
-    @keyframes scene-fade-in {
-      from { opacity: 0; transform: translateX(-10px); }
-      to { opacity: 0.65; transform: translateX(0); }
-    }
-    .scene-side:hover { opacity: 1; }
     @media (max-width: 1100px) {
-      .scene-side { display: none; }
       .sky-scene .moon { display: none; }
     }
 
@@ -1712,7 +1693,7 @@
       <div class="moon-crater" style="top:8px;left:18px;width:3px;height:3px;"></div>
     </div>
   </div>
-  <img class="scene-side" src="assets/sprites/sprite-scene-midgar.svg" alt="" aria-hidden="true" />
+  <!-- scene removed -->
 
   <main class="hud">
     <header class="topbar">
@@ -2881,71 +2862,62 @@
         city.className = "cityscape";
         document.body.appendChild(city);
 
-        // Build enough buildings to span viewport width + generous off-screen margins
-        var totalWidth = Math.max(window.innerWidth + 120, 1400);
-        var x = -60;
-        while (x < totalWidth) {
-          var w = 10 + Math.floor(Math.random() * 38);
-          // Vary heights: mix of short, medium, and tall skyscrapers
-          var tier = Math.random();
-          var h;
-          if (tier < 0.25) h = 20 + Math.floor(Math.random() * 30);   // short
-          else if (tier < 0.6) h = 45 + Math.floor(Math.random() * 40); // medium
-          else h = 80 + Math.floor(Math.random() * 55);                  // tall
+        function buildSkyline(container, startX) {
+          var totalWidth = Math.max(window.innerWidth + 200, 1600);
+          var x = startX;
+          while (x < totalWidth) {
+            var w = 12 + Math.floor(Math.random() * 40);
+            var tier = Math.random();
+            var h;
+            if (tier < 0.2) h = 30 + Math.floor(Math.random() * 40);
+            else if (tier < 0.55) h = 60 + Math.floor(Math.random() * 60);
+            else h = 110 + Math.floor(Math.random() * 80);
 
-          var b = document.createElement("div");
-          b.className = "building";
-          b.style.cssText = "left:" + x + "px;width:" + w + "px;height:" + h + "px;";
-          city.appendChild(b);
+            var b = document.createElement("div");
+            b.className = "building";
+            b.style.cssText = "left:" + x + "px;width:" + w + "px;height:" + h + "px;";
+            container.appendChild(b);
 
-          // Antenna on tall buildings
-          if (h > 90 && Math.random() > 0.5) {
-            var ant = document.createElement("div");
-            var aw = 2;
-            var ah = 6 + Math.floor(Math.random() * 10);
-            ant.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 1) + "px;bottom:" + h + "px;width:" + aw + "px;height:" + ah + "px;background:#0a1e4a;";
-            city.appendChild(ant);
-            var tip = document.createElement("div");
-            tip.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 2) + "px;bottom:" + (h + ah) + "px;width:4px;height:2px;background:#ff6f61;box-shadow:0 0 6px rgba(255,111,97,0.8);animation:win-blink 1.5s steps(1,end) infinite;";
-            city.appendChild(tip);
-          }
-
-          x += w + 1 + Math.floor(Math.random() * 3);
-
-          // Windows
-          var numWins = 2 + Math.floor(Math.random() * 5);
-          for (var j = 0; j < numWins; j++) {
-            var wx = 3 + Math.floor(Math.random() * Math.max(1, w - 9));
-            var wy = 5 + Math.floor(Math.random() * Math.max(1, h - 14));
-            var win = document.createElement("div");
-            var lit = Math.random() > 0.4;
-            win.className = "window" + (lit ? " lit" : "");
-            win.style.cssText = "left:" + (x - w + wx) + "px;bottom:" + wy + "px;";
-            if (lit) {
-              win.style.animation = "win-blink " + (2 + Math.random() * 5) + "s steps(1, end) infinite";
-              win.style.animationDelay = (Math.random() * 4) + "s";
+            if (h > 100 && Math.random() > 0.4) {
+              var ant = document.createElement("div");
+              var ah = 8 + Math.floor(Math.random() * 14);
+              ant.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 1) + "px;bottom:" + h + "px;width:2px;height:" + ah + "px;background:#0a1e4a;";
+              container.appendChild(ant);
+              var tip = document.createElement("div");
+              tip.style.cssText = "position:absolute;left:" + (x + Math.floor(w / 2) - 2) + "px;bottom:" + (h + ah) + "px;width:4px;height:2px;background:#ff6f61;box-shadow:0 0 6px rgba(255,111,97,0.8);animation:win-blink 1.5s steps(1,end) infinite;";
+              container.appendChild(tip);
             }
-            city.appendChild(win);
+
+            x += w + 1 + Math.floor(Math.random() * 3);
+
+            var numWins = 3 + Math.floor(Math.random() * 6);
+            for (var j = 0; j < numWins; j++) {
+              var wx = 3 + Math.floor(Math.random() * Math.max(1, w - 9));
+              var wy = 5 + Math.floor(Math.random() * Math.max(1, h - 14));
+              var win = document.createElement("div");
+              var lit = Math.random() > 0.35;
+              win.className = "window" + (lit ? " lit" : "");
+              win.style.cssText = "left:" + (x - w + wx) + "px;bottom:" + wy + "px;";
+              if (lit) {
+                win.style.animation = "win-blink " + (2 + Math.random() * 5) + "s steps(1, end) infinite";
+                win.style.animationDelay = (Math.random() * 4) + "s";
+              }
+              container.appendChild(win);
+            }
           }
         }
 
-        // Rebuild on resize for responsive cityscape
+        buildSkyline(city, -100);
+
         var resizeTimer;
         window.addEventListener("resize", function () {
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(function () {
             city.innerHTML = "";
-            var newW = Math.max(window.innerWidth + 120, 1400);
-            var nx = -60;
-            while (nx < newW) {
-              var nw = 10 + Math.floor(Math.random() * 38);
-              var nt = Math.random();
-              var nh;
-              if (nt < 0.25) nh = 20 + Math.floor(Math.random() * 30);
-              else if (nt < 0.6) nh = 45 + Math.floor(Math.random() * 40);
-              else nh = 80 + Math.floor(Math.random() * 55);
-              var nb = document.createElement("div");
-              nb.className = "building";
+            buildSkyline(city, -100);
+          }, 400);
+        });
+      }
               nb.style.cssText = "left:" + nx + "px;width:" + nw + "px;height:" + nh + "px;";
               city.appendChild(nb);
               nx += nw + 1 + Math.floor(Math.random() * 3);
@@ -2973,7 +2945,7 @@
       (function () {
         var sky = document.getElementById("sky-scene");
         if (!sky) return;
-        var starCount = 45;
+        var starCount = 90;
         for (var i = 0; i < starCount; i++) {
           var star = document.createElement("div");
           var isLarge = Math.random() > 0.85;
