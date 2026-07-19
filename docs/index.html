@@ -3027,5 +3027,16 @@
       } catch (e) { console.warn("Init error:", e); dismissLoading(); }
     })();
   </script>
+  <script>
+    (function(){
+      var timer = setTimeout(function() {
+        var ls = document.getElementById("loading-screen");
+        if (ls && ls.style.display !== "none" && !ls.classList.contains("done")) {
+          ls.classList.add("done");
+          setTimeout(function(){ ls.style.display = "none"; }, 600);
+        }
+      }, 4000);
+    })();
+  </script>
 </body>
 </html>
