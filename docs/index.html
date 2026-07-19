@@ -1554,7 +1554,7 @@
     }
 
     /* === CITYSCAPE === */
-    .cityscape { position: fixed; bottom: 0; left: 0; right: 0; height: 320px; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.5; }
+    .cityscape { position: fixed; bottom: 0; left: 0; right: 0; height: 200px; pointer-events: none; z-index: 0; overflow: hidden; opacity: 0.5; }
     .cityscape .building {
       position: absolute; bottom: 0;
       background: linear-gradient(180deg, #0c1f4a, #071634);
@@ -2867,12 +2867,12 @@
           var city = document.createElement("div");
           city.className = "cityscape";
           document.body.appendChild(city);
-          var totalW = Math.max(window.innerWidth + 400, 2400);
+          var totalW = Math.max(window.innerWidth + 200, 1600);
           var x = -100;
           while (x < totalW) {
             var w = 12 + Math.floor(Math.random() * 40);
             var tier = Math.random();
-            var h = tier < 0.2 ? 50 + Math.floor(Math.random() * 50) : tier < 0.55 ? 90 + Math.floor(Math.random() * 70) : 150 + Math.floor(Math.random() * 100);
+            var h = tier < 0.2 ? 30 + Math.floor(Math.random() * 40) : tier < 0.55 ? 60 + Math.floor(Math.random() * 60) : 110 + Math.floor(Math.random() * 80);
             var b = document.createElement("div");
             b.className = "building";
             b.style.cssText = "left:" + x + "px;width:" + w + "px;height:" + h + "px;";
