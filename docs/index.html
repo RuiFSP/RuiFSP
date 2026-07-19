@@ -1634,19 +1634,19 @@
     }
     .sky-scene .comet {
       position: absolute;
-      top: 8%;
-      right: -100px;
+      top: 6%;
+      left: -100px;
       width: 60px; height: auto;
       image-rendering: pixelated;
       animation: comet-fly 7s linear infinite;
     }
     @keyframes comet-fly {
-      0% { right: -80px; top: 6%; opacity: 0; }
+      0% { left: -80px; top: 6%; opacity: 0; }
       4% { opacity: 1; }
-      25% { right: 50%; top: 14%; opacity: 1; }
-      45% { right: 75%; top: 20%; opacity: 0.7; }
-      65% { right: 92%; top: 28%; opacity: 0.4; }
-      100% { right: 120%; top: 40%; opacity: 0; }
+      25% { left: 45%; top: 14%; opacity: 1; }
+      45% { left: 65%; top: 20%; opacity: 0.7; }
+      65% { left: 80%; top: 28%; opacity: 0.4; }
+      100% { left: 110%; top: 38%; opacity: 0; }
     }
     .sky-scene .side-star {
       position: absolute;
