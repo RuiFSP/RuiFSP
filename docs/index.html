@@ -1670,20 +1670,20 @@
     }
     .scene-side {
       position: fixed;
-      top: 10%;
-      left: 6px;
+      top: 8%;
+      left: 8px;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.7;
+      opacity: 0.65;
       image-rendering: pixelated;
       transition: opacity 0.4s ease;
-      width: 110px;
+      width: 100px;
       height: auto;
       animation: scene-fade-in 1.8s ease-out;
     }
     @keyframes scene-fade-in {
       from { opacity: 0; transform: translateX(-10px); }
-      to { opacity: 0.7; transform: translateX(0); }
+      to { opacity: 0.65; transform: translateX(0); }
     }
     .scene-side:hover { opacity: 1; }
     @media (max-width: 1100px) {

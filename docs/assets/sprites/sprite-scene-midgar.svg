@@ -1,142 +1,112 @@
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 200" shape-rendering="crispEdges">
-    <rect width="48" height="200" fill="#02091a"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 200" shape-rendering="crispEdges">
+    <rect width="28" height="200" fill="none"/>
 
-    <!-- Night sky gradient -->
-    <rect x="0" y="0" width="48" height="80" fill="#071634"/>
-    <rect x="0" y="0" width="48" height="40" fill="#0a1e4a"/>
+    <!-- Sky -->
+    <rect x="0" y="0" width="28" height="40" fill="#071634"/>
+    <rect x="0" y="0" width="28" height="20" fill="#0a1e4a"/>
 
     <!-- Stars -->
-    <rect x="4" y="6" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="18" y="3" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="34" y="10" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="10" y="18" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="42" y="5" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="26" y="15" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="5" y="25" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="38" y="22" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="15" y="30" width="2" height="2" fill="#d9f1ff"/>
-    <rect x="30" y="28" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="3" y="4" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="12" y="2" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="22" y="6" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="7" y="12" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="18" y="14" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="5" y="22" width="2" height="2" fill="#d9f1ff"/>
+    <rect x="24" y="20" width="2" height="2" fill="#d9f1ff"/>
 
-    <!-- Distant towers (background) -->
-    <rect x="28" y="50" width="4" height="30" fill="#0c1f4a"/>
-    <rect x="34" y="40" width="3" height="40" fill="#0c1f4a"/>
-    <rect x="39" y="55" width="4" height="25" fill="#0c1f4a"/>
-    <rect x="2" y="45" width="4" height="35" fill="#0c1f4a"/>
-    <rect x="8" y="55" width="3" height="25" fill="#0c1f4a"/>
+    <!-- Distant smoke/steam (background haze) -->
+    <rect x="0" y="35" width="28" height="5" fill="#0c1f4a"/>
+    <rect x="0" y="38" width="28" height="10" fill="#071634"/>
 
-    <!-- Distant windows -->
-    <rect x="29" y="55" width="2" height="2" fill="#1a3d6e"/>
-    <rect x="29" y="62" width="2" height="2" fill="#f7cf67"/>
-    <rect x="35" y="48" width="1" height="2" fill="#1a3d6e"/>
-    <rect x="35" y="55" width="1" height="2" fill="#1a3d6e"/>
-    <rect x="3" y="52" width="2" height="2" fill="#1a3d6e"/>
-    <rect x="3" y="60" width="2" height="2" fill="#f7cf67"/>
+    <!-- Main Reactor Tower - Central Pillar -->
+    <rect x="10" y="30" width="8" height="150" fill="#0a1e4a"/>
+    <rect x="11" y="30" width="6" height="150" fill="#0c2a4a"/>
+    <rect x="9" y="30" width="10" height="150" fill="none" stroke="#1a3d6e" stroke-width="1"/>
 
-    <!-- Mako Reactor - central tower base -->
-    <rect x="20" y="50" width="8" height="130" fill="#0a1e4a"/>
-    <rect x="21" y="50" width="6" height="130" fill="#0c2a4a"/>
-    <rect x="19" y="80" width="10" height="2" fill="#1a3d6e"/>
-    <rect x="19" y="110" width="10" height="2" fill="#1a3d6e"/>
-    <rect x="19" y="140" width="10" height="2" fill="#1a3d6e"/>
+    <!-- Tower horizontal bands -->
+    <rect x="9" y="50" width="10" height="2" fill="#2b5ea3"/>
+    <rect x="9" y="75" width="10" height="2" fill="#2b5ea3"/>
+    <rect x="9" y="100" width="10" height="2" fill="#2b5ea3"/>
+    <rect x="9" y="125" width="10" height="2" fill="#2b5ea3"/>
+    <rect x="9" y="150" width="10" height="2" fill="#2b5ea3"/>
 
-    <!-- Reactor pipes -->
-    <rect x="17" y="55" width="3" height="2" fill="#2b5ea3"/>
-    <rect x="28" y="55" width="3" height="2" fill="#2b5ea3"/>
-    <rect x="17" y="85" width="3" height="2" fill="#2b5ea3"/>
-    <rect x="28" y="85" width="3" height="2" fill="#2b5ea3"/>
-    <rect x="17" y="115" width="3" height="2" fill="#2b5ea3"/>
-    <rect x="28" y="115" width="3" height="2" fill="#2b5ea3"/>
+    <!-- Tower side pipes -->
+    <rect x="7" y="55" width="2" height="20" fill="#4aa7dd"/>
+    <rect x="19" y="55" width="2" height="20" fill="#4aa7dd"/>
+    <rect x="7" y="80" width="2" height="20" fill="#4aa7dd"/>
+    <rect x="19" y="80" width="2" height="20" fill="#4aa7dd"/>
+    <rect x="7" y="105" width="2" height="20" fill="#4aa7dd"/>
+    <rect x="19" y="105" width="2" height="20" fill="#4aa7dd"/>
 
-    <!-- Vertical pipe lines -->
-    <rect x="17" y="57" width="2" height="28" fill="#2b5ea3"/>
-    <rect x="29" y="57" width="2" height="28" fill="#2b5ea3"/>
-    <rect x="17" y="87" width="2" height="28" fill="#2b5ea3"/>
-    <rect x="29" y="87" width="2" height="28" fill="#2b5ea3"/>
+    <!-- Pipe cross connectors -->
+    <rect x="9" y="65" width="2" height="2" fill="#4aa7dd"/>
+    <rect x="17" y="65" width="2" height="2" fill="#4aa7dd"/>
+    <rect x="9" y="90" width="2" height="2" fill="#4aa7dd"/>
+    <rect x="17" y="90" width="2" height="2" fill="#4aa7dd"/>
+    <rect x="9" y="115" width="2" height="2" fill="#4aa7dd"/>
+    <rect x="17" y="115" width="2" height="2" fill="#4aa7dd"/>
 
-    <!-- Mako Crystal / Reactor Core (top of tower) -->
-    <rect x="21" y="38" width="6" height="12" fill="#74ff98"/>
-    <rect x="22" y="38" width="4" height="12" fill="#a0ffb8"/>
-    <rect x="23" y="36" width="2" height="2" fill="#74ff98"/>
-    <rect x="23" y="50" width="2" height="2" fill="#74ff98"/>
-    <rect x="20" y="37" width="8" height="14" fill="none" stroke="#74ff98" stroke-width="1"/>
+    <!-- Reactor Core / Mako Crystal (top of tower) -->
+    <rect x="10" y="18" width="8" height="12" fill="#74ff98"/>
+    <rect x="11" y="18" width="6" height="12" fill="#a0ffb8"/>
+    <rect x="12" y="16" width="4" height="4" fill="#74ff98"/>
+    <rect x="12" y="30" width="4" height="2" fill="#74ff98"/>
+    <rect x="9" y="17" width="10" height="14" fill="none" stroke="#74ff98" stroke-width="1"/>
+    <rect x="13" y="20" width="2" height="8" fill="#d9ffe7"/>
 
-    <!-- Mako Crystal inner glow -->
-    <rect x="22" y="40" width="4" height="8" fill="#d9ffe7"/>
+    <!-- Mako energy glow radiating -->
+    <rect x="6" y="21" width="3" height="2" fill="#4ae07a"/>
+    <rect x="19" y="21" width="3" height="2" fill="#4ae07a"/>
+    <rect x="4" y="25" width="2" height="2" fill="#2fb85e"/>
+    <rect x="22" y="25" width="2" height="2" fill="#2fb85e"/>
+    <rect x="6" y="28" width="3" height="2" fill="#4ae07a"/>
+    <rect x="19" y="28" width="3" height="2" fill="#4ae07a"/>
 
-    <!-- Mako glow beams radiating from crystal -->
-    <rect x="16" y="42" width="3" height="2" fill="#74ff98"/>
-    <rect x="29" y="42" width="3" height="2" fill="#74ff98"/>
-    <rect x="29" y="46" width="3" height="2" fill="#74ff98"/>
-    <rect x="16" y="46" width="3" height="2" fill="#74ff98"/>
+    <!-- Small adjacent buildings (left) -->
+    <rect x="2" y="80" width="5" height="100" fill="#071634"/>
+    <rect x="2" y="80" width="5" height="100" fill="#0a1e4a"/>
+    <rect x="2" y="98" width="2" height="2" fill="#f7cf67"/>
+    <rect x="4" y="98" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="2" y="106" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="4" y="106" width="2" height="2" fill="#f7cf67"/>
+    <rect x="2" y="114" width="2" height="2" fill="#f7cf67"/>
+    <rect x="4" y="114" width="2" height="2" fill="#f7cf67"/>
+    <rect x="2" y="122" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="4" y="122" width="2" height="2" fill="#f7cf67"/>
 
-    <!-- Foreground buildings (left cluster) -->
-    <rect x="1" y="80" width="7" height="100" fill="#071634"/>
-    <rect x="1" y="80" width="7" height="100" fill="#0a1e4a"/>
-    <rect x="8" y="95" width="5" height="85" fill="#071634"/>
-    <rect x="8" y="95" width="5" height="85" fill="#0c1f4a"/>
+    <!-- Small adjacent buildings (right) -->
+    <rect x="21" y="70" width="5" height="110" fill="#071634"/>
+    <rect x="21" y="70" width="5" height="110" fill="#0a1e4a"/>
+    <rect x="22" y="82" width="2" height="2" fill="#f7cf67"/>
+    <rect x="24" y="82" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="22" y="90" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="24" y="90" width="2" height="2" fill="#f7cf67"/>
+    <rect x="22" y="98" width="2" height="2" fill="#f7cf67"/>
+    <rect x="24" y="98" width="2" height="2" fill="#f7cf67"/>
+    <rect x="22" y="106" width="2" height="2" fill="#f7cf67"/>
+    <rect x="24" y="106" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="22" y="114" width="2" height="2" fill="#1a3d6e"/>
+    <rect x="24" y="114" width="2" height="2" fill="#f7cf67"/>
 
-    <!-- Foreground buildings windows (left) -->
-    <rect x="2" y="88" width="2" height="3" fill="#f7cf67"/>
-    <rect x="5" y="88" width="2" height="3" fill="#f7cf67"/>
-    <rect x="2" y="96" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="5" y="96" width="2" height="3" fill="#f7cf67"/>
-    <rect x="2" y="104" width="2" height="3" fill="#f7cf67"/>
-    <rect x="5" y="104" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="2" y="112" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="5" y="112" width="2" height="3" fill="#f7cf67"/>
-    <rect x="2" y="120" width="2" height="3" fill="#f7cf67"/>
-    <rect x="5" y="120" width="2" height="3" fill="#f7cf67"/>
-    <rect x="2" y="128" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="5" y="128" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="2" y="136" width="2" height="3" fill="#f7cf67"/>
-    <rect x="5" y="136" width="2" height="3" fill="#f7cf67"/>
-
-    <!-- Foreground buildings (right cluster) -->
-    <rect x="31" y="70" width="6" height="110" fill="#071634"/>
-    <rect x="31" y="70" width="6" height="110" fill="#0a1e4a"/>
-    <rect x="38" y="90" width="9" height="90" fill="#071634"/>
-    <rect x="38" y="90" width="9" height="90" fill="#0c1f4a"/>
-
-    <!-- Foreground buildings windows (right) -->
-    <rect x="32" y="78" width="2" height="3" fill="#f7cf67"/>
-    <rect x="35" y="78" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="32" y="86" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="35" y="86" width="2" height="3" fill="#f7cf67"/>
-    <rect x="32" y="94" width="2" height="3" fill="#f7cf67"/>
-    <rect x="35" y="94" width="2" height="3" fill="#f7cf67"/>
-    <rect x="32" y="102" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="35" y="102" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="32" y="110" width="2" height="3" fill="#f7cf67"/>
-    <rect x="35" y="110" width="2" height="3" fill="#f7cf67"/>
-    <rect x="32" y="118" width="2" height="3" fill="#f7cf67"/>
-    <rect x="35" y="118" width="2" height="3" fill="#1a3d6e"/>
-    <rect x="39" y="98" width="3" height="3" fill="#f7cf67"/>
-    <rect x="44" y="98" width="3" height="3" fill="#1a3d6e"/>
-    <rect x="39" y="106" width="3" height="3" fill="#1a3d6e"/>
-    <rect x="44" y="106" width="3" height="3" fill="#f7cf67"/>
-    <rect x="39" y="114" width="3" height="3" fill="#f7cf67"/>
-    <rect x="44" y="114" width="3" height="3" fill="#f7cf67"/>
-    <rect x="39" y="122" width="3" height="3" fill="#1a3d6e"/>
-    <rect x="44" y="122" width="3" height="3" fill="#1a3d6e"/>
-
-    <!-- Mako pool at base of reactor -->
-    <rect x="18" y="175" width="12" height="4" fill="#74ff98"/>
-    <rect x="19" y="175" width="10" height="4" fill="#a0ffb8"/>
-    <rect x="17" y="174" width="14" height="6" fill="none" stroke="#74ff98" stroke-width="1"/>
-    <rect x="20" y="177" width="8" height="2" fill="#d9ffe7"/>
+    <!-- Mako pool at base -->
+    <rect x="7" y="175" width="14" height="5" fill="#74ff98"/>
+    <rect x="8" y="175" width="12" height="5" fill="#a0ffb8"/>
+    <rect x="6" y="174" width="16" height="7" fill="none" stroke="#74ff98" stroke-width="1"/>
+    <rect x="10" y="177" width="8" height="3" fill="#d9ffe7"/>
 
     <!-- Mako glow spreading along ground -->
-    <rect x="10" y="178" width="8" height="2" fill="#4ae07a"/>
-    <rect x="30" y="178" width="8" height="2" fill="#4ae07a"/>
-    <rect x="6" y="180" width="4" height="2" fill="#2fb85e"/>
-    <rect x="38" y="180" width="4" height="2" fill="#2fb85e"/>
+    <rect x="3" y="178" width="4" height="2" fill="#4ae07a"/>
+    <rect x="21" y="178" width="4" height="2" fill="#4ae07a"/>
+    <rect x="1" y="180" width="2" height="2" fill="#2fb85e"/>
+    <rect x="25" y="180" width="2" height="2" fill="#2fb85e"/>
 
     <!-- Ground -->
-    <rect x="0" y="180" width="48" height="20" fill="#02091a"/>
-    <rect x="0" y="180" width="48" height="2" fill="#0a1e4a"/>
-    <rect x="0" y="196" width="48" height="4" fill="#010612"/>
+    <rect x="0" y="180" width="28" height="20" fill="#02091a"/>
+    <rect x="0" y="180" width="28" height="2" fill="#0a1e4a"/>
+    <rect x="0" y="196" width="28" height="4" fill="#010612"/>
 
-    <!-- Searchlights -->
-    <rect x="5" y="70" width="1" height="15" fill="#c597ff"/>
-    <rect x="42" y="60" width="1" height="20" fill="#c597ff"/>
+    <!-- Ground-level lights -->
+    <rect x="4" y="182" width="2" height="2" fill="#f7cf67"/>
+    <rect x="14" y="182" width="2" height="2" fill="#f7cf67"/>
+    <rect x="22" y="182" width="2" height="2" fill="#f7cf67"/>
   </svg>
