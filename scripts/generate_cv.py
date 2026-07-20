@@ -156,19 +156,22 @@ cv.section_title("Featured Projects")
 
 projects = [
     ("LLM RAG Pipeline (Portuguese Food & Wine Guide)",
-     "Qdrant, Flask, PostgreSQL, Grafana, GPT-4o, Docker Compose  |  github.com/RuiFSP/llmzoomcamp-2026-final-project"),
+     "Qdrant, Flask, PostgreSQL, Grafana, GPT-4o, Docker Compose",
+     "https://github.com/RuiFSP/llmzoomcamp-2026-final-project"),
     ("Data Engineering Platform (GitHub Analytics)",
-     "Terraform, GCS, BigQuery, Bruin, Streamlit, Cloud Run, CI/CD  |  github.com/RuiFSP/dezoomcamp-2026-final-project"),
+     "Terraform, GCS, BigQuery, Bruin, Streamlit, Cloud Run, CI/CD",
+     "https://github.com/RuiFSP/dezoomcamp-2026-final-project"),
     ("MLOps Pipeline (Premier League Prediction, 61.8% accuracy)",
-     "FastAPI, MLflow, Prefect, PostgreSQL, Grafana, Docker, GitHub Actions  |  github.com/RuiFSP/mlops-2025-final_project"),
+     "FastAPI, MLflow, Prefect, PostgreSQL, Grafana, Docker, GitHub Actions",
+     "https://github.com/RuiFSP/mlops-2025-final_project"),
 ]
-for title, subtitle in projects:
+for title, stack, url in projects:
     cv.set_font("Helvetica", "B", 9)
     cv.set_text_color(33, 33, 33)
     cv.cell(cv.page_w, 4.5, title, new_x="LMARGIN", new_y="NEXT")
     cv.set_font("Helvetica", "I", 8)
     cv.set_text_color(100, 100, 100)
-    cv.cell(cv.page_w, 4.5, subtitle, new_x="LMARGIN", new_y="NEXT")
+    cv.cell(cv.page_w, 4.5, stack + " | " + url, new_x="LMARGIN", new_y="NEXT", link=url)
     cv.ln(1)
 
 cv.ln(1.5)
@@ -192,7 +195,11 @@ for title, detail in edu:
     cv.set_text_color(100, 100, 100)
     cv.cell(cv.page_w - 65.5, 5, detail, new_x="LMARGIN", new_y="NEXT")
 
-cv.ln(3)
+cv.ln(2)
+cv.set_font("Helvetica", "", 7.5)
+cv.set_text_color(120, 120, 120)
+cv.cell(cv.page_w, 4, "Languages: Portuguese (native)  |  English (full professional)", new_x="LMARGIN", new_y="NEXT")
+cv.ln(2)
 cv.set_font("Helvetica", "I", 7)
 cv.set_text_color(160, 160, 160)
 cv.cell(cv.page_w, 4, "Full career history available on LinkedIn", align="C", new_x="LMARGIN", new_y="NEXT")
