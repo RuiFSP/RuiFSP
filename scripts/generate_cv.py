@@ -20,10 +20,10 @@ class CV(FPDF):
     def section_title(self, title):
         self.set_font("Helvetica", "B", 10)
         self.set_text_color(33, 33, 33)
-        self.cell(self.page_w, 5.5, title.upper(), new_x="LMARGIN", new_y="NEXT")
+        self.cell(self.page_w, 6, title.upper(), new_x="LMARGIN", new_y="NEXT")
         self.set_draw_color(33, 33, 33)
         self.line(self.l_margin, self.get_y(), 210 - self.r_margin, self.get_y())
-        self.ln(2)
+        self.ln(2.5)
 
     def bullet(self, text, indent=3):
         self.set_x(self.l_margin + indent)
@@ -37,7 +37,7 @@ class CV(FPDF):
         style = "B" if bold else ""
         self.set_font("Helvetica", style, size)
         self.set_text_color(60, 60, 60)
-        self.multi_cell(self.page_w, 4.5, text)
+        self.multi_cell(self.page_w, 4.8, text)
 
 
 cv = CV()
@@ -49,18 +49,18 @@ cv.cell(cv.page_w, 8, "RUI PINTO", new_x="LMARGIN", new_y="NEXT")
 
 cv.set_font("Helvetica", "", 10)
 cv.set_text_color(80, 80, 80)
-cv.cell(cv.page_w, 5, "Data Scientist & Machine Learning Engineer", new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w, 5.5, "Data Scientist & Machine Learning Engineer", new_x="LMARGIN", new_y="NEXT")
 
 cv.set_font("Helvetica", "", 8)
 cv.set_text_color(110, 110, 110)
-cv.cell(cv.page_w, 4.5, "Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w, 5, "Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
 
-cv.ln(1.5)
+cv.ln(2)
 
 cv.set_font("Helvetica", "", 7.5)
 cv.set_text_color(50, 110, 200)
 links = "github.com/RuiFSP  |  linkedin.com/in/ruifspinto  |  ruifsp.github.io/RuiFSP"
-cv.cell(cv.page_w, 4.5, links, new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w, 5, links, new_x="LMARGIN", new_y="NEXT")
 cv.set_text_color(60, 60, 60)
 
 cv.ln(3.5)
@@ -68,23 +68,22 @@ cv.ln(3.5)
 # -- PROFESSIONAL SUMMARY --
 cv.section_title("Professional Summary")
 cv.body_text(
-    "Machine Learning Engineer with 2+ years designing and deploying production ML systems "
-    "across retail, finance, public sector, and automotive. Expertise in MLOps pipelines, "
-    "LLM and RAG applications, cloud-native data platforms (AWS, GCP, Azure), and forecasting "
-    "at scale. Strong engineering and consulting background with a Lean Six Sigma Black Belt "
-    "and MBA - bridging technical execution with business impact."
+    "Machine Learning Engineer delivering production ML systems across retail, finance, "
+    "public sector, and automotive. End-to-end expertise from data pipelines and forecasting "
+    "models to LLM/RAG applications and MLOps deployment on AWS, GCP, and Azure. MBA and "
+    "Lean Six Sigma Black Belt - translating technical execution into business outcomes."
 )
 
-cv.ln(3)
+cv.ln(3.5)
 
 # -- CORE COMPETENCIES --
 cv.section_title("Core Competencies")
 
 competencies = [
-    "Python, SQL, scikit-learn, XGBoost, TensorFlow, PyTorch",
-    "MLflow, Prefect, Dagster, Docker, Terraform, GitHub Actions",
-    "AWS SageMaker, GCP (BigQuery, Spanner, ADK), Azure Databricks",
-    "FastAPI, Streamlit, Kedro, Airflow",
+    "ML Engineering: Python, scikit-learn, XGBoost, TensorFlow, PyTorch, FastAPI, Streamlit",
+    "MLOps & Pipelines: MLflow, Prefect, Dagster, Docker, Terraform, GitHub Actions, Kedro",
+    "Cloud & Data: AWS SageMaker, GCP (BigQuery, Spanner, ADK, Cloud Run), Azure Databricks",
+    "LLMs & AI: RAG pipelines, Google ADK, LangChain, NER, MCP, Temporal Fusion Transformers",
 ]
 for comp in competencies:
     cv.set_font("Helvetica", "", 8.5)
@@ -92,7 +91,7 @@ for comp in competencies:
     cv.cell(3.5, 4.5, "-")
     cv.cell(cv.page_w - 3.5, 4.5, comp, new_x="LMARGIN", new_y="NEXT")
 
-cv.ln(2.5)
+cv.ln(1.5)
 
 # -- EXPERIENCE --
 cv.section_title("Experience")
@@ -100,39 +99,55 @@ cv.section_title("Experience")
 # Deloitte
 cv.set_font("Helvetica", "B", 9)
 cv.set_text_color(33, 33, 33)
-cv.cell(cv.page_w, 5, "Deloitte  |  Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w, 4.5, "Deloitte  |  Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
 cv.set_font("Helvetica", "I", 8)
 cv.set_text_color(100, 100, 100)
 cv.cell(cv.page_w, 4.5, "Tech Senior / Tech Consultant, AI & Data  |  Dec 2024 - Present", new_x="LMARGIN", new_y="NEXT")
 cv.ln(1.5)
 
 deloitte_bullets = [
-    "Built ML forecasting models for project expenditure tracking using AWS SageMaker, integrating real-time financial data to improve budget accuracy",
-    "Designed and deployed a RAG agent using Google ADK, Cloud Spanner, and BigQuery for enterprise-scale intelligent retrieval and contextual reasoning",
-    "Developed AI forecasting tools using Model Context Protocol (MCP), integrated with SAP systems via AWS SageMaker",
-    "Built sales forecasting models for a retail client using Temporal Fusion Transformers on Azure Databricks for demand planning and anomaly detection",
-    "Led data anonymization for a public sector tax program using NER models on GCP to protect sensitive data while maintaining analytical value",
-    "Orchestrated ETL pipelines with Dagster in the automotive sector, integrating front-end and back-end systems",
+    "Built ML forecasting models on AWS SageMaker integrating real-time financial data, improving budget accuracy for project expenditure tracking",
+    "Designed and deployed a RAG agent using Google ADK, Cloud Spanner, and BigQuery for enterprise-scale intelligent document retrieval and analytics",
+    "Developed AI forecasting tools via Model Context Protocol (MCP), integrated with SAP systems on AWS SageMaker",
+    "Built retail demand forecasting with Temporal Fusion Transformers on Azure Databricks, enabling anomaly detection and improving planning accuracy",
+    "Applied NER models on GCP for large-scale data anonymization in a public sector tax program, balancing data protection with analytical value",
+    "Orchestrated ETL pipelines with Dagster in the automotive sector, integrating cross-system data flows for automated reporting",
 ]
 for b in deloitte_bullets:
     cv.bullet(b)
-cv.ln(2.5)
+cv.ln(2)
 
 # Le Wagon
 cv.set_font("Helvetica", "B", 9)
 cv.set_text_color(33, 33, 33)
-cv.cell(cv.page_w, 5, "Le Wagon  |  Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w, 4.5, "Le Wagon  |  Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
 cv.set_font("Helvetica", "I", 8)
 cv.set_text_color(100, 100, 100)
 cv.cell(cv.page_w, 4.5, "Data Science Instructor & Batch Manager  |  Jan 2024 - Dec 2024", new_x="LMARGIN", new_y="NEXT")
 cv.ln(1.5)
 
 lewagon_bullets = [
-    "Taught Data Science and Data Analytics bootcamps, mentoring students through end-to-end ML projects from EDA to deployment",
-    "Managed cohort operations, project supervision, and Demo Day presentations across 7 cohorts",
+    "Taught Data Science and Data Analytics across 7 cohorts, mentoring end-to-end ML projects from EDA to deployment",
+    "Managed cohort operations, project supervision, and Demo Day presentations",
 ]
 for b in lewagon_bullets:
     cv.bullet(b)
+
+cv.ln(2)
+
+# Earlier Career
+cv.set_font("Helvetica", "B", 9)
+cv.set_text_color(33, 33, 33)
+cv.cell(cv.page_w, 4.5, "Earlier Career", new_x="LMARGIN", new_y="NEXT")
+cv.ln(1)
+cv.set_font("Helvetica", "", 8)
+cv.set_text_color(100, 100, 100)
+cv.multi_cell(cv.page_w, 4.2,
+    "Java Developer @ BNP Paribas (global booking & allocation)  |  "
+    "Lean Six Sigma Black Belt, Sigma4Profit founder  |  "
+    "Operations & Quality Management across industry  |  "
+    "Mechanical Engineering R&D, IST"
+)
 
 cv.ln(2.5)
 
@@ -140,21 +155,22 @@ cv.ln(2.5)
 cv.section_title("Featured Projects")
 
 projects = [
-    ("MLOps Pipeline (Premier League Prediction)",
-     "MLflow, FastAPI, Prefect, PostgreSQL, Grafana, Docker - github.com/RuiFSP/mlops-2025-final_project"),
-    ("Bike Demand Forecasting",
-     "Kedro, CatBoost, Dash, Docker Compose - github.com/RuiFSP/kedro-bike-demand-pipeline"),
-    ("DE Data Platform",
-     "GCP (Terraform, BigQuery, Cloud Run), Streamlit - github.com/RuiFSP/dezoomcamp-2026-final-project"),
+    ("LLM RAG Pipeline (Portuguese Food & Wine Guide)",
+     "Qdrant, Flask, PostgreSQL, Grafana, GPT-4o, Docker Compose - github.com/RuiFSP/llmzoomcamp-2026-final-project"),
+    ("Data Engineering Platform (GitHub Analytics)",
+     "Terraform, GCS, BigQuery, Bruin, Streamlit, Cloud Run, Python, CI/CD - github.com/RuiFSP/dezoomcamp-2026-final-project"),
+    ("MLOps Pipeline (Premier League Prediction, 61.8% accuracy)",
+     "FastAPI, MLflow, Prefect, PostgreSQL, Grafana, Docker, GitHub Actions - github.com/RuiFSP/mlops-2025-final_project"),
 ]
 for title, desc in projects:
     cv.set_font("Helvetica", "B", 8.5)
     cv.set_text_color(33, 33, 33)
     cv.cell(3.5, 4.5, "-")
-    cv.cell(65, 4.5, title)
+    cv.multi_cell(cv.page_w - 3.5, 4.5, title)
     cv.set_font("Helvetica", "", 8)
     cv.set_text_color(100, 100, 100)
-    cv.multi_cell(cv.page_w - 68.5, 4.5, desc)
+    cv.set_x(cv.l_margin + 6)
+    cv.multi_cell(cv.page_w - 6, 4.2, desc)
 
 cv.ln(1.5)
 
@@ -171,11 +187,11 @@ edu = [
 for title, detail in edu:
     cv.set_font("Helvetica", "B", 8.5)
     cv.set_text_color(33, 33, 33)
-    cv.cell(3.5, 4.5, "-")
-    cv.cell(65, 4.5, title)
+    cv.cell(3.5, 5, "-")
+    cv.cell(62, 5, title)
     cv.set_font("Helvetica", "", 8)
     cv.set_text_color(100, 100, 100)
-    cv.cell(cv.page_w - 68.5, 4.5, detail, new_x="LMARGIN", new_y="NEXT")
+    cv.cell(cv.page_w - 65.5, 5, detail, new_x="LMARGIN", new_y="NEXT")
 
 cv.ln(3)
 cv.set_font("Helvetica", "I", 7)
