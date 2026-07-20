@@ -168,15 +168,12 @@ projects = [
 for title, stack, url in projects:
     cv.set_font("Helvetica", "B", 8.5)
     cv.set_text_color(33, 33, 33)
-    cv.cell(3.5, 4.5, "-")
-    cv.multi_cell(cv.page_w - 3.5, 4.5, title)
+    cv.multi_cell(cv.page_w, 4.5, "- " + title)
     cv.set_font("Helvetica", "", 7.5)
     cv.set_text_color(100, 100, 100)
-    cv.set_x(cv.l_margin + 6)
-    cv.multi_cell(cv.page_w - 6, 3.8, stack)
-    cv.set_x(cv.l_margin + 6)
+    cv.multi_cell(cv.page_w, 3.8, "  " + stack)
     cv.set_text_color(50, 110, 200)
-    cv.multi_cell(cv.page_w - 6, 3.8, url)
+    cv.multi_cell(cv.page_w, 3.8, "  " + url)
     cv.set_text_color(60, 60, 60)
 
 cv.ln(1.5)
