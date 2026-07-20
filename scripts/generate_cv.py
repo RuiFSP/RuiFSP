@@ -202,14 +202,13 @@ for title, detail in edu:
     cv.set_text_color(100, 100, 100)
     cv.cell(cv.page_w - 65.5, 5, detail, new_x="LMARGIN", new_y="NEXT")
 
-cv.ln(2)
+cv.ln(2.5)
+cv.set_draw_color(180, 180, 180)
+cv.line(cv.l_margin, cv.get_y(), 210 - cv.r_margin, cv.get_y())
+cv.ln(2.5)
 cv.set_font("Helvetica", "", 7.5)
 cv.set_text_color(120, 120, 120)
 cv.cell(cv.page_w, 4, "Languages: Portuguese (native)  |  English (full professional)", new_x="LMARGIN", new_y="NEXT")
-cv.ln(2)
-cv.set_font("Helvetica", "I", 7)
-cv.set_text_color(160, 160, 160)
-cv.cell(cv.page_w, 4, "Full career history available on LinkedIn", align="C", new_x="LMARGIN", new_y="NEXT")
 
 cv.output(OUTPUT)
 print(f"PDF generated: {OUTPUT}")
