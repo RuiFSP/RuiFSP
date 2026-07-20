@@ -23,7 +23,7 @@ class CV(FPDF):
         self.cell(self.page_w, 6, title.upper(), new_x="LMARGIN", new_y="NEXT")
         self.set_draw_color(33, 33, 33)
         self.line(self.l_margin, self.get_y(), 210 - self.r_margin, self.get_y())
-        self.ln(2.5)
+        self.ln(2)
 
     def bullet(self, text, indent=3):
         self.set_x(self.l_margin + indent)
@@ -37,7 +37,7 @@ class CV(FPDF):
         style = "B" if bold else ""
         self.set_font("Helvetica", style, size)
         self.set_text_color(60, 60, 60)
-        self.multi_cell(self.page_w, 4.8, text)
+        self.multi_cell(self.page_w, 4.5, text)
 
 
 cv = CV()
@@ -127,7 +127,7 @@ cv.cell(cv.page_w, 4.5, "Data Science Instructor & Batch Manager  |  Jan 2024 - 
 cv.ln(1.5)
 
 lewagon_bullets = [
-    "Taught Data Science and Data Analytics across 7 cohorts, mentoring end-to-end ML projects from EDA to deployment",
+    "Taught Data Science and Data Analytics across 7 cohorts, guiding end-to-end ML projects from EDA to deployment",
     "Managed cohort operations, project supervision, and Demo Day presentations",
 ]
 for b in lewagon_bullets:
@@ -145,7 +145,7 @@ cv.set_text_color(100, 100, 100)
 cv.multi_cell(cv.page_w, 4.2,
     "Java Developer @ BNP Paribas (global booking & allocation)  |  "
     "Lean Six Sigma Black Belt, Sigma4Profit founder  |  "
-    "Operations & Quality Management across industry  |  "
+    "Operations & Quality Management across industries  |  "
     "Mechanical Engineering R&D, IST"
 )
 
@@ -186,7 +186,7 @@ edu = [
     ("Full Stack Developer Bootcamp", "Code for All_, 2022"),
     ("MBA, Business Administration", "ISEG, 2013"),
     ("Lean Six Sigma Black Belt", "ASQ, 2014"),
-    ("MSc, Mechanical Engineering", "Instituto Superior Tecnico, 2007"),
+    ("MSc, Mechanical Engineering", "Instituto Superior Tecnico (IST), 2007"),
 ]
 for title, detail in edu:
     cv.set_font("Helvetica", "B", 8.5)
