@@ -156,25 +156,20 @@ cv.section_title("Featured Projects")
 
 projects = [
     ("LLM RAG Pipeline (Portuguese Food & Wine Guide)",
-     "Qdrant, Flask, PostgreSQL, Grafana, GPT-4o, Docker Compose",
-     "github.com/RuiFSP/llmzoomcamp-2026-final-project"),
+     "Qdrant, Flask, PostgreSQL, Grafana, GPT-4o, Docker Compose  |  github.com/RuiFSP/llmzoomcamp-2026-final-project"),
     ("Data Engineering Platform (GitHub Analytics)",
-     "Terraform, GCS, BigQuery, Bruin, Streamlit, Cloud Run, CI/CD",
-     "github.com/RuiFSP/dezoomcamp-2026-final-project"),
+     "Terraform, GCS, BigQuery, Bruin, Streamlit, Cloud Run, CI/CD  |  github.com/RuiFSP/dezoomcamp-2026-final-project"),
     ("MLOps Pipeline (Premier League Prediction, 61.8% accuracy)",
-     "FastAPI, MLflow, Prefect, PostgreSQL, Grafana, Docker, GitHub Actions",
-     "github.com/RuiFSP/mlops-2025-final_project"),
+     "FastAPI, MLflow, Prefect, PostgreSQL, Grafana, Docker, GitHub Actions  |  github.com/RuiFSP/mlops-2025-final_project"),
 ]
-for title, stack, url in projects:
-    cv.set_font("Helvetica", "B", 8.5)
+for title, subtitle in projects:
+    cv.set_font("Helvetica", "B", 9)
     cv.set_text_color(33, 33, 33)
-    cv.multi_cell(cv.page_w, 4.5, "- " + title)
-    cv.set_font("Helvetica", "", 7.5)
+    cv.cell(cv.page_w, 4.5, title, new_x="LMARGIN", new_y="NEXT")
+    cv.set_font("Helvetica", "I", 8)
     cv.set_text_color(100, 100, 100)
-    cv.multi_cell(cv.page_w, 3.8, "  " + stack)
-    cv.set_text_color(50, 110, 200)
-    cv.multi_cell(cv.page_w, 3.8, "  " + url)
-    cv.set_text_color(60, 60, 60)
+    cv.cell(cv.page_w, 4.5, subtitle, new_x="LMARGIN", new_y="NEXT")
+    cv.ln(1)
 
 cv.ln(1.5)
 
