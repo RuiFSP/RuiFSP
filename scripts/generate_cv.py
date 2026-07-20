@@ -59,8 +59,15 @@ cv.ln(2)
 
 cv.set_font("Helvetica", "", 7.5)
 cv.set_text_color(50, 110, 200)
-links = "github.com/RuiFSP  |  linkedin.com/in/ruifspinto  |  ruifsp.github.io/RuiFSP"
-cv.cell(cv.page_w, 5, links, new_x="LMARGIN", new_y="NEXT")
+cv.cell(38, 5, "github.com/RuiFSP", link="https://github.com/RuiFSP")
+cv.set_text_color(150, 150, 150)
+cv.cell(6, 5, "|")
+cv.set_text_color(50, 110, 200)
+cv.cell(50, 5, "linkedin.com/in/ruifspinto", link="https://linkedin.com/in/ruifspinto")
+cv.set_text_color(150, 150, 150)
+cv.cell(6, 5, "|")
+cv.set_text_color(50, 110, 200)
+cv.cell(cv.page_w - 100, 5, "ruifsp.github.io/RuiFSP", link="https://ruifsp.github.io/RuiFSP", new_x="LMARGIN", new_y="NEXT")
 cv.set_text_color(60, 60, 60)
 
 cv.ln(3.5)
@@ -171,7 +178,7 @@ for title, stack, url in projects:
     cv.cell(cv.page_w, 4.5, title, new_x="LMARGIN", new_y="NEXT")
     cv.set_font("Helvetica", "I", 8)
     cv.set_text_color(100, 100, 100)
-    cv.cell(cv.page_w, 4.5, stack + " | " + url, new_x="LMARGIN", new_y="NEXT", link=url)
+    cv.cell(cv.page_w, 4.5, stack, new_x="LMARGIN", new_y="NEXT", link=url)
     cv.ln(1)
 
 cv.ln(1.5)
