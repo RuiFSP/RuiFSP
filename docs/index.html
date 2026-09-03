@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rui Pinto | Final Fantasy VII Portfolio</title>
+  <title>Rui Pinto | ML Engineer Lisbon — MLOps, LLMs, Data Platforms</title>
   <link rel="icon" type="image/png" href="https://github.com/RuiFSP.png" />
+  <link rel="canonical" href="https://ruifsp.github.io/RuiFSP/" />
+  <meta name="theme-color" content="#071634" />
 
-  <meta name="description" content="Rui Pinto - Data Scientist and ML Engineer building production-ready ML systems, MLOps pipelines, and LLM workflows. Final Fantasy VII themed portfolio." />
-  <meta property="og:title" content="Rui Pinto | ML Engineer Portfolio" />
-  <meta property="og:description" content="FF7-themed portfolio with live GitHub stats, Materia skill grid, featured projects, and recent engineering activity." />
+  <meta name="description" content="Rui Pinto — ML Engineer in Lisbon building production ML systems, MLOps pipelines, and LLM/RAG apps. Deloitte AI & Data, Python, AWS/GCP, FastAPI, MLflow." />
+  <meta property="og:title" content="Rui Pinto | ML Engineer — Production ML, MLOps, LLMs" />
+  <meta property="og:description" content="Portfolio: 4 production ML/data/LLM builds with metrics, live GitHub telemetry, CV download, and contact." />
   <meta property="og:image" content="https://github.com/RuiFSP.png" />
   <meta property="og:url" content="https://ruifsp.github.io/RuiFSP/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Rui Pinto | ML Engineer Portfolio" />
-  <meta name="twitter:description" content="FF7-themed portfolio with live GitHub stats and projects." />
+  <meta name="twitter:title" content="Rui Pinto | ML Engineer Lisbon — MLOps, LLMs" />
+  <meta name="twitter:description" content="Production ML systems, MLOps pipelines, LLM/RAG apps. CV + featured builds." />
   <meta name="twitter:image" content="https://github.com/RuiFSP.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Rui Pinto","jobTitle":"Machine Learning Engineer","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"PT"},"url":"https://ruifsp.github.io/RuiFSP/","sameAs":["https://github.com/RuiFSP","https://www.linkedin.com/in/ruifspinto","https://www.kaggle.com/ruifspinto"]}
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1517,7 +1522,7 @@
     .loading-bar-fill {
       height: 100%; width: 0%;
       background: linear-gradient(90deg, var(--accent-green), #9de9ff);
-      transition: width 2.2s ease;
+      transition: width 0.6s ease;
     }
     .loading-hint {
       font-family: "VT323", monospace; font-size: 22px;
@@ -1751,7 +1756,7 @@
       </ul>
       <div class="music-control" aria-label="Background music controls">
         <label for="music-toggle">BGM</label>
-        <button class="music-toggle" id="music-toggle" type="button">Pause</button>
+        <button class="music-toggle" id="music-toggle" type="button">Play</button>
         <label class="music-volume-label" for="music-volume">Vol</label>
         <input class="music-volume" id="music-volume" type="range" min="0" max="100" value="25" aria-label="Background music volume" />
         <button class="sfx-toggle on" id="sfx-toggle" type="button" title="Toggle sound effects">SFX</button>
@@ -1853,16 +1858,16 @@
               </div>
             </div>
             <div class="exp-wrap">
-              <p class="exp-text" id="exp-text">Exp 18,750 / 24,000</p>
-              <div class="bar"><span id="exp-bar"></span></div>
+              <p class="exp-text" id="exp-text">Exp — / —</p>
+              <div class="bar"><span id="exp-bar" style="width:0%"></span></div>
             </div>
           </div>
 
           <ul class="stat-list" aria-label="Stats">
-            <li><span class="stat-label"><img src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />Stars</span><span id="stat-stars">12,345</span></li>
-            <li><span class="stat-label"><img src="assets/icons/icon-branch.svg" alt="" aria-hidden="true" />Forks</span><span id="stat-forks">6,789</span></li>
-            <li><span class="stat-label"><img src="assets/icons/icon-pr.svg" alt="" aria-hidden="true" />Pull Requests</span><span id="stat-prs">321</span></li>
-            <li><span class="stat-label"><img src="assets/icons/icon-issue.svg" alt="" aria-hidden="true" />Issues</span><span id="stat-issues">98</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-star.svg" alt="" aria-hidden="true" />Stars</span><span id="stat-stars" aria-live="polite">—</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-branch.svg" alt="" aria-hidden="true" />Forks</span><span id="stat-forks" aria-live="polite">—</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-pr.svg" alt="" aria-hidden="true" />Pull Requests</span><span id="stat-prs" aria-live="polite">—</span></li>
+            <li><span class="stat-label"><img src="assets/icons/icon-issue.svg" alt="" aria-hidden="true" />Issues</span><span id="stat-issues" aria-live="polite">—</span></li>
           </ul>
 
           <div>
@@ -1966,25 +1971,25 @@
       <section class="panel reveal dungeon-section" id="featured-repos">
         <div class="dungeon-label"><span>Arsenal — Featured Repositories</span></div>
         <div class="repo-grid" id="featured-grid">
-          <a class="repo-card" href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank" rel="noreferrer">
+          <a class="repo-card" href="https://github.com/RuiFSP/llmzoomcamp-2026-final-project" target="_blank" rel="noopener noreferrer">
+            <h3>llmzoomcamp-2026-final-project</h3>
+            <p>Portuguese food &amp; wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose. LLM Zoomcamp 2026 ✅ Completed.</p>
+            <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
+          </a>
+          <a class="repo-card" href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank" rel="noopener noreferrer">
             <h3>dezoomcamp-2026-final-project</h3>
-            <p>Batch data platform from ingestion to dashboard in GCP.</p>
-            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Python</span></p>
+            <p>GitHub analytics platform — Terraform, GCS, BigQuery, Bruin, Cloud Run + CI/CD.</p>
+            <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
-          <a class="repo-card" href="https://github.com/RuiFSP/mlops-2025-final_project" target="_blank" rel="noreferrer">
+          <a class="repo-card" href="https://github.com/RuiFSP/mlops-2025-final_project" target="_blank" rel="noopener noreferrer">
             <h3>mlops-2025-final_project</h3>
-            <p>End-to-end MLOps system with serving and monitoring.</p>
-            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Python</span></p>
+            <p>Premier League prediction (61.8%) — FastAPI, MLflow, Prefect, Grafana.</p>
+            <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
-          <a class="repo-card" href="https://github.com/RuiFSP/llm_engineering" target="_blank" rel="noreferrer">
-            <h3>llm_engineering</h3>
-            <p>Applied LLM and RAG workflows for real-world tasks.</p>
-            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Notebook</span></p>
-          </a>
-          <a class="repo-card" href="https://github.com/RuiFSP/mlzoomcamp2024-final-project" target="_blank" rel="noreferrer">
-            <h3>mlzoomcamp2024-final-project</h3>
-            <p>Production-style ML service with reproducible deployment.</p>
-            <p class="repo-meta"><span class="repo-stars">loading...</span><span class="repo-lang">Python</span></p>
+          <a class="repo-card" href="https://github.com/RuiFSP/kedro-bike-demand-pipeline" target="_blank" rel="noopener noreferrer">
+            <h3>kedro-bike-demand-pipeline</h3>
+            <p>Next-hour bike demand — Kedro, CatBoost, Dash dashboard, Dockerised.</p>
+            <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
         </div>
       </section>
@@ -1993,28 +1998,28 @@
         <div class="dungeon-label"><span>Career Highlights</span></div>
         <div class="career-strip">
           <div class="career-card">
+            <p class="career-year">2024 — Present</p>
+            <img class="career-icon" src="assets/sprites/sprite-crystal.svg" alt="" />
+            <p class="career-title">Deloitte · Tech Senior AI &amp; Data</p>
+            <p class="career-desc">SageMaker forecasting, RAG on GCP, retail TFT on Databricks</p>
+          </div>
+          <div class="career-card">
             <p class="career-year">2024</p>
             <img class="career-icon" src="assets/sprites/sprite-trophy.svg" alt="" />
-            <p class="career-title">ML Zoomcamp</p>
-            <p class="career-desc">Training, deployment, monitoring</p>
+            <p class="career-title">Le Wagon · Instructor</p>
+            <p class="career-desc">7 cohorts EDA → deployment, Demo Days</p>
           </div>
           <div class="career-card">
-            <p class="career-year">2025</p>
+            <p class="career-year">2026 ✅</p>
             <img class="career-icon" src="assets/sprites/sprite-trophy.svg" alt="" />
-            <p class="career-title">MLOps Zoomcamp</p>
-            <p class="career-desc">CI/CD, serving, infrastructure</p>
-          </div>
-          <div class="career-card">
-            <p class="career-year">2026</p>
-            <img class="career-icon" src="assets/sprites/sprite-trophy.svg" alt="" />
-            <p class="career-title">DE &amp; LLM Zoomcamp</p>
-            <p class="career-desc">Data platforms, RAG, agents</p>
+            <p class="career-title">LLM Zoomcamp — Completed</p>
+            <p class="career-desc">RAG food &amp; wine guide: Qdrant, GPT-4o, eval</p>
           </div>
           <div class="career-card">
             <p class="career-year">Active</p>
-            <img class="career-icon" src="assets/sprites/sprite-crystal.svg" alt="" />
-            <p class="career-title">ML Engineer</p>
-            <p class="career-desc">Production ML systems</p>
+            <img class="career-icon" src="assets/sprites/sprite-trophy.svg" alt="" />
+            <p class="career-title">ML Engineer · Lisbon</p>
+            <p class="career-desc">Open to ML/MLOps roles — see CV below</p>
           </div>
         </div>
       </section>
@@ -2048,21 +2053,18 @@
         <article class="panel">
           <h2 class="panel-title">Recent Activity</h2>
           <ul class="activity-list" id="activity-list">
-            <li>merged pull request #128 | 2h ago</li>
-            <li>starred data pipeline project | 5h ago</li>
-            <li>opened issue #87 | 1d ago</li>
-            <li>released v1.4.0 model service | 2d ago</li>
+            <li>Syncing quest log…</li>
           </ul>
         </article>
 
         <article class="panel">
           <h2 class="panel-title">Professional Profiles</h2>
-          <p class="profiles-intro">Looking for an ML engineer who can ship end-to-end systems? Start here.</p>
+          <p class="profiles-intro">ML Engineer (Deloitte AI &amp; Data) shipping end-to-end systems? Start here.</p>
           <ul class="actions">
-            <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">GitHub</span><span class="action-sub">Code and featured projects</span></span></a></li>
-            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-branch.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">LinkedIn</span><span class="action-sub">Experience and background</span></span></a></li>
-            <li><a class="action-btn" href="https://www.kaggle.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">Kaggle</span><span class="action-sub">ML notebooks and competitions</span></span></a></li>
-            <li><a class="action-btn" href="https://x.com/ruifspinto" target="_blank" rel="noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">X / Twitter</span><span class="action-sub">Updates and project notes</span></span></a></li>
+            <li><a class="action-btn" href="https://github.com/RuiFSP" target="_blank" rel="noopener noreferrer"><img class="action-icon" src="assets/icons/icon-folder.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">GitHub</span><span class="action-sub">Code and featured projects</span></span></a></li>
+            <li><a class="action-btn" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noopener noreferrer"><img class="action-icon" src="assets/icons/icon-branch.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">LinkedIn</span><span class="action-sub">Experience and background</span></span></a></li>
+            <li><a class="action-btn" href="https://www.kaggle.com/ruifspinto" target="_blank" rel="noopener noreferrer"><img class="action-icon" src="assets/icons/icon-crosshair.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">Kaggle</span><span class="action-sub">ML notebooks and competitions</span></span></a></li>
+            <li><a class="action-btn" href="https://x.com/ruifspinto" target="_blank" rel="noopener noreferrer"><img class="action-icon" src="assets/icons/icon-star.svg" alt="" aria-hidden="true" /><span class="action-copy"><span class="action-title">X / Twitter</span><span class="action-sub">Updates and project notes</span></span></a></li>
           </ul>
         </article>
       </section>
@@ -2071,20 +2073,20 @@
         <img class="save-crystal-img" src="assets/sprites/sprite-save-crystal.svg" alt="" aria-hidden="true" />
         <div class="save-point-text">
           <h3>&#x1F48E; Save Point</h3>
-          <p>Save your progress — download my resume or connect on LinkedIn.</p>
+          <p>Deloitte Tech Senior AI &amp; Data — download CV or connect on LinkedIn.</p>
         </div>
         <div class="save-point-actions">
-          <a class="save-btn primary" href="Rui_Pinto_ML_Engineer_CV.pdf" id="resume-btn" target="_blank" rel="noreferrer">&#x1F4BE; Download CV</a>
-          <a class="save-btn secondary" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noreferrer">&#x1F4E1; Connect</a>
+          <a class="save-btn primary" href="./Rui_Pinto_ML_Engineer_CV.pdf" id="resume-btn" target="_blank" rel="noopener noreferrer">&#x1F4BE; Download CV</a>
+          <a class="save-btn secondary" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noopener noreferrer">&#x1F4E1; Connect</a>
         </div>
       </section>
     </div>
 
     <footer class="status-strip">
-      <span>Portfolio quest board with live project telemetry and verified public work.</span>
+      <span>Production ML · MLOps · LLM/RAG — verified public builds.</span>
       <span>Status: <span id="footer-status">Open to ML engineering opportunities</span></span>
     </footer>
-    <audio id="bgm-audio" src="assets/audio/the_mountain-final-scene-186304.mp3" preload="auto" loop></audio>
+    <audio id="bgm-audio" src="assets/audio/the_mountain-final-scene-186304.mp3" preload="none" loop></audio>
   </main>
 
   <script>
@@ -2224,7 +2226,9 @@
         musicAudio.addEventListener("play", updateMusicButtonState);
         musicAudio.addEventListener("pause", updateMusicButtonState);
         musicAudio.addEventListener("error", function () { musicButton.textContent = "No file"; });
-        musicAudio.play().then(updateMusicButtonState).catch(updateMusicButtonState);
+        // No autoplay: browsers block it and the 3.9MB file delays first paint.
+        // User starts BGM explicitly via the Play button.
+        updateMusicButtonState();
       }
 
       // === FORMATTING ===
@@ -2321,6 +2325,16 @@
       applyClass(currentClass);
 
       // === REPOS ===
+      // Curated outcome-driven blurbs — kept even after live GitHub hydration
+      // so the static HTML story (metrics, stack) is never overwritten by API descriptions.
+      var FEATURED_META = {
+        "llmzoomcamp-2026-final-project": "Portuguese food & wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose. LLM Zoomcamp 2026 ✅ Completed.",
+        "dezoomcamp-2026-final-project": "GitHub analytics platform — Terraform, GCS, BigQuery, Bruin, Cloud Run + CI/CD.",
+        "mlops-2025-final_project": "Premier League prediction (61.8%) — FastAPI, MLflow, Prefect, Grafana.",
+        "kedro-bike-demand-pipeline": "Next-hour bike demand — Kedro, CatBoost, Dash dashboard, Dockerised."
+      };
+      var PINNED_FEATURED = Object.keys(FEATURED_META);
+
       function renderFeaturedRepos(repos) {
         var grid = document.getElementById("featured-grid");
         if (!grid || !repos || !repos.length) return;
@@ -2331,13 +2345,13 @@
           card.className = "repo-card";
           card.href = repo.html_url;
           card.target = "_blank";
-          card.rel = "noreferrer";
+          card.rel = "noopener noreferrer";
 
           var title = document.createElement("h3");
           title.textContent = repo.name;
 
           var desc = document.createElement("p");
-          desc.textContent = repo.description || "Repository in active development.";
+          desc.textContent = FEATURED_META[repo.name] || repo.description || "Repository in active development.";
 
           var meta = document.createElement("p");
           meta.className = "repo-meta";
@@ -2494,14 +2508,18 @@
         }
 
         sideQuestList.innerHTML = "";
+        // Explicitly completed courses — always show Complete even if pushed recently.
+        var COMPLETED_QUESTS = ["llm-zoomcamp-2026", "llmzoomcamp-2026-final-project"];
         learningRepos.forEach(function (repo) {
           var item = document.createElement("li");
           item.className = "side-quest-item";
           var nameSpan = document.createElement("span");
           nameSpan.textContent = repo.name;
+          if (COMPLETED_QUESTS.indexOf(repo.name) !== -1) nameSpan.textContent += " ✅";
           var statusSpan = document.createElement("span");
           statusSpan.className = "side-quest-status";
-          var isActive = repo.pushed_at && (Date.now() - new Date(repo.pushed_at).getTime() < 90 * 24 * 60 * 60 * 1000);
+          var isCompleted = COMPLETED_QUESTS.indexOf(repo.name) !== -1;
+          var isActive = !isCompleted && repo.pushed_at && (Date.now() - new Date(repo.pushed_at).getTime() < 90 * 24 * 60 * 60 * 1000);
           if (isActive) {
             statusSpan.className += " in-progress";
             statusSpan.textContent = "In Progress";
@@ -2631,6 +2649,15 @@
       }
 
       // === HYDRATE ===
+      // Prefers pre-rendered docs/data.json (nightly Actions workflow) to avoid
+      // unauthenticated rate limits (60 req/h). Falls back to live API.
+      async function loadCachedStats() {
+        try {
+          var res = await fetch("./data.json", { headers: { "Accept": "application/json" } });
+          if (!res.ok) return null;
+          return res.json();
+        } catch (e) { return null; }
+      }
       async function hydrateGitHubStats() {
         var starsEl = document.getElementById("stat-stars");
         var forksEl = document.getElementById("stat-forks");
@@ -2643,24 +2670,32 @@
         var prsUrl = "https://api.github.com/search/issues?q=" + encodeURIComponent("type:pr author:" + githubUser);
         var issuesUrl = "https://api.github.com/search/issues?q=" + encodeURIComponent("type:issue author:" + githubUser);
 
-        var result = await Promise.allSettled([
-          fetchJson(userUrl),
-          fetchJson(reposUrl),
-          fetchJson(prsUrl),
-          fetchJson(issuesUrl)
-        ]);
+        var cached = await loadCachedStats();
+        var user = cached && cached.user ? cached.user : null;
+        var repos = cached && Array.isArray(cached.repos) ? cached.repos : null;
+        var prs = cached && typeof cached.prs_total !== "undefined" ? { total_count: cached.prs_total } : null;
+        var issues = cached && typeof cached.issues_total !== "undefined" ? { total_count: cached.issues_total } : null;
 
-        var user = result[0].status === "fulfilled" ? result[0].value : null;
-        var repos = result[1].status === "fulfilled" ? result[1].value : [];
-        var prs = result[2].status === "fulfilled" ? result[2].value : null;
-        var issues = result[3].status === "fulfilled" ? result[3].value : null;
+        if (!repos) {
+          var result = await Promise.allSettled([
+            fetchJson(userUrl),
+            fetchJson(reposUrl),
+            fetchJson(prsUrl),
+            fetchJson(issuesUrl)
+          ]);
+
+          user = result[0].status === "fulfilled" ? result[0].value : null;
+          repos = result[1].status === "fulfilled" ? result[1].value : [];
+          prs = result[2].status === "fulfilled" ? result[2].value : null;
+          issues = result[3].status === "fulfilled" ? result[3].value : null;
+        }
 
         allReposCache = repos;
 
         if (repos.length) {
           var ownRepos = repos.filter(function (repo) { return !repo.fork; });
 
-          var pinnedFeaturedRepoNames = [];
+          var pinnedFeaturedRepoNames = PINNED_FEATURED;
           var pinnedFeaturedRepos = pinnedFeaturedRepoNames.map(function (name) {
             return ownRepos.find(function (repo) { return repo.name === name; });
           }).filter(Boolean);
@@ -2941,27 +2976,24 @@
         if (loadingBar) loadingBar.style.width = "100%";
         setTimeout(function () {
           loadingScreen.style.display = "none";
-          if (musicAudio && musicAudio.paused) {
-            musicAudio.play().catch(function () {});
-          }
-        }, 600);
+          // No BGM autoplay here — user opts in via Play.
+        }, 350);
       }
 
-      setTimeout(function () {
+      // Fast path: dismiss on window load, hard cap 900ms + 2.5s safety net.
+      // Previous 2.8s forced delay cost recruiter bounces.
+      function dismissWhenReady() {
         if (loadingBar) loadingBar.style.width = "100%";
-        var hi = 0;
-        var hintTimer = setInterval(function () {
-          hi += 1;
-          if (hi < hints.length && loadingHint) {
-            loadingHint.textContent = hints[hi];
-          }
-        }, 380);
-        setTimeout(function () { clearInterval(hintTimer); }, 2500);
-      }, 200);
-
-      setTimeout(dismissLoading, 2800);
-      // Safety net: force dismiss after 5s no matter what
-      setTimeout(dismissLoading, 5000);
+        dismissLoading();
+      }
+      if (document.readyState === "complete") {
+        setTimeout(dismissWhenReady, 350);
+      } else {
+        window.addEventListener("load", function () { setTimeout(dismissWhenReady, 350); });
+      }
+      setTimeout(dismissWhenReady, 900);
+      // Safety net: force dismiss after 2.5s no matter what
+      setTimeout(dismissLoading, 2500);
 
       // === MATERIA LEVEL-UP ANIMATION ===
       var originalUpdateMateria = updateMateriaLevels;
@@ -3011,9 +3043,9 @@
         var ls = document.getElementById("loading-screen");
         if (ls && ls.style.display !== "none" && !ls.classList.contains("done")) {
           ls.classList.add("done");
-          setTimeout(function(){ ls.style.display = "none"; }, 600);
+          setTimeout(function(){ ls.style.display = "none"; }, 350);
         }
-      }, 4000);
+      }, 2500);
     })();
   </script>
 </body>

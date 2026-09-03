@@ -1,0 +1,252 @@
+{
+  "user": {
+    "login": "RuiFSP",
+    "followers": 23
+  },
+  "repos": [
+    {
+      "name": "100-days-of-code",
+      "html_url": "https://github.com/RuiFSP/100-days-of-code",
+      "description": "100 days journal - to keep yourself accountable (multiple languages available)",
+      "stargazers_count": 2,
+      "forks_count": 2,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2023-07-19T15:14:25Z",
+      "size": 53713
+    },
+    {
+      "name": "advent_code_2024",
+      "html_url": "https://github.com/RuiFSP/advent_code_2024",
+      "description": null,
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": "Python",
+      "fork": false,
+      "pushed_at": "2024-12-25T10:12:55Z",
+      "size": 280
+    },
+    {
+      "name": "ai-engineer-handbook",
+      "html_url": "https://github.com/RuiFSP/ai-engineer-handbook",
+      "description": "All the links, books, and creators you need to follow to stay up to date with AI!",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2026-02-17T23:09:53Z",
+      "size": 31
+    },
+    {
+      "name": "autoresearch",
+      "html_url": "https://github.com/RuiFSP/autoresearch",
+      "description": "AI agents running research on single-GPU nanochat training automatically",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2026-03-26T00:07:37Z",
+      "size": 530
+    },
+    {
+      "name": "data-preparation-for-machine-learning-with-databricks",
+      "html_url": "https://github.com/RuiFSP/data-preparation-for-machine-learning-with-databricks",
+      "description": "data-preparation-for-machine-learning-with-databricks",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2024-10-15T16:16:29Z",
+      "size": 83
+    },
+    {
+      "name": "dataengineering-zoomcamp-2026",
+      "html_url": "https://github.com/RuiFSP/dataengineering-zoomcamp-2026",
+      "description": "Datatalks homeworks and exercises for DE Zoomcamp 2026",
+      "stargazers_count": 5,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2026-03-16T22:26:02Z",
+      "size": 6859
+    },
+    {
+      "name": "dezoomcamp-2026-final-project",
+      "html_url": "https://github.com/RuiFSP/dezoomcamp-2026-final-project",
+      "description": "Datatalksclub final project for dezoomcamp 2026",
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "language": "Python",
+      "fork": false,
+      "pushed_at": "2026-03-23T12:36:38Z",
+      "size": 1525
+    },
+    {
+      "name": "garmin_mcp",
+      "html_url": "https://github.com/RuiFSP/garmin_mcp",
+      "description": "MCP server to access Garmin data",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2026-08-04T18:29:56Z",
+      "size": 798
+    },
+    {
+      "name": "kedro-bike-demand-pipeline",
+      "html_url": "https://github.com/RuiFSP/kedro-bike-demand-pipeline",
+      "description": "End-to-end ML pipeline for bike demand forecasting using Kedro, CatBoost, and Dash. Includes training, inference, and a real-time dashboard.",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2026-04-25T14:09:11Z",
+      "size": 344
+    },
+    {
+      "name": "llm-zoomcamp-2026",
+      "html_url": "https://github.com/RuiFSP/llm-zoomcamp-2026",
+      "description": "LLM Zoomcamp homeworks",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2026-07-18T16:42:46Z",
+      "size": 8918
+    },
+    {
+      "name": "llmzoomcamp-2026-final-project",
+      "html_url": "https://github.com/RuiFSP/llmzoomcamp-2026-final-project",
+      "description": "Portuguese Food & Wine Guide \u2014 A RAG-powered conversational assistant for Portuguese cuisine, wine regions, and food-wine pairings. Built with Qdrant, Flask, PostgreSQL, Grafana, and GPT-4o as the final project for LLM Zoomcamp 2026.",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": "Python",
+      "fork": false,
+      "pushed_at": "2026-07-19T18:23:46Z",
+      "size": 2618
+    },
+    {
+      "name": "llm_engineering",
+      "html_url": "https://github.com/RuiFSP/llm_engineering",
+      "description": "Repo to accompany my mastering LLM engineering course",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": true,
+      "pushed_at": "2026-07-12T13:37:33Z",
+      "size": 570474
+    },
+    {
+      "name": "marvel-characters",
+      "html_url": "https://github.com/RuiFSP/marvel-characters",
+      "description": "A complete end-to-end MLOps pipeline for Marvel character data.",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": "Python",
+      "fork": true,
+      "pushed_at": "2026-08-10T20:05:01Z",
+      "size": 3828
+    },
+    {
+      "name": "ml-zoomcamp",
+      "html_url": "https://github.com/RuiFSP/ml-zoomcamp",
+      "description": "My datatalks repo for homeworks",
+      "stargazers_count": 3,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2024-12-21T13:57:00Z",
+      "size": 159041
+    },
+    {
+      "name": "mlops-2025-final_project",
+      "html_url": "https://github.com/RuiFSP/mlops-2025-final_project",
+      "description": "Production-ready MLOps pipeline for Premier League match prediction",
+      "stargazers_count": 3,
+      "forks_count": 1,
+      "language": "Python",
+      "fork": false,
+      "pushed_at": "2025-07-15T21:41:27Z",
+      "size": 3924
+    },
+    {
+      "name": "MLOps-Basics",
+      "html_url": "https://github.com/RuiFSP/MLOps-Basics",
+      "description": null,
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2024-09-22T19:19:29Z",
+      "size": 7771
+    },
+    {
+      "name": "mlops-coding-course",
+      "html_url": "https://github.com/RuiFSP/mlops-coding-course",
+      "description": "Learn how to create, develop, and maintain a state-of-the-art MLOps code base",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2026-01-25T20:27:06Z",
+      "size": 5640
+    },
+    {
+      "name": "mlops-zoomcamp-2025",
+      "html_url": "https://github.com/RuiFSP/mlops-zoomcamp-2025",
+      "description": "MLOps Zoomcamp Course",
+      "stargazers_count": 4,
+      "forks_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2025-07-01T05:09:37Z",
+      "size": 256578
+    },
+    {
+      "name": "mlzoomcamp2024-final-project",
+      "html_url": "https://github.com/RuiFSP/mlzoomcamp2024-final-project",
+      "description": "Final project for MLZoomcap",
+      "stargazers_count": 3,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2025-01-25T14:14:55Z",
+      "size": 34760
+    },
+    {
+      "name": "mlzoomcamp2024-midterm-project",
+      "html_url": "https://github.com/RuiFSP/mlzoomcamp2024-midterm-project",
+      "description": "Midterm project for mlzoomcamp 2024",
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "pushed_at": "2024-11-23T10:35:31Z",
+      "size": 45345
+    },
+    {
+      "name": "ragbook-notebooks",
+      "html_url": "https://github.com/RuiFSP/ragbook-notebooks",
+      "description": "Building LLMs for Production materials",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": null,
+      "fork": true,
+      "pushed_at": "2024-10-01T22:47:59Z",
+      "size": 469
+    },
+    {
+      "name": "RuiFSP",
+      "html_url": "https://github.com/RuiFSP/RuiFSP",
+      "description": null,
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "language": "Python",
+      "fork": false,
+      "pushed_at": "2026-07-20T09:43:54Z",
+      "size": 7028
+    }
+  ],
+  "prs_total": 136,
+  "issues_total": 0
+}
