@@ -55,24 +55,6 @@
 
 ---
 
-## 📊 GitHub Stats
-
-|  |  |
-|---|---|
-| ![Rui's GitHub Stats](https://github-readme-stats.vercel.app/api?username=RuiFSP&show_icons=true&theme=tokyonight&hide_border=true) | ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=RuiFSP&layout=compact&theme=tokyonight&hide_border=true) |
-
----
-
-## 📬 Let's Connect
-
-I'm open to collaborations, mentoring, and interesting ML/MLOps projects!
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/ruifspinto)
-[![Kaggle](https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=flat-square&logo=kaggle)](https://kaggle.com/ruifspinto)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/RuiFSP)
-
----
-
 <div align="center">
   <i>⭐️ If you find my work useful, feel free to star a repo!</i>
 </div>
