@@ -1176,6 +1176,56 @@
       outline-offset: 2px;
     }
 
+    /* QUOTE — FF-style NPC dialogue */
+    .quote-box {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: 10px 0;
+      padding: 14px 36px 14px 14px;
+      background: linear-gradient(180deg, #0c2f74 0%, #0a285e 100%);
+      border: 3px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: inset 0 0 0 2px rgba(207, 236, 255, 0.14), 0 0 0 3px var(--pixel-shadow);
+      position: relative;
+    }
+
+    .quote-npc {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      image-rendering: pixelated;
+      animation: avatar-breathe 2.4s ease-in-out infinite;
+    }
+
+    .quote-text {
+      font-size: 24px;
+      line-height: 1.3;
+      color: var(--text-main);
+      font-style: italic;
+      margin: 0;
+      flex: 1;
+    }
+
+    .quote-attr {
+      display: block;
+      margin-top: 6px;
+      font-style: normal;
+      font-family: "Press Start 2P", monospace;
+      font-size: 9px;
+      color: var(--accent-gold);
+      letter-spacing: 0.5px;
+    }
+
+    .quote-cursor {
+      position: absolute;
+      right: 12px;
+      bottom: 8px;
+      color: var(--accent-gold);
+      font-size: 12px;
+      animation: blink 1s steps(1) infinite;
+    }
+
     /* SECTIONS */
     .section-divider {
       border: none;
@@ -1561,6 +1611,8 @@
       .materia-grid { grid-template-columns: repeat(3, 1fr); }
       .konami-banner { font-size: 12px; padding: 12px 14px; }
       .konami-hint { display: none; }
+      .quote-text { font-size: 19px; }
+      .quote-npc { width: 32px; height: 32px; }
     }
 
     /* PRINT — recruiter-friendly clean version */
@@ -2054,6 +2106,14 @@
           </div>
         </aside>
       </section>
+
+      <aside class="quote-box reveal" aria-label="Words to live by">
+        <img class="quote-npc" src="assets/sprites/sprite-mercenary.svg" alt="" aria-hidden="true" />
+        <p class="quote-text">&ldquo;Discipline is the bridge between goals and accomplishment.&rdquo;
+          <span class="quote-attr">&mdash; Jim Rohn</span>
+        </p>
+        <span class="quote-cursor" aria-hidden="true">&#x25BC;</span>
+      </aside>
 
       <section class="panel reveal dungeon-section" id="featured-repos">
         <div class="dungeon-label"><span>Arsenal — Featured Repositories</span></div>
