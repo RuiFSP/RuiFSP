@@ -30,14 +30,14 @@ class CV(FPDF):
         self.set_font("Helvetica", "", 8.5)
         self.set_text_color(60, 60, 60)
         bw = self.page_w - indent
-        self.cell(3.5, 4.5, "-")
-        self.multi_cell(bw - 3.5, 4.5, text)
+        self.cell(3.5, 4.2, "-")
+        self.multi_cell(bw - 3.5, 4.2, text)
 
     def body_text(self, text, bold=False, size=9):
         style = "B" if bold else ""
         self.set_font("Helvetica", style, size)
         self.set_text_color(60, 60, 60)
-        self.multi_cell(self.page_w, 4.5, text)
+        self.multi_cell(self.page_w, 4.2, text)
 
 
 cv = CV()
@@ -74,7 +74,7 @@ cv.set_text_color(50, 110, 200)
 cv.cell(cv.page_w - 146, 5, "ruifsp.github.io/RuiFSP", link="https://ruifsp.github.io/RuiFSP", new_x="LMARGIN", new_y="NEXT")
 cv.set_text_color(60, 60, 60)
 
-cv.ln(3.5)
+cv.ln(2.5)
 
 # -- PROFESSIONAL SUMMARY --
 cv.section_title("Professional Summary")
@@ -85,7 +85,7 @@ cv.body_text(
     "Lean Six Sigma Black Belt - translating technical execution into business outcomes."
 )
 
-cv.ln(3.5)
+cv.ln(2)
 
 # -- CORE COMPETENCIES --
 cv.section_title("Core Competencies")
@@ -107,27 +107,41 @@ cv.ln(1.5)
 # -- EXPERIENCE --
 cv.section_title("Experience")
 
-# Deloitte
+# Deloitte — Tech Senior
 cv.set_font("Helvetica", "B", 9)
 cv.set_text_color(33, 33, 33)
 cv.cell(cv.page_w, 4.5, "Deloitte  |  Lisbon, Portugal", new_x="LMARGIN", new_y="NEXT")
 cv.set_font("Helvetica", "I", 8)
 cv.set_text_color(100, 100, 100)
-cv.cell(cv.page_w, 4.5, "Tech Senior / Tech Consultant, AI & Data  |  Dec 2024 - Present", new_x="LMARGIN", new_y="NEXT")
-cv.ln(1.5)
+cv.cell(cv.page_w, 4.5, "Tech Senior, AI & Data  |  Sep 2025 - Present", new_x="LMARGIN", new_y="NEXT")
+cv.ln(1)
 
-# TODO: add real impact figures where available (%, volume, scale) to Deloitte bullets
-deloitte_bullets = [
-    "Built ML forecasting models on AWS SageMaker integrating real-time financial data, improving budget accuracy for project expenditure tracking",
-    "Designed and deployed a RAG agent using Google ADK, Cloud Spanner, and BigQuery for enterprise-scale intelligent document retrieval and analytics",
-    "Developed AI forecasting tools via Model Context Protocol (MCP), integrated with SAP systems on AWS SageMaker",
-    "Built retail demand forecasting with Temporal Fusion Transformers on Azure Databricks, enabling anomaly detection and improving planning accuracy",
-    "Applied NER models on GCP for large-scale data anonymization in a public sector tax program, balancing data protection with analytical value",
-    "Orchestrated ETL pipelines with Dagster in the automotive sector, integrating cross-system data flows for automated reporting",
+# TODO: add real impact figures where available (%, volume, scale)
+tech_senior_bullets = [
+    "Built ML models on AWS SageMaker forecasting monthly project expenditures from real-time financial data, improving budget planning accuracy",
+    "Designed a RAG agent (Google ADK, Cloud Spanner, BigQuery) for enterprise-scale intelligent document retrieval and contextual analytics",
+    "Developed AI forecasting agents via Model Context Protocol (MCP), integrated with SAP systems on AWS SageMaker",
+    "Built a Databricks analytics agent delivering personalized KPI reports by email from prompt-based instructions",
+    "Forecast customer payment and receivables behavior across accounts on Azure Databricks, supporting cash flow planning",
 ]
-for b in deloitte_bullets:
+for b in tech_senior_bullets:
     cv.bullet(b)
-cv.ln(2)
+cv.ln(1)
+
+# Deloitte — Tech Consultant
+cv.set_font("Helvetica", "I", 8)
+cv.set_text_color(100, 100, 100)
+cv.cell(cv.page_w, 4.5, "Tech Consultant, AI & Data  |  Dec 2024 - Sep 2025", new_x="LMARGIN", new_y="NEXT")
+cv.ln(0.5)
+
+tech_consultant_bullets = [
+    "Built retail sales forecasting with Temporal Fusion Transformers on Azure Databricks, adding anomaly detection for irregular spend patterns",
+    "Developed NER-based data anonymization on GCP for a public sector tax program, protecting sensitive data while preserving analytical value",
+    "Orchestrated automotive data pipelines with Dagster, automating cross-system flows for reporting and visualization",
+]
+for b in tech_consultant_bullets:
+    cv.bullet(b)
+cv.ln(1.5)
 
 # Le Wagon
 cv.set_font("Helvetica", "B", 9)
@@ -145,7 +159,7 @@ lewagon_bullets = [
 for b in lewagon_bullets:
     cv.bullet(b)
 
-cv.ln(2)
+cv.ln(1.5)
 
 # Earlier Career
 cv.set_font("Helvetica", "B", 9)
@@ -181,15 +195,14 @@ projects = [
      "https://github.com/RuiFSP/kedro-bike-demand-pipeline"),
 ]
 for title, stack, url in projects:
-    cv.set_font("Helvetica", "B", 9)
+    cv.set_font("Helvetica", "B", 8.5)
     cv.set_text_color(33, 33, 33)
-    cv.cell(cv.page_w, 4.5, title, new_x="LMARGIN", new_y="NEXT")
-    cv.set_font("Helvetica", "I", 8)
+    cv.cell(cv.page_w, 4.2, title, new_x="LMARGIN", new_y="NEXT")
+    cv.set_font("Helvetica", "I", 7.5)
     cv.set_text_color(100, 100, 100)
-    cv.cell(cv.page_w, 4.5, stack, new_x="LMARGIN", new_y="NEXT", link=url)
-    cv.ln(1)
+    cv.cell(cv.page_w, 4.0, stack, link=url, new_x="LMARGIN", new_y="NEXT")
 
-cv.ln(1.5)
+cv.ln(1)
 
 # -- EDUCATION --
 cv.section_title("Education")
@@ -204,13 +217,13 @@ edu = [
 for title, detail in edu:
     cv.set_font("Helvetica", "B", 8.5)
     cv.set_text_color(33, 33, 33)
-    cv.cell(3.5, 5, "-")
-    cv.cell(62, 5, title)
+    cv.cell(3.5, 4.5, "-")
+    cv.cell(62, 4.5, title)
     cv.set_font("Helvetica", "", 8)
     cv.set_text_color(100, 100, 100)
-    cv.cell(cv.page_w - 65.5, 5, detail, new_x="LMARGIN", new_y="NEXT")
+    cv.cell(cv.page_w - 65.5, 4.5, detail, new_x="LMARGIN", new_y="NEXT")
 
-cv.ln(2.5)
+cv.ln(1.5)
 cv.set_draw_color(180, 180, 180)
 cv.line(cv.l_margin, cv.get_y(), 210 - cv.r_margin, cv.get_y())
 cv.ln(2.5)
