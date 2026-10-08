@@ -304,10 +304,19 @@
     }
 
     .mission-text {
-      font-size: 30px;
-      line-height: 1.08;
-      letter-spacing: 0.35px;
-      margin-bottom: 14px;
+      font-size: 32px;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .mission-pitch {
+      font-size: 19px;
+      line-height: 1.2;
+      color: var(--accent-blue);
+      margin-bottom: 10px;
+      border-left: 3px solid var(--accent-blue);
+      padding-left: 8px;
     }
 
     .mission-sub {
@@ -1057,6 +1066,13 @@
     .repo-card:hover h3,
     .repo-card:focus-visible h3 { color: var(--accent-green); }
 
+    .repo-result {
+      font-size: 18px !important;
+      color: var(--accent-green) !important;
+      flex: 0 0 auto !important;
+      line-height: 1.15;
+    }
+
     .repo-hidden { display: none; }
 
     .repo-meta {
@@ -1494,6 +1510,8 @@
       .top-clock { margin-left: 0; }
       .mission-text { font-size: 24px; }
       .mission-sub, .typing, .repo-card p, .repo-meta, .activity-list li, .stat-list li, .search-row input, .level { font-size: 20px; }
+      .mission-pitch { font-size: 17px; }
+      .repo-result { font-size: 16px !important; }
       .repo-grid { grid-template-columns: 1fr; }
       .materia-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -1777,6 +1795,7 @@
               </div>
               <p class="mission-text" id="mission-text">Building ML/AI products for Business</p>
               <p class="mission-sub" id="mission-sub">From data pipelines to serving.<br />From prototype to production.</p>
+              <p class="mission-pitch">ML Engineer at Deloitte AI &amp; Data · 5+ yrs in production ML, MLOps &amp; LLM/RAG · based in Lisbon, open to opportunities</p>
               <p class="mission-badge"><span class="mission-badge-dot" aria-hidden="true"></span><span id="status-badge">Open to ML engineering roles</span></p>
               <div class="mission-flair" aria-hidden="true">
                 <div class="mission-runner">
@@ -1877,37 +1896,37 @@
                 <div class="materia-orb-inner"></div>
                 <span class="materia-orb-type">Magic</span>
                 <span class="materia-orb-lvl" style="color:var(--accent-blue);">Lv.85</span>
-                <span class="materia-tooltip">Python: Web, API, Scripting</span>
+                <span class="materia-tooltip">Python: 5+ yrs — Web, API, Scripting</span>
               </div>
               <div class="materia-orb mlops" data-skill="MLOps">
                 <div class="materia-orb-inner"></div>
                 <span class="materia-orb-type">Support</span>
                 <span class="materia-orb-lvl" style="color:var(--accent-green);">Lv.72</span>
-                <span class="materia-tooltip">MLOps: CI/CD, Monitoring, Deploy</span>
+                <span class="materia-tooltip">MLOps: 2+ yrs — CI/CD, Monitoring, Deploy</span>
               </div>
               <div class="materia-orb llm" data-skill="LLM">
                 <div class="materia-orb-inner"></div>
                 <span class="materia-orb-type">Summon</span>
                 <span class="materia-orb-lvl" style="color:var(--accent-purple);">Lv.68</span>
-                <span class="materia-tooltip">LLM: RAG, Agents, Evaluation</span>
+                <span class="materia-tooltip">LLM: 2+ yrs — RAG, Agents, Evaluation</span>
               </div>
               <div class="materia-orb cloud" data-skill="Cloud">
                 <div class="materia-orb-inner"></div>
                 <span class="materia-orb-type">Command</span>
                 <span class="materia-orb-lvl" style="color:var(--accent-orange);">Lv.65</span>
-                <span class="materia-tooltip">Cloud: GCP, AWS, BigQuery</span>
+                <span class="materia-tooltip">Cloud: 2+ yrs — GCP, AWS, BigQuery</span>
               </div>
               <div class="materia-orb data" data-skill="Data">
                 <div class="materia-orb-inner"></div>
                 <span class="materia-orb-type">Independent</span>
                 <span class="materia-orb-lvl" style="color:var(--accent-yellow);">Lv.78</span>
-                <span class="materia-tooltip">Data: Pipelines, ETL, Analytics</span>
+                <span class="materia-tooltip">Data: 5+ yrs — Pipelines, ETL, Analytics</span>
               </div>
               <div class="materia-orb sql" data-skill="SQL">
                 <div class="materia-orb-inner"></div>
                 <span class="materia-orb-type">Summon</span>
                 <span class="materia-orb-lvl" style="color:var(--accent-red);">Lv.76</span>
-                <span class="materia-tooltip">SQL: Queries, Optimization, DW</span>
+                <span class="materia-tooltip">SQL: 5+ yrs — Queries, Optimization, DW</span>
               </div>
             </div>
           </div>
@@ -1973,22 +1992,26 @@
         <div class="repo-grid" id="featured-grid">
           <a class="repo-card" href="https://github.com/RuiFSP/llmzoomcamp-2026-final-project" target="_blank" rel="noopener noreferrer">
             <h3>llmzoomcamp-2026-final-project</h3>
-            <p>Portuguese food &amp; wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose. LLM Zoomcamp 2026 ✅ Completed.</p>
+            <p>Portuguese food &amp; wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose.</p>
+            <p class="repo-result">Result: shipped end-to-end RAG app with offline eval harness ✅</p>
             <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
           <a class="repo-card" href="https://github.com/RuiFSP/dezoomcamp-2026-final-project" target="_blank" rel="noopener noreferrer">
             <h3>dezoomcamp-2026-final-project</h3>
             <p>GitHub analytics platform — Terraform, GCS, BigQuery, Bruin, Cloud Run + CI/CD.</p>
+            <p class="repo-result">Result: infra-as-code analytics lakehouse, fully CI/CD'd</p>
             <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
           <a class="repo-card" href="https://github.com/RuiFSP/mlops-2025-final_project" target="_blank" rel="noopener noreferrer">
             <h3>mlops-2025-final_project</h3>
-            <p>Premier League prediction (61.8%) — FastAPI, MLflow, Prefect, Grafana.</p>
+            <p>Premier League prediction — FastAPI, MLflow, Prefect, Grafana.</p>
+            <p class="repo-result">Result: 61.8% accuracy, tracked in MLflow, live Grafana dashboards</p>
             <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
           <a class="repo-card" href="https://github.com/RuiFSP/kedro-bike-demand-pipeline" target="_blank" rel="noopener noreferrer">
             <h3>kedro-bike-demand-pipeline</h3>
             <p>Next-hour bike demand — Kedro, CatBoost, Dash dashboard, Dockerised.</p>
+            <p class="repo-result">Result: reproducible Kedro pipeline + interactive Dash dashboard</p>
             <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">Python</span></p>
           </a>
         </div>
@@ -2011,13 +2034,13 @@
           </div>
           <div class="career-card">
             <p class="career-year">2026 ✅</p>
-            <img class="career-icon" src="assets/sprites/sprite-trophy.svg" alt="" />
+            <img class="career-icon" src="assets/sprites/ach-llm.svg" alt="" />
             <p class="career-title">LLM Zoomcamp — Completed</p>
             <p class="career-desc">RAG food &amp; wine guide: Qdrant, GPT-4o, eval</p>
           </div>
           <div class="career-card">
             <p class="career-year">Active</p>
-            <img class="career-icon" src="assets/sprites/sprite-trophy.svg" alt="" />
+            <img class="career-icon" src="assets/sprites/ach-deployer.svg" alt="" />
             <p class="career-title">ML Engineer · Lisbon</p>
             <p class="career-desc">Open to ML/MLOps roles — see CV below</p>
           </div>
@@ -2073,11 +2096,11 @@
         <img class="save-crystal-img" src="assets/sprites/sprite-save-crystal.svg" alt="" aria-hidden="true" />
         <div class="save-point-text">
           <h3>&#x1F48E; Save Point</h3>
-          <p>Deloitte Tech Senior AI &amp; Data — download CV or connect on LinkedIn.</p>
+          <p>Open to ML/MLOps engineering roles — grab the CV or start a conversation.</p>
         </div>
         <div class="save-point-actions">
           <a class="save-btn primary" href="./Rui_Pinto_ML_Engineer_CV.pdf" id="resume-btn" target="_blank" rel="noopener noreferrer">&#x1F4BE; Download CV</a>
-          <a class="save-btn secondary" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noopener noreferrer">&#x1F4E1; Connect</a>
+          <a class="save-btn secondary" href="https://www.linkedin.com/in/ruifspinto" target="_blank" rel="noopener noreferrer">&#x1F4E1; Connect on LinkedIn</a>
         </div>
       </section>
     </div>
@@ -2328,10 +2351,16 @@
       // Curated outcome-driven blurbs — kept even after live GitHub hydration
       // so the static HTML story (metrics, stack) is never overwritten by API descriptions.
       var FEATURED_META = {
-        "llmzoomcamp-2026-final-project": "Portuguese food & wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose. LLM Zoomcamp 2026 ✅ Completed.",
+        "llmzoomcamp-2026-final-project": "Portuguese food & wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose.",
         "dezoomcamp-2026-final-project": "GitHub analytics platform — Terraform, GCS, BigQuery, Bruin, Cloud Run + CI/CD.",
-        "mlops-2025-final_project": "Premier League prediction (61.8%) — FastAPI, MLflow, Prefect, Grafana.",
+        "mlops-2025-final_project": "Premier League prediction — FastAPI, MLflow, Prefect, Grafana.",
         "kedro-bike-demand-pipeline": "Next-hour bike demand — Kedro, CatBoost, Dash dashboard, Dockerised."
+      };
+      var FEATURED_RESULTS = {
+        "llmzoomcamp-2026-final-project": "Result: shipped end-to-end RAG app with offline eval harness ✅",
+        "dezoomcamp-2026-final-project": "Result: infra-as-code analytics lakehouse, fully CI/CD'd",
+        "mlops-2025-final_project": "Result: 61.8% accuracy, tracked in MLflow, live Grafana dashboards",
+        "kedro-bike-demand-pipeline": "Result: reproducible Kedro pipeline + interactive Dash dashboard"
       };
       var PINNED_FEATURED = Object.keys(FEATURED_META);
 
@@ -2353,6 +2382,10 @@
           var desc = document.createElement("p");
           desc.textContent = FEATURED_META[repo.name] || repo.description || "Repository in active development.";
 
+          var result = document.createElement("p");
+          result.className = "repo-result";
+          result.textContent = FEATURED_RESULTS[repo.name] || "";
+
           var meta = document.createElement("p");
           meta.className = "repo-meta";
 
@@ -2368,6 +2401,7 @@
           meta.appendChild(lang);
           card.appendChild(title);
           card.appendChild(desc);
+          if (result.textContent) card.appendChild(result);
           card.appendChild(meta);
           grid.appendChild(card);
         });
