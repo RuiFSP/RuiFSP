@@ -1131,6 +1131,51 @@
       100% { transform: scale(1); }
     }
 
+    .konami-banner {
+      position: fixed;
+      top: 14%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.6);
+      font-family: "Press Start 2P", monospace;
+      font-size: 18px;
+      color: var(--accent-gold);
+      background: rgba(4, 20, 46, 0.94);
+      border: 3px solid var(--accent-gold);
+      border-radius: 6px;
+      padding: 16px 24px;
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      text-align: center;
+      box-shadow: 0 0 32px rgba(247, 207, 103, 0.55);
+      line-height: 1.6;
+    }
+
+    .konami-banner.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .konami-banner small {
+      display: block;
+      font-family: "VT323", monospace;
+      font-size: 20px;
+      color: var(--text-dim);
+      margin-top: 6px;
+    }
+
+    .konami-hint {
+      opacity: 0.45;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .materia-orb.active-filter .materia-orb-inner {
+      outline: 2px solid var(--accent-gold);
+      outline-offset: 2px;
+    }
+
     /* SECTIONS */
     .section-divider {
       border: none;
@@ -1514,6 +1559,29 @@
       .repo-result { font-size: 16px !important; }
       .repo-grid { grid-template-columns: 1fr; }
       .materia-grid { grid-template-columns: repeat(3, 1fr); }
+      .konami-banner { font-size: 12px; padding: 12px 14px; }
+      .konami-hint { display: none; }
+    }
+
+    /* PRINT — recruiter-friendly clean version */
+    @media print {
+      body { background: #fff !important; color: #111 !important; padding: 0; }
+      body::before, .firefly-container, .loading-screen, .limit-break-overlay,
+      .music-control, #bgm-audio, .map-atmosphere, .map-cloud, .map-sprites,
+      .map-radar, .map-depth, .mission-flair, .konami-banner, .konami-hint { display: none !important; }
+      .hud, .panel, .repo-card, .career-card, .equip-slot, .save-point, .action-btn {
+        background: #fff !important; border-color: #444 !important;
+        box-shadow: none !important; color: #111 !important;
+      }
+      .panel-title, .dungeon-label span, .save-point-text h3, .equip-name, .equip-stat,
+      .career-title, .career-year, .materia-orb-type, .materia-orb-lvl, .stat-list li, .repo-meta {
+        color: #222 !important;
+      }
+      p, span, h1, h2, h3, li, .mission-text, .mission-sub, .mission-pitch, .repo-card p, .repo-result, .career-desc {
+        color: #222 !important;
+      }
+      a { color: #0645ad !important; text-decoration: none; }
+      .materia-orb-inner, .achievement-badge, .equip-slot img, .career-icon { filter: grayscale(0.3); }
     }
 
     /* === LOADING SCREEN === */
@@ -2107,6 +2175,7 @@
 
     <footer class="status-strip">
       <span>Production ML · MLOps · LLM/RAG — verified public builds.</span>
+      <span class="konami-hint" aria-hidden="true">↑↑↓↓←→←→BA</span>
       <span>Status: <span id="footer-status">Open to ML engineering opportunities</span></span>
     </footer>
     <audio id="bgm-audio" src="assets/audio/the_mountain-final-scene-186304.mp3" preload="none" loop></audio>
@@ -2477,6 +2546,56 @@
           }, idx * 100);
         });
       }
+
+      // === KONAMI EASTER EGG ===
+      // ↑↑↓↓←→←→BA — "RUI UNLEASHED"
+      var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+      var konamiIndex = 0;
+      document.addEventListener("keydown", function (e) {
+        if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")) return;
+        if (e.keyCode === konamiCode[konamiIndex]) {
+          konamiIndex++;
+          if (konamiIndex === konamiCode.length) {
+            konamiIndex = 0;
+            hasTriggeredLimit = false;
+            triggerLimitBreak();
+            showKonamiBanner();
+          }
+        } else {
+          konamiIndex = (e.keyCode === konamiCode[0]) ? 1 : 0;
+        }
+      });
+
+      function showKonamiBanner() {
+        var banner = document.createElement("div");
+        banner.className = "konami-banner";
+        banner.innerHTML = "LIMIT BREAK! RUI UNLEASHED<small>A recruiting bonus appears...</small>";
+        document.body.appendChild(banner);
+        setTimeout(function () { banner.classList.add("show"); }, 20);
+        setTimeout(function () { banner.classList.remove("show"); }, 2600);
+        setTimeout(function () { banner.remove(); }, 3200);
+      }
+
+      // === MATERIA → REPO FILTER ===
+      var MATTERIA_CHIP = { python: "python", mlops: "mlops", llm: "llm", cloud: "cloud", data: "data" };
+      document.querySelectorAll(".materia-orb").forEach(function (orb) {
+        orb.setAttribute("title", "Click to filter repos");
+        orb.addEventListener("click", function () {
+          var skill = (orb.getAttribute("data-skill") || "").toLowerCase();
+          var input = document.getElementById("repo-search-input");
+          var chipVal = MATTERIA_CHIP[skill];
+          document.querySelectorAll(".search-chip[data-chip]").forEach(function (c) {
+            c.classList.toggle("active", !!chipVal && c.getAttribute("data-chip") === chipVal);
+          });
+          if (input) input.value = chipVal ? "" : skill;
+          document.querySelectorAll(".materia-orb").forEach(function (o) { o.classList.remove("active-filter"); });
+          if (chipVal || skill) orb.classList.add("active-filter");
+          applyRepoSearch();
+          playSfx("click");
+          var target = document.getElementById("activity");
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
 
       // === ACTIVITY ===
       function eventToLine(event) {
@@ -2891,10 +3010,15 @@
         });
       });
 
-      // Save point sound
+      // Save point sound + print (crystal = classic FF save → printable page)
       var saveCrystal = document.querySelector(".save-crystal-img");
       if (saveCrystal) {
-        saveCrystal.addEventListener("click", function () { playSfx("save"); });
+        saveCrystal.style.cursor = "pointer";
+        saveCrystal.setAttribute("title", "Save (print this page)");
+        saveCrystal.addEventListener("click", function () {
+          playSfx("save");
+          setTimeout(function () { window.print(); }, 150);
+        });
       }
 
       // Resume button

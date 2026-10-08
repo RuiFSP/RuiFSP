@@ -59,6 +59,10 @@ cv.ln(2)
 
 cv.set_font("Helvetica", "", 7.5)
 cv.set_text_color(50, 110, 200)
+cv.cell(46, 5, "ruifspinto@gmail.com", link="mailto:ruifspinto@gmail.com")
+cv.set_text_color(150, 150, 150)
+cv.cell(6, 5, "|")
+cv.set_text_color(50, 110, 200)
 cv.cell(38, 5, "github.com/RuiFSP", link="https://github.com/RuiFSP")
 cv.set_text_color(150, 150, 150)
 cv.cell(6, 5, "|")
@@ -67,7 +71,7 @@ cv.cell(50, 5, "linkedin.com/in/ruifspinto", link="https://linkedin.com/in/ruifs
 cv.set_text_color(150, 150, 150)
 cv.cell(6, 5, "|")
 cv.set_text_color(50, 110, 200)
-cv.cell(cv.page_w - 100, 5, "ruifsp.github.io/RuiFSP", link="https://ruifsp.github.io/RuiFSP", new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w - 146, 5, "ruifsp.github.io/RuiFSP", link="https://ruifsp.github.io/RuiFSP", new_x="LMARGIN", new_y="NEXT")
 cv.set_text_color(60, 60, 60)
 
 cv.ln(3.5)
@@ -112,6 +116,7 @@ cv.set_text_color(100, 100, 100)
 cv.cell(cv.page_w, 4.5, "Tech Senior / Tech Consultant, AI & Data  |  Dec 2024 - Present", new_x="LMARGIN", new_y="NEXT")
 cv.ln(1.5)
 
+# TODO: add real impact figures where available (%, volume, scale) to Deloitte bullets
 deloitte_bullets = [
     "Built ML forecasting models on AWS SageMaker integrating real-time financial data, improving budget accuracy for project expenditure tracking",
     "Designed and deployed a RAG agent using Google ADK, Cloud Spanner, and BigQuery for enterprise-scale intelligent document retrieval and analytics",
@@ -145,7 +150,7 @@ cv.ln(2)
 # Earlier Career
 cv.set_font("Helvetica", "B", 9)
 cv.set_text_color(33, 33, 33)
-cv.cell(cv.page_w, 4.5, "Earlier Career", new_x="LMARGIN", new_y="NEXT")
+cv.cell(cv.page_w, 4.5, "Earlier Career  (2007 - 2022)", new_x="LMARGIN", new_y="NEXT")
 cv.ln(1)
 cv.set_font("Helvetica", "", 8)
 cv.set_text_color(100, 100, 100)
@@ -171,6 +176,9 @@ projects = [
     ("MLOps Pipeline (Premier League Prediction, 61.8% accuracy)",
      "FastAPI, MLflow, Prefect, PostgreSQL, Grafana, Docker, GitHub Actions",
      "https://github.com/RuiFSP/mlops-2025-final_project"),
+    ("Bike Demand Forecasting (Next-Hour, Kedro)",
+     "Kedro, CatBoost, Dash, Docker",
+     "https://github.com/RuiFSP/kedro-bike-demand-pipeline"),
 ]
 for title, stack, url in projects:
     cv.set_font("Helvetica", "B", 9)
