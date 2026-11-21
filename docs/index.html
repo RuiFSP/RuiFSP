@@ -10,7 +10,7 @@
 
   <meta name="description" content="Rui Pinto — ML Engineer in Lisbon building production ML systems, MLOps pipelines, and LLM/RAG apps. Deloitte AI & Data, Python, AWS/GCP, FastAPI, MLflow." />
   <meta property="og:title" content="Rui Pinto | ML Engineer — Production ML, MLOps, LLMs" />
-  <meta property="og:description" content="Portfolio: 4 production ML/data/LLM builds with metrics, live GitHub telemetry, CV download, and contact." />
+  <meta property="og:description" content="Portfolio: 5 production builds (ML, data, LLM, full-stack) with metrics, live GitHub telemetry, CV download, and contact." />
   <meta property="og:image" content="https://github.com/RuiFSP.png" />
   <meta property="og:url" content="https://ruifsp.github.io/RuiFSP/" />
   <meta property="og:type" content="website" />
@@ -1010,7 +1010,7 @@
     /* REPO GRID */
     .repo-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 10px;
     }
 
@@ -2118,6 +2118,12 @@
       <section class="panel reveal dungeon-section" id="featured-repos">
         <div class="dungeon-label"><span>Arsenal — Featured Repositories</span></div>
         <div class="repo-grid" id="featured-grid">
+          <a class="repo-card" href="https://github.com/RuiFSP/accountable" target="_blank" rel="noopener noreferrer">
+            <h3>accountable</h3>
+            <p>Sales CRM for a small team — FastAPI, React 19, Supabase Auth, drag-and-drop pipeline board.</p>
+            <p class="repo-result">Result: live on Render with unit + E2E test gates (pytest, Vitest, Playwright)</p>
+            <p class="repo-meta"><span class="repo-stars">—</span><span class="repo-lang">TypeScript</span></p>
+          </a>
           <a class="repo-card" href="https://github.com/RuiFSP/llmzoomcamp-2026-final-project" target="_blank" rel="noopener noreferrer">
             <h3>llmzoomcamp-2026-final-project</h3>
             <p>Portuguese food &amp; wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose.</p>
@@ -2480,12 +2486,14 @@
       // Curated outcome-driven blurbs — kept even after live GitHub hydration
       // so the static HTML story (metrics, stack) is never overwritten by API descriptions.
       var FEATURED_META = {
+        "accountable": "Sales CRM for a small team — FastAPI, React 19, Supabase Auth, drag-and-drop pipeline board.",
         "llmzoomcamp-2026-final-project": "Portuguese food & wine RAG guide — Qdrant, GPT-4o, eval harness, Docker Compose.",
         "dezoomcamp-2026-final-project": "GitHub analytics platform — Terraform, GCS, BigQuery, Bruin, Cloud Run + CI/CD.",
         "mlops-2025-final_project": "Premier League prediction — FastAPI, MLflow, Prefect, Grafana.",
         "kedro-bike-demand-pipeline": "Next-hour bike demand — Kedro, CatBoost, Dash dashboard, Dockerised."
       };
       var FEATURED_RESULTS = {
+        "accountable": "Result: live on Render with unit + E2E test gates (pytest, Vitest, Playwright)",
         "llmzoomcamp-2026-final-project": "Result: shipped end-to-end RAG app with offline eval harness ✅",
         "dezoomcamp-2026-final-project": "Result: infra-as-code analytics lakehouse, fully CI/CD'd",
         "mlops-2025-final_project": "Result: 61.8% accuracy, tracked in MLflow, live Grafana dashboards",
@@ -2909,8 +2917,10 @@
           var ownRepos = repos.filter(function (repo) { return !repo.fork; });
 
           var pinnedFeaturedRepoNames = PINNED_FEATURED;
+          // Pinned picks are looked up across ALL repos (not just non-forks), so a
+          // deliberately featured fork such as accountable still renders.
           var pinnedFeaturedRepos = pinnedFeaturedRepoNames.map(function (name) {
-            return ownRepos.find(function (repo) { return repo.name === name; });
+            return repos.find(function (repo) { return repo.name === name; });
           }).filter(Boolean);
 
           var rankedRepos = ownRepos.slice().sort(function (a, b) {
@@ -2921,7 +2931,7 @@
 
           var featured = pinnedFeaturedRepos.concat(rankedRepos.filter(function (repo) {
             return pinnedFeaturedRepoNames.indexOf(repo.name) === -1;
-          })).slice(0, 4);
+          })).slice(0, 5);
 
           featuredReposCache = featured.slice();
           var totalStars = ownRepos.reduce(function (acc, repo) { return acc + (repo.stargazers_count || 0); }, 0);

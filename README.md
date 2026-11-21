@@ -32,6 +32,7 @@
 
 | Project | Description | Stack |
 |---------|-------------|-------|
+| [**accountable**](https://github.com/RuiFSP/accountable) | Live sales CRM for small teams — dashboard, drag-and-drop pipeline board, Supabase Auth, full test gates | Python · FastAPI · React · TypeScript · Supabase · PostgreSQL · Playwright |
 | [**llmzoomcamp-2026-final-project**](https://github.com/RuiFSP/llmzoomcamp-2026-final-project) | Portuguese food & wine RAG guide — eval harness, Docker Compose | Python · Qdrant · Flask · PostgreSQL · Grafana · GPT-4o · Docker |
 | [**dezoomcamp-2026-final-project**](https://github.com/RuiFSP/dezoomcamp-2026-final-project) | Batch data platform from ingestion to dashboard using cloud-native orchestration | Python · Bruin · Terraform · GCS · BigQuery · Streamlit · Cloud Run |
 | [**kedro-bike-demand-pipeline**](https://github.com/RuiFSP/kedro-bike-demand-pipeline) | Production-style ML pipeline forecasting next-hour bike demand — Kedro orchestration, CatBoost, live Dash dashboard, fully Dockerised | Python · Kedro · CatBoost · Dash · Docker Compose · uv |
