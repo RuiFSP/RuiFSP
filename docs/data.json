@@ -1,7 +1,7 @@
 {
   "user": {
     "login": "RuiFSP",
-    "followers": 23
+    "followers": 21
   },
   "repos": [
     {
@@ -14,6 +14,17 @@
       "fork": false,
       "pushed_at": "2023-07-19T15:14:25Z",
       "size": 53713
+    },
+    {
+      "name": "accountable",
+      "html_url": "https://github.com/RuiFSP/accountable",
+      "description": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "language": "TypeScript",
+      "fork": true,
+      "pushed_at": "2026-11-20T19:17:39Z",
+      "size": 5028
     },
     {
       "name": "advent_code_2024",
@@ -87,10 +98,10 @@
       "description": "MCP server to access Garmin data",
       "stargazers_count": 0,
       "forks_count": 0,
-      "language": null,
+      "language": "Python",
       "fork": true,
-      "pushed_at": "2026-08-04T18:29:56Z",
-      "size": 798
+      "pushed_at": "2026-09-28T06:52:34Z",
+      "size": 1038
     },
     {
       "name": "kedro-bike-demand-pipeline",
@@ -133,8 +144,8 @@
       "forks_count": 0,
       "language": "Jupyter Notebook",
       "fork": true,
-      "pushed_at": "2026-07-12T13:37:33Z",
-      "size": 570474
+      "pushed_at": "2026-09-20T18:39:13Z",
+      "size": 578061
     },
     {
       "name": "marvel-characters",
@@ -243,10 +254,10 @@
       "forks_count": 0,
       "language": "Python",
       "fork": false,
-      "pushed_at": "2026-07-20T09:43:54Z",
-      "size": 7028
+      "pushed_at": "2026-11-21T10:34:50Z",
+      "size": 7085
     }
   ],
-  "prs_total": 136,
+  "prs_total": 143,
   "issues_total": 0
 }
