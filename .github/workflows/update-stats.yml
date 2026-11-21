@@ -1,0 +1,53 @@
+name: Update GitHub stats snapshot
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+# main requires pull requests (0 approvals needed), so the workflow cannot
+# push directly. It opens a PR instead and squash-merges it itself.
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch stats
+        run: python scripts/fetch_github_stats.py
+
+      - name: Open and merge snapshot PR if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet docs/data.json; then
+            echo "No changes."
+            exit 0
+          fi
+
+          # Close leftover snapshot PRs from a previous failed merge
+          for pr in $(gh pr list --state open --author "github-actions[bot]" --json number,title --jq '.[] | select(.title == "chore: nightly GitHub stats snapshot") | .number'); do
+            gh pr close "$pr" --comment "Superseded by a newer snapshot run."
+          done
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          branch="chore/stats-snapshot-${GITHUB_RUN_ID}"
+          git checkout -b "$branch"
+          git add docs/data.json
+          git commit -m "chore: nightly GitHub stats snapshot"
+          git push origin "$branch"
+          gh pr create \
+            --title "chore: nightly GitHub stats snapshot" \
+            --body "Automated nightly snapshot of docs/data.json (GitHub stats). Auto-merged by the workflow." \
+            --base main \
+            --head "$branch"
+          gh pr merge "$branch" --squash --delete-branch
