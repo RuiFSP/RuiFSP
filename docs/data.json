@@ -19,7 +19,7 @@
       "name": "accountable",
       "html_url": "https://github.com/RuiFSP/accountable",
       "description": null,
-      "stargazers_count": 0,
+      "stargazers_count": 1,
       "forks_count": 0,
       "language": "TypeScript",
       "fork": true,
@@ -254,8 +254,8 @@
       "forks_count": 0,
       "language": "Python",
       "fork": false,
-      "pushed_at": "2026-11-21T10:59:40Z",
-      "size": 7085
+      "pushed_at": "2026-11-21T11:00:14Z",
+      "size": 7128
     }
   ],
   "prs_total": 144,
